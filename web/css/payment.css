@@ -1,0 +1,386 @@
+
+.payment-index .operations {
+    text-align: right;
+}
+.payment-form .operations {
+    display: inline-block;
+    width: 210px;
+    float: right;
+    text-align: right;
+}
+
+.error-message {
+    color: #ca8f00;
+}
+
+
+/* index page new design */
+
+.payment-table {
+    width: 100%;
+    font-family: 'Open Sans', sans-serif;
+}
+.payment-table th > div {
+    box-sizing: border-box;
+}
+.payment-table td > div {
+    box-sizing: border-box;
+}
+.payment-table tr th > div,
+.payment-table tr td > div {
+    margin-bottom: 3px;
+}
+.payment-table .tr-row td > div {
+    height: 65px;
+    padding: 2px 8px;
+    margin-right: 3px;
+}
+.payment-table .col-min {
+    position: relative;
+}
+.payment-table .labels th > div {
+    margin-right: 3px;
+}
+.payment-table .filters th > div {
+    margin-right: 3px;
+}
+.payment-table .row-2 td > div {
+    background-color: #f7f7f7 !important;
+}
+.payment-table .tr-row td:first-child > div {
+    text-align: center;
+}
+.payment-table .header th > div:not(.col-wrap):not(.box-40) {
+    background-color: #ffd37b;
+    height: 26px;
+    font-size: 14px;
+    text-align: center;
+    font-weight: normal;
+    padding: 3px 0;
+    margin-bottom: 6px;
+    cursor: pointer;
+}
+.payment-table .header .col-operations > div {
+    margin-right: 3px;
+}
+.payment-table .header .col-min {
+    width: 41px;
+}
+.payment-table .header .col-min .col-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 100%;
+    width: 26px;
+    overflow: hidden;
+    background-color: #ffd37b;
+}
+.payment-table .header .col-min .col-wrap > div {
+    text-align: right !important;
+    padding: 0 !important;
+    display: inline-block !important;
+    height: auto !important;
+    transform: rotate(270deg);
+    width: 150px;
+    position: relative;
+    top: 75px;
+    left: -62px;
+    font-weight: normal;
+}
+.payment-table .light-header > div {
+    background-color: #ffea94 !important;
+}
+.payment-table .header th:last-child > div {
+    background-color: transparent !important;
+}
+.payment-table .col-operations {
+    width: 36px;
+}
+.payment-table .labels .sort {
+    color: #000;
+    text-decoration: underline;
+}
+.payment-table .labels .col-dates {
+    width: 90px;
+}
+.payment-table .labels .col-lead-client {
+    /*width: 180px;*/
+}
+.payment-table .labels .col-lead-amo {
+    width: 52px;
+}
+.payment-table .labels .col-account-type {
+    width: 90px;
+}
+.payment-table .labels .col-account-sum {
+    width: 100px;
+}
+.payment-table .labels .col-account-status {
+    width: 120px;
+}
+.payment-table .labels .col-account-date,
+.payment-table .labels .col-manager-date {
+    width: 110px;
+}
+.payment-table .labels .col-manager-name {
+    width: 140px;
+}
+.payment-table .labels .col-manager-link {
+    width: 90px;
+}
+.payment-table .labels .col-lead-client {
+    width: 316px;
+}
+.payment-table .labels .col-manager-link > div {
+    padding: 4px 0;
+}
+.payment-table .labels .col-manager-date > div {
+    padding: 4px 0;
+}
+.payment-table .labels .col-account-date > div {
+    padding: 4px 0;
+}
+.payment-table .group-last > div,
+.payment-table .col-full > div {
+    margin-right: 15px !important;
+}
+.payment-table th > div > input,
+.payment-table th > div > select {
+    width: 96%;
+    margin-left: 2%;
+    font-size: 14px;
+    padding: 1px;
+    height: 30px;
+    font-weight: normal;
+}
+.payment-table .labels th > div {
+    background-color: #fff8cc;
+    padding: 14px 0;
+    height: 50px;
+    font-size: 14px;
+    text-align: center;
+    font-weight: normal;
+}
+.payment-table .filters th > div {
+    /*background-color: #fff8cc;*/
+    /*height: 45px;*/
+    /*padding: 8px 0;*/
+    height: 95px;
+    padding: 15px 0;
+}
+.payment-table .multiselect-native-select .btn-group {
+    top: -2px;
+    margin-left: 4%;
+}
+.payment-table .row-1 td > div {
+    background-color: #fff !important;
+}
+.payment-table .col-status {
+    width: 194px;
+}
+.payment-table .tr-row a {
+    color: #000;
+}
+
+
+
+.add-form-item {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+}
+.add-form-item .delete-item {
+    float: right;
+}
+.add-form-template {
+    display: none;
+}
+
+.field-payment-status .label-success {
+    font-size: 16px;
+}
+
+/* checkout page */
+
+.checkout .container {
+    padding-bottom: 50px;
+}
+.checkout .logo {
+    padding-top: 30px;
+    text-align: center;
+}
+.checkout .logo h1 {
+    font-family: 'Noto Serif', serif;
+    font-size: 30px;
+    margin: 30px 0 50px 0;
+}
+.checkout .products { }
+.checkout .items .column {
+    font: normal 13px/18px 'Open Sans', sans-serif;
+    color: black;
+    padding: 0 10px 15px 10px;
+}
+.checkout .items .item {
+    background: white;
+    border: 1px solid #f1a419;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.checkout .products.has-images .items .item.no-image {
+    margin-top: 118px;
+}
+.checkout .items .item .image {
+    height: 118px;
+    overflow: hidden;
+}
+.checkout .items .item h4 {
+    font-size: 17px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 24px;
+    margin-bottom: 12px;
+    padding: 0 15px;
+}
+.checkout .items .item .description {
+    padding: 0 10px 15px 10px;
+    font: normal 13px/15px 'Open Sans', sans-serif;
+    text-align: center;
+    margin-bottom: 8px;
+}
+.checkout .items .item .price {
+    font-size: 13px;
+    line-height: 13px;
+    text-align: left;
+    margin-bottom: 10px;
+    padding-left: 32%;
+}
+.checkout .items .item .price img {
+    position: relative;
+    top: -1px;
+    height: 12px;
+}
+.checkout .items .item .count {
+    font-size: 13px;
+    line-height: 13px;
+    text-align: left;
+    margin-bottom: 16px;
+    padding-left: 32%;
+}
+.checkout .total {
+    text-align: center;
+    margin: 30px 0px 20px 0px;
+    margin-top: 240px;
+}
+
+.checkout .tot1{
+    margin-top: 30px !important;
+}
+
+.checkout .total .sum {
+    font-family: 'Noto Serif', serif;
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 24px;
+}
+.checkout .total .sum img {
+    position: relative;
+    top: -2px;
+}
+.checkout .total .payment-button {
+    border: none;
+    width: 219px;
+    height: 66px;
+    background: url(../images/pay-btn.png) left top no-repeat;
+}
+.checkout .info {
+    font-size: 15px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.checkout .info a {
+    font-size: 15px;
+    color: #000;
+    text-decoration: underline;
+}
+.checkout .about-company {
+    font-size: 13px;
+}
+.checkout .about-company h4 {
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+.checkout .about-company b {
+    font-style: italic;
+}
+.checkout table .remove-order {
+    color: red;
+}
+
+
+.gateways .gt-col td:first-child {
+    text-align: center;
+    padding: 7px 15px 7px 0;
+}
+
+.gateways label {
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    line-height: 22px;
+    margin-bottom: 15px;
+}
+
+
+
+@media (min-width: 1200px) {
+    .checkout .container {
+        width: 940px;
+    }
+}
+@media (min-width: 992px) {
+    .checkout .container {
+        width: 940px;
+    }
+}
+@media (min-width: 300px) {
+    .checkout .items .item .description {
+        font: normal 15px/20px 'Open Sans', sans-serif;
+    }
+}
+@media (max-width: 768px) {
+    .checkout .gateways {
+        width: 240px;
+        margin: 0 auto;
+    }
+}
+
+
+.status-selector-wrap {
+    position: relative;
+    height: 45px;
+}
+.status-selector-wrap .select-status.selector {
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+}
+.status-selector-wrap.open .select-status.selector {
+    border: 1px solid #000;
+}
+.details .status-selector-wrap .select-status.selector {
+    position: absolute;
+    width: auto;
+}
+
+.status-selector-wrap .select-status.selector a {
+    display: block;
+    text-decoration: none;
+    color: #000;
+}
+.status-selector-wrap .select-status.selector a.selected {
+    text-decoration: underline;
+}
+.multiselect-native-select .btn-group button {
+    width: 106px;
+    padding: 6px 1px !important;
+}

@@ -1,0 +1,123 @@
+table {
+    font-size: 11px;
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+.wrap {
+    width: 840px;
+    margin: 10px auto;
+    font-size: 0;
+    font-family: 'Myriad Pro', Arial, sans-serif;
+    color: #231f20;
+    font-weight: 600;
+}
+.item {
+    display: inline-block;
+    width: 239px;
+    padding: 5px;
+    height: 520px;
+    border:1px dashed #ece9e9;
+}
+td {
+    padding: 0 5px;
+}
+.grey-bg {
+    position: relative;
+    background: #f1f1f2;
+    padding: 0;
+
+}
+.vertical-text {
+    position: absolute;
+    left: -12px;
+    top: 48px;
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    font-weight: 600;
+    background: #f1f1f2;
+}
+.col1 {
+    width: 30px
+}
+.col2 {
+    width: 100px
+}
+.col3 {
+    width: 180px
+}
+.col4 {
+    width: 30px
+}
+
+/*main*/
+.main tr td:first-child {
+    text-align: right;
+    color: #a7a9ac;
+}
+.main tr td:last-child {
+    text-align: left;
+}
+.main-col1 {
+    width: 110px;
+}
+.main-col2 {
+    width: 160px;
+}
+.main-col3 {
+    width: 50px;
+}
+.big {
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.5em;
+}
+.ok{
+    background: url(/images/ok.png) no-repeat bottom right;
+}
+
+/*secondary*/
+.other td:first-child, .secondary .first td:nth-child(2) {
+    text-align: right;
+    color: #a7a9ac;
+}
+.other td:nth-child(2), .secondary .first td:nth-child(3) {
+    text-align: left;
+}
+.secondary .first td:first-child {
+    border: none;
+    color: #231f20;
+    min-width:12px;
+}
+.secondary .first td:nth-child(3), .secondary .first td:nth-child(4), .other td:nth-child(2), .other td:nth-child(3) {
+    border: 1px solid #a7a9ac;
+    border-left: none;
+}
+
+/*nakladnaya*/
+.nakladnaya .vertical-text {
+    position: absolute;
+    left: -23px;
+    top: 32px;
+}
+
+/*dopolneniya*/
+.dopolneniya .vertical-text {
+    position: absolute;
+    left: -27px;
+    top: 51px;
+}
+.dopolneniya {
+    height: 110px;
+}
+.dopolneniya .other td {
+    border-right: none;
+}
+
+
+
+
+

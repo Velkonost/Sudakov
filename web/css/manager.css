@@ -1,0 +1,36 @@
+a.button24 {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    padding: .5em 2em;
+    outline: none;
+    border-width: 2px 0;
+    border-style: solid none;
+    border-color: #FDBE33 #000 #D77206;
+    border-radius: 6px;
+    background: linear-gradient(#F3AE0F, #E38916) #E38916;
+    transition: 0.2s;
+}
+a.button24:hover { background: linear-gradient(#f5ae00, #f59500) #f5ae00; }
+a.button24:active { background: linear-gradient(#f59500, #f5ae00) #f59500; }
+.wrap {
+    height: auto;
+    margin: 0 auto -30px;
+    min-height: 100%;
+    padding: 0 0 30px;
+}
+body.manager-index .container {
+    padding: 0 !important;
+}
+.bg-color-220674{
+    background-color:#fbc00f;
+}
+.bg-color-1122684{
+    background-color:#1ab060;
+}
+.bg-color-220428{
+    background-color:#e4e4e4;
+}
+.bg-color-1122690{
+    background-color:#686ee9;
+}

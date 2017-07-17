@@ -1,0 +1,324 @@
+
+.status-0 {
+    background-color: #fffeb3;
+}
+.status-10 {
+    background-color: #fffeb2;
+}
+.status-20 {
+    background-color: #e6e7e8;
+}
+.status-25 {
+    background-color: #d0d1d2;
+}
+.status-30 {
+    background-color: #f2daa0;
+}
+.status-31 {
+    background-color: #CDB581;
+}
+.status-40 {
+    background-color: #87f2c0;
+}
+.status-41 {
+    background-color: #64C897;
+}
+.status-50 {
+    background-color: #ff8f92;
+}
+.status-60 {
+    background-color: #98cbff;
+}
+.status-70 {
+    background-color: #e6e8ea;
+}
+.status-80 {
+    background-color: #ff8f92;
+}
+.status-90 {
+    background-color: #ccff66;
+}
+.status-100 {
+    background-color: #d5d8db;
+}
+.status-sm {
+    padding: 6px 16px;
+}
+.big-status {
+    display: inline-block;
+    padding: 10px 20px;
+    font-weight: bold;
+}
+.status-selector-wrap {
+    position: relative;
+    height: 45px;
+}
+.job-index .status-selector-wrap {
+    height: 55px;
+}
+.status-selector-wrap .select-status.selector {
+    position: absolute;
+	width: 100%;
+    z-index: 1000;
+}
+.status-selector-wrap.open .select-status.selector {
+    border: 1px solid #000;
+}
+.details .status-selector-wrap .select-status.selector {
+    position: absolute;
+	    width: auto;
+}
+.status-selector-wrap .select-status.selector a {
+    display: block;
+    text-decoration: none;
+    color: #000;
+}
+@media (max-width: 800px) {
+    .status-selector-wrap .select-status.selector a {
+        font-size: 13px;
+    }
+    .status-sm {
+        padding: 6px;
+    }
+}
+.status-selector-wrap .select-status.selector a.selected {
+    text-decoration: underline;
+}
+.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
+    background-color: transparent !important;
+    color: #333 !important;
+}
+
+/*.grid-view table > thead a.asc:after {*/
+    /*content: "\e601" !important;*/
+/*}*/
+/*.grid-view table > thead a.desc:after {*/
+    /*content: "\e602" !important;*/
+/*}*/
+
+.job-view .status-label {
+    display: block;
+    margin-bottom: 8px;
+}
+.job-view .image {
+    display: block;
+    padding: 8px 50px 0 0;
+    margin-bottom: 10px;
+}
+.job-view .image img {
+    width: 100%;
+    border: 1px solid gray;
+}
+.job-view .download-link {
+    padding: 4px 0;
+}
+.job-view .download-link a {
+    font-size: 16px;
+}
+.job-view .logs-table td {
+    padding: 8px;
+}
+.job-view .details .value {
+    font-size: 18px;
+}
+.job-view .details h4 {
+    font-size: 14px;
+    color: #737373;
+}
+.job-view .details .deadline {
+    background: #feda00;
+    width: 120px;
+    text-align: center;
+    padding: 7px 12px;
+}
+
+
+.job-view .details .client-name {
+margin-top: 50px;
+}
+.job-view .details .dops {
+color: #B0B0B0;
+}
+.job-view .details h4.dops {
+    color: #D5D5D5;
+}
+
+.grid-view table tbody tr td:nth-child(1),
+.grid-view table tbody tr td:nth-child(5),
+.grid-view table tbody tr td:nth-child(6) {
+    width: 104px;
+    line-height: 16px;
+}
+.grid-view table tbody tr td:nth-child(4) {
+    width: 220px;
+}
+
+
+/* index page new design */
+
+.job-table {
+    width: 100%;
+    font-family: 'Open Sans', sans-serif;
+}
+.job-table th > div {
+    box-sizing: border-box;
+}
+.job-table td > div {
+    box-sizing: border-box;
+}
+.job-table tr th > div,
+.job-table tr td > div {
+    margin-bottom: 3px;
+}
+.job-table .tr-row td > div {
+    height: 65px;
+    padding: 2px 8px;
+    margin-right: 3px;
+}
+.job-table .labels th > div {
+    margin-right: 3px;
+}
+.job-table .filters th > div {
+    margin-right: 3px;
+}
+.job-table .row-2 td > div {
+    background-color: #f7f7f7 !important;
+}
+.job-table .tr-row td:first-child > div {
+    text-align: center;
+}
+.job-table .header th div:not(.col-wrap):not(.box-40) {
+    background-color: #ffd37b;
+    height: 26px;
+    font-size: 14px;
+    text-align: center;
+    font-weight: normal;
+    padding: 3px 0;
+    margin-bottom: 6px;
+    cursor: pointer;
+}
+.job-table .header .col-operations > div {
+    margin-right: 3px;
+}
+.job-table .header .col-deadline-min.col-min,
+.job-table .header .col-status-min.col-min,
+.job-table .header .col-prints-min.col-min{
+    position: relative;
+    font-size: 14px;
+    text-align: center;
+    font-weight: normal;
+}
+.job-table .header .col-lead-min.col-min,
+.job-table .header .col-dates-min.col-min {
+    font-size: 14px;
+    text-align: center;
+    font-weight: normal;
+    position: relative;
+}
+.job-table .header .col-min {
+    width: 41px;
+}
+.job-table .header .col-min .col-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 100%;
+    width: 26px;
+    overflow: hidden;
+    background-color: #ffd37b;
+}
+.job-table .header .col-min .col-wrap > div {
+    text-align: right !important;
+    padding: 0 !important;
+    display: inline-block !important;
+    height: auto !important;
+    transform: rotate(270deg);
+    width: 150px;
+    position: relative;
+    top: 75px;
+    left: -62px;
+}
+.job-table .light-header > div {
+    background-color: #ffea94 !important;
+}
+.job-table .header th:last-child > div {
+    background-color: transparent !important;
+}
+.job-table .col-operations {
+    width: 36px;
+}
+.job-table .labels .col-dates {
+    width: 116px;
+}
+.job-table .labels .col-dates > div {
+    padding: 4px 0;
+}
+.job-table .labels .sort {
+    color: #000;
+    text-decoration: underline;
+}
+.job-table .col-deadline {
+    width: 104px;
+}
+.job-table .col-lead-collection {
+    width: 131px;
+}
+.job-table .col-prints {
+    width: 95px;
+}
+.job-table .col-lead-amo {
+    width: 40px;
+}
+.job-table .col-lead-name {
+    width: 430px;
+}
+.job-table .group-last > div,
+.job-table .col-full > div {
+    margin-right: 15px !important;
+}
+.job-table th > div > input,
+.job-table th > div > select {
+   * width: 96%;
+    margin-left: 2%;
+    font-size: 14px;
+    padding: 1px;
+    *height: 30px;
+}
+.job-table .labels th > div {
+    background-color: #fff8cc;
+    padding: 14px 0;
+    height: 50px;
+    font-size: 14px;
+    text-align: center;
+    font-weight: normal;
+}
+
+.job-table .filters th > div {
+    height: 95px;
+    padding: 15px 0;
+}
+.job-table .filters .col-status .multiselect-container {
+    z-index: 5000;
+}
+.job-table .col-status .multiselect-native-select .btn-group {
+    top: -2px;
+    margin-left: 4%;
+    width: 96%;
+}
+.job-table .col-status .multiselect-native-select .btn-group button {
+    width: 100%;
+    text-align: right;
+}
+.job-table .row-1 td > div {
+    background-color: #fff !important;
+}
+.job-table td.col-text-value > div {
+    overflow: hidden;
+}
+.job-table .col-status {
+    width: 194px;
+}
+.job-table .tr-row a {
+    color: #000;
+}
+

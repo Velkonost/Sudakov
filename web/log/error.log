@@ -1,0 +1,774 @@
+2016/07/10 16:58:13 [error] 1856#1856: *6752 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Class 'common\models\Model' not found in /home/adamasantares/WebServer/crm-aist.dev/models/User.php on line 24
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:0
+PHP message: PHP   2. yii\base\Application->run() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:12
+PHP message: PHP   3. yii\web\Application->handleRequest() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Application.php:375
+PHP message: PHP   4. yii\base\Module->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/Application.php:84
+PHP message: PHP   5. yii\base\Controller->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Module.php:454
+PHP message: PHP   6. yii\base\InlineAction->runWithParams() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:154
+PHP message: PHP   7. call_user_func_array() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   8. yii\gii\controllers\DefaultController->actionView() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   9. yii\base\Model->validate() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2-gii/controllers/DefaultController.php:48
+PHP message: PHP  10. yii\validators\Validator->validateAttributes() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Model.php:356
+PHP message: PHP  11. yii\validators\InlineValidator->validateAttribute() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/validators/Validator.php:252
+PHP message: PHP  12. call_user_func() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/validators/InlineValidator.php:69
+PHP message: PHP  13. yii\gii\Generator->validateClass() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/validators/Inl
+2016/07/10 16:58:49 [error] 1856#1856: *6752 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Class 'common\models\Model' not found in /home/adamasantares/WebServer/crm-aist.dev/models/User.php on line 25
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:0
+PHP message: PHP   2. yii\base\Application->run() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:12
+PHP message: PHP   3. yii\web\Application->handleRequest() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Application.php:375
+PHP message: PHP   4. yii\base\Module->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/Application.php:84
+PHP message: PHP   5. yii\base\Controller->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Module.php:454
+PHP message: PHP   6. yii\base\InlineAction->runWithParams() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:154
+PHP message: PHP   7. call_user_func_array() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   8. yii\gii\controllers\DefaultController->actionView() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   9. yii\base\Model->validate() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2-gii/controllers/DefaultController.php:48
+PHP message: PHP  10. yii\validators\Validator->validateAttributes() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Model.php:356
+PHP message: PHP  11. yii\validators\InlineValidator->validateAttribute() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/validators/Validator.php:252
+PHP message: PHP  12. call_user_func() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/validators/InlineValidator.php:69
+PHP message: PHP  13. yii\gii\Generator->validateClass() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/validators/Inl
+2016/07/10 19:29:25 [error] 1859#1859: *6855 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Class 'app\controllers\AccessControl' not found in /home/adamasantares/WebServer/crm-aist.dev/controllers/UserController.php on line 24
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:0
+PHP message: PHP   2. yii\base\Application->run() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:12
+PHP message: PHP   3. yii\web\Application->handleRequest() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Application.php:375
+PHP message: PHP   4. yii\base\Module->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/Application.php:84
+PHP message: PHP   5. yii\base\Controller->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Module.php:454
+PHP message: PHP   6. yii\web\Controller->beforeAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:152
+PHP message: PHP   7. yii\base\Controller->beforeAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/Controller.php:108
+PHP message: PHP   8. yii\base\Component->trigger() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:269
+PHP message: PHP   9. yii\base\Component->ensureBehaviors() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Component.php:529
+PHP message: PHP  10. app\controllers\UserController->behaviors() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Component.php:646" while reading response header from upstream, client: 127.0.0.1, server: crm-aist.dev, request: "GET /user/create HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "crm-aist.dev", referrer: "http://crm-aist.dev/users"
+2016/07/10 23:07:15 [error] 1859#1859: *7170 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+exception 'yii\web\ForbiddenHttpException' with message 'Login Required' in /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/User.php:446
+Stack trace:
+#0 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/filters/AccessControl.php(149): yii\web\User->loginRequired()
+#1 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/filters/AccessControl.php(134): yii\filters\AccessControl->denyAccess(Object(yii\web\User))
+#2 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/ActionFilter.php(71): yii\filters\AccessControl->beforeAction(Object(yii\web\ErrorAction))
+#3 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#4 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Component.php(541): call_user_func(Array, Object(yii\base\ActionEvent))
+#5 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php(269): yii\base\Componen" while reading upstream, client: 127.0.0.1, server: crm-aist.dev, request: "GET /site/login HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "crm-aist.dev", referrer: "http://crm-aist.dev/"
+2016/07/10 23:14:10 [error] 1859#1859: *7196 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+exception 'yii\web\ForbiddenHttpException' with message 'Login Required' in /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/User.php:446
+Stack trace:
+#0 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/filters/AccessControl.php(149): yii\web\User->loginRequired()
+#1 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/filters/AccessControl.php(134): yii\filters\AccessControl->denyAccess(Object(yii\web\User))
+#2 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/ActionFilter.php(71): yii\filters\AccessControl->beforeAction(Object(yii\web\" while reading upstream, client: 127.0.0.1, server: crm-aist.dev, request: "GET /site/images/logo.jpg HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "crm-aist.dev", referrer: "http://crm-aist.dev/site/login"
+2016/07/10 23:14:10 [error] 1859#1859: *7196 FastCGI sent in stderr: "ErrorAction))
+#3 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#4 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Component.php(541): call_user_func(Array, Object(yii\base\ActionEvent))
+#5 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php(269): yii\base\Componen" while reading upstream, client: 127.0.0.1, server: crm-aist.dev, request: "GET /site/images/logo.jpg HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "crm-aist.dev", referrer: "http://crm-aist.dev/site/login"
+2016/07/10 23:14:18 [error] 1859#1859: *7199 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+exception 'yii\web\ForbiddenHttpException' with message 'Login Required' in /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/User.php:446
+Stack trace:
+#0 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/filters/AccessControl.php(149): yii\web\User->loginRequired()
+#1 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/filters/AccessControl.php(134): yii\filters\AccessControl->denyAccess(Object(yii\web\User))
+#2 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/ActionFilter.php(71): yii\filters\AccessControl->beforeAction(Object(yii\web\ErrorAct" while reading upstream, client: 127.0.0.1, server: crm-aist.dev, request: "GET /images/logo.jpg HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "crm-aist.dev", referrer: "http://crm-aist.dev/site/login"
+2016/07/10 23:14:18 [error] 1859#1859: *7199 FastCGI sent in stderr: "ion))
+#3 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#4 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Component.php(541): call_user_func(Array, Object(yii\base\ActionEvent))
+#5 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php(269): yii\base\Componen" while reading upstream, client: 127.0.0.1, server: crm-aist.dev, request: "GET /images/logo.jpg HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "crm-aist.dev", referrer: "http://crm-aist.dev/site/login"
+2016/07/11 06:02:48 [error] 1856#1856: *7434 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Class 'User' not found in /home/adamasantares/WebServer/crm-aist.dev/views/user/index.php on line 31
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:0
+PHP message: PHP   2. yii\base\Application->run() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:12
+PHP message: PHP   3. yii\web\Application->handleRequest() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Application.php:375
+PHP message: PHP   4. yii\base\Module->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/Application.php:84
+PHP message: PHP   5. yii\base\Controller->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Module.php:454
+PHP message: PHP   6. yii\base\InlineAction->runWithParams() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:154
+PHP message: PHP   7. call_user_func_array() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   8. app\controllers\UserController->actionIndex() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   9. yii\base\Controller->render() /home/adamasantares/WebServer/crm-aist.dev/controllers/UserController.php:61
+PHP message: PHP  10. yii\base\View->render() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:378
+PHP message: PHP  11. yii\base\View->renderFile() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:149
+PHP message: PHP  12. yii\base\View->renderPhpFile() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:247
+PHP message: PHP  13. require() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:325
+PHP message: PHP  14. yii\base\Widget::widget() /home/adamasantares/WebServer/crm-aist.dev/views/user/index.php:45
+P
+2016/07/11 06:02:48 [error] 1856#1856: *7434 upstream sent too big header while reading response header from upstream, client: 127.0.0.1, server: crm-aist.dev, request: "GET /users HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "crm-aist.dev", referrer: "http://crm-aist.dev/user/view?id=1"
+2016/07/11 06:03:23 [error] 1856#1856: *7434 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Class 'User' not found in /home/adamasantares/WebServer/crm-aist.dev/views/user/index.php on line 31
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:0
+PHP message: PHP   2. yii\base\Application->run() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:12
+PHP message: PHP   3. yii\web\Application->handleRequest() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Application.php:375
+PHP message: PHP   4. yii\base\Module->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/Application.php:84
+PHP message: PHP   5. yii\base\Controller->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Module.php:454
+PHP message: PHP   6. yii\base\InlineAction->runWithParams() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:154
+PHP message: PHP   7. call_user_func_array() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   8. app\controllers\UserController->actionIndex() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   9. yii\base\Controller->render() /home/adamasantares/WebServer/crm-aist.dev/controllers/UserController.php:61
+PHP message: PHP  10. yii\base\View->render() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:378
+PHP message: PHP  11. yii\base\View->renderFile() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:149
+PHP message: PHP  12. yii\base\View->renderPhpFile() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:247
+PHP message: PHP  13. require() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:325
+PHP message: PHP  14. yii\base\Widget::widget() /home/adamasantares/WebServer/crm-aist.dev/views/user/index.php:45
+P
+2016/07/11 06:03:23 [error] 1856#1856: *7434 upstream sent too big header while reading response header from upstream, client: 127.0.0.1, server: crm-aist.dev, request: "GET /users HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "crm-aist.dev", referrer: "http://crm-aist.dev/user/view?id=1"
+2016/07/11 07:52:10 [error] 1859#1859: *7653 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Class 'app\controllers\JobSearch' not found in /home/adamasantares/WebServer/crm-aist.dev/controllers/SiteController.php on line 56
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:0
+PHP message: PHP   2. yii\base\Application->run() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:12
+PHP message: PHP   3. yii\web\Application->handleRequest() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Application.php:375
+PHP message: PHP   4. yii\base\Module->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/Application.php:84
+PHP message: PHP   5. yii\base\Controller->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Module.php:454
+PHP message: PHP   6. yii\base\InlineAction->runWithParams() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:154
+PHP message: PHP   7. call_user_func_array() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   8. app\controllers\SiteController->actionIndex() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55" while reading response header from upstream, client: 127.0.0.1, server: crm-aist.dev, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "crm-aist.dev"
+2016/07/11 16:10:24 [error] 1859#1859: *8189 FastCGI sent in stderr: "PHP message: PHP Parse error:  syntax error, unexpected '?>' in /home/adamasantares/WebServer/crm-aist.dev/views/site/view.php on line 38
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:0
+PHP message: PHP   2. yii\base\Application->run() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:12
+PHP message: PHP   3. yii\web\Application->handleRequest() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Application.php:375
+PHP message: PHP   4. yii\base\Module->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/Application.php:84
+PHP message: PHP   5. yii\base\Controller->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Module.php:454
+PHP message: PHP   6. yii\base\InlineAction->runWithParams() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:154
+PHP message: PHP   7. call_user_func_array() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   8. app\controllers\SiteController->actionView() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   9. yii\base\Controller->render() /home/adamasantares/WebServer/crm-aist.dev/controllers/SiteController.php:98
+PHP message: PHP  10. yii\base\View->render() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:378
+PHP message: PHP  11. yii\base\View->renderFile() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:149
+PHP message: PHP  12. yii\base\View->renderPhpFile() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:247" while reading response header from upstream, client: 127.0.0.1, server: crm-aist.dev, request: "GET /site/view?id=1 HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "crm-aist.dev"
+2016/07/12 18:23:30 [error] 1859#1859: *9587 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Class 'Html' not found in /home/adamasantares/WebServer/crm-aist.dev/views/site/index.php on line 40
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:0
+PHP message: PHP   2. yii\base\Application->run() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:12
+PHP message: PHP   3. yii\web\Application->handleRequest() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Application.php:375
+PHP message: PHP   4. yii\base\Module->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/Application.php:84
+PHP message: PHP   5. yii\base\Controller->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Module.php:454
+PHP message: PHP   6. yii\base\InlineAction->runWithParams() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:154
+PHP message: PHP   7. call_user_func_array() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   8. app\controllers\SiteController->actionIndex() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   9. yii\base\Controller->render() /home/adamasantares/WebServer/crm-aist.dev/controllers/SiteController.php:72
+PHP message: PHP  10. yii\base\View->render() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:378
+PHP message: PHP  11. yii\base\View->renderFile() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:149
+PHP message: PHP  12. yii\base\View->renderPhpFile() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:247
+PHP message: PHP  13. require() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:325" while reading response header from upstream, client: 127.0.0.1, server: crm-aist.dev, request: "GET / HTTP/1.1", up
+2016/07/12 22:12:47 [error] 1859#1859: *9796 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+exception 'ReflectionException' with message 'Class @npm/air-datepicker does not exist' in /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/di/Container.php:422
+Stack trace:
+#0 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/di/Container.php(422): ReflectionClass->__construct('@npm/air-datepi...')
+#1 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/di/Container.php(362): yii\di\Container->getDependencies('@npm/air-datepi...')
+#2 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/di/Container.php(154): yii\di\Container->build('@npm/air-datepi...', Array, Array)
+#3 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/BaseYii.php(344): yii\di\Container->get('@npm/air-datepi...', Array, Array)
+#4 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/AssetManager.php(264): yii\BaseYii::createObject(Array)
+#5 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web" while reading response header from upstream, client: 127.0.0.1, server: crm-aist.dev, request: "GET /dist/js/datepicker.min.js HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "crm-aist.dev", referrer: "http://crm-aist.dev/"
+2016/07/12 22:12:47 [error] 1859#1859: *9796 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+exception 'ReflectionException' with message 'Class @npm/air-datepicker does not exist' in /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/di/Container.php:422
+Stack trace:
+#0 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/di/Container.php(422): ReflectionClass->__construct('@npm/air-datepi...')
+#1 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/di/Container.php(362): yii\di\Container->getDependencies('@npm/air-datepi...')
+#2 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/di/Container.php(154): yii\di\Container->build('@npm/air-datepi...', Array, Array)
+#3 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/BaseYii.php(344): yii\di\Container->get('@npm/air-datepi...', Array, Array)
+#4 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/AssetManager.php(264): yii\BaseYii::createObject(Array)
+#5 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web" while reading response header from upstream, client: 127.0.0.1, server: crm-aist.dev, request: "GET /dist/js/datepicker.min.js HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "crm-aist.dev", referrer: "http://crm-aist.dev/"
+2016/07/12 22:21:31 [error] 1859#1859: *9807 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+exception 'ReflectionException' with message 'Class @npm/air-datepicker does not exist' in /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/di/Container.php:422
+Stack trace:
+#0 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/di/Container.php(422): ReflectionClass->__construct('@npm/air-datepi...')
+#1 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/di/Container.php(362): yii\di\Container->getDependencies('@npm/air-datepi...')
+#2 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/di/Container.php(154): yii\di\Container->build('@npm/air-datepi...', Array, Array)
+#3 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/BaseYii.php(344): yii\di\Container->get('@npm/air-datepi...', Array, Array)
+#4 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/AssetManager.php(264): yii\BaseYii::createObject(Array)
+#5 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web" while reading response header from upstream, client: 127.0.0.1, server: crm-aist.dev, request: "GET /dist/js/datepicker.min.js HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "crm-aist.dev", referrer: "http://crm-aist.dev/"
+2016/07/12 22:21:31 [error] 1859#1859: *9807 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+exception 'ReflectionException' with message 'Class @npm/air-datepicker does not exist' in /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/di/Container.php:422
+Stack trace:
+#0 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/di/Container.php(422): ReflectionClass->__construct('@npm/air-datepi...')
+#1 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/di/Container.php(362): yii\di\Container->getDependencies('@npm/air-datepi...')
+#2 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/di/Container.php(154): yii\di\Container->build('@npm/air-datepi...', Array, Array)
+#3 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/BaseYii.php(344): yii\di\Container->get('@npm/air-datepi...', Array, Array)
+#4 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/AssetManager.php(264): yii\BaseYii::createObject(Array)
+#5 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web" while reading response header from upstream, client: 127.0.0.1, server: crm-aist.dev, request: "GET /dist/js/datepicker.min.js HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "crm-aist.dev", referrer: "http://crm-aist.dev/"
+2016/07/25 09:07:35 [error] 8970#8970: *95 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: last in /home/adamasantares/WebServer/crm-aist.dev/config/web.php on line 7
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:0
+PHP message: PHP   2. require() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:10
+PHP message: PHP Notice:  Undefined offset: -1 in /home/adamasantares/WebServer/crm-aist.dev/config/web.php on line 7
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:0
+PHP message: PHP   2. require() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:10
+PHP message: PHP Notice:  Undefined variable: last in /home/adamasantares/WebServer/crm-aist.dev/config/web.php on line 7
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:0
+PHP message: PHP   2. require() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:10" while reading response header from upstream, client: 127.0.0.1, server: crm-aist.dev, request: "GET /site/login HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "crm-aist.dev"
+2016/07/25 09:07:35 [error] 8970#8970: *95 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index:  in /home/adamasantares/WebServer/crm-aist.dev/config/web.php on line 7
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:0
+PHP message: PHP   2. require() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:10" while reading upstream, client: 127.0.0.1, server: crm-aist.dev, request: "GET /site/login HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "crm-aist.dev"
+2016/07/25 10:09:34 [error] 14737#14737: *1 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined offset: -1 in /home/adamasantares/WebServer/crm-aist.dev/config/web.php on line 7
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:0
+PHP message: PHP   2. require() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:10" while reading response header from upstream, client: 127.0.0.1, server: crm-aist.dev, request: "GET /site/login HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "money.crm-aist.dev", referrer: "http://money.crm-aist.dev/"
+2016/07/25 10:09:34 [error] 14737#14737: *4 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined offset: -1 in /home/adamasantares/WebServer/crm-aist.dev/config/web.php on line 7
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:0
+PHP message: PHP   2. require() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:10" while reading response header from upstream, client: 127.0.0.1, server: crm-aist.dev, request: "GET /debug/default/toolbar?tag=579590fe3d20c HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "money.crm-aist.dev", referrer: "http://money.crm-aist.dev/site/login"
+2016/07/25 10:13:46 [error] 15080#15080: *1 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 127.0.0.1, server: ~^(?<subdomain>\w+\.)crm-aist\.dev$, request: "GET /site/login HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "money.crm-aist.dev", referrer: "http://money.crm-aist.dev/"
+2016/07/25 10:21:41 [error] 15810#15810: *1 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 127.0.0.1, server: ~^(?<site_id>.+)\.crm-aist\.dev$, request: "GET /site/login HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "money.crm-aist.dev", referrer: "http://money.crm-aist.dev/"
+2016/07/25 20:44:21 [error] 1971#1971: *126 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Class 'View' not found in /home/adamasantares/WebServer/crm-aist.dev/views/payment/_form.php on line 60
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:0
+PHP message: PHP   2. yii\base\Application->run() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:12
+PHP message: PHP   3. yii\web\Application->handleRequest() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Application.php:375
+PHP message: PHP   4. yii\base\Module->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/Application.php:87
+PHP message: PHP   5. yii\base\Controller->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Module.php:454
+PHP message: PHP   6. yii\base\InlineAction->runWithParams() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:154
+PHP message: PHP   7. call_user_func_array() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   8. app\controllers\PaymentController->actionCreate() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   9. yii\base\Controller->render() /home/adamasantares/WebServer/crm-aist.dev/controllers/PaymentController.php:114
+PHP message: PHP  10. yii\base\View->render() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:378
+PHP message: PHP  11. yii\base\View->renderFile() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:149
+PHP message: PHP  12. yii\base\View->renderPhpFile() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:247
+PHP message: PHP  13. require() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:325
+PHP message: PHP  14. yii\base\View->render() /home/adamasantares/WebServer/crm-aist.dev/views/payment/cre
+2016/07/25 21:24:24 [error] 1971#1971: *163 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Class 'Html' not found in /home/adamasantares/WebServer/crm-aist.dev/views/payment/_item_block.php on line 18
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:0
+PHP message: PHP   2. yii\base\Application->run() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:12
+PHP message: PHP   3. yii\web\Application->handleRequest() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Application.php:375
+PHP message: PHP   4. yii\base\Module->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/Application.php:87
+PHP message: PHP   5. yii\base\Controller->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Module.php:454
+PHP message: PHP   6. yii\base\InlineAction->runWithParams() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:154
+PHP message: PHP   7. call_user_func_array() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   8. app\controllers\PaymentController->actionCreate() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   9. yii\base\Controller->render() /home/adamasantares/WebServer/crm-aist.dev/controllers/PaymentController.php:114
+PHP message: PHP  10. yii\base\View->render() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:378
+PHP message: PHP  11. yii\base\View->renderFile() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:149
+PHP message: PHP  12. yii\base\View->renderPhpFile() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:247
+PHP message: PHP  13. require() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:325
+PHP message: PHP  14. yii\base\View->render() /home/adamasantares/WebServer/crm-aist.dev/views/payme
+2016/07/31 23:01:16 [error] 1970#1970: *3473 FastCGI sent in stderr: "PHP message: PHP Parse error:  syntax error, unexpected '}' in /home/adamasantares/WebServer/crm-aist.dev/views/payment/checkout.php on line 63
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:0
+PHP message: PHP   2. yii\base\Application->run() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:12
+PHP message: PHP   3. yii\web\Application->handleRequest() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Application.php:375
+PHP message: PHP   4. yii\base\Module->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/Application.php:87
+PHP message: PHP   5. yii\base\Controller->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Module.php:454
+PHP message: PHP   6. yii\base\InlineAction->runWithParams() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:154
+PHP message: PHP   7. call_user_func_array() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   8. app\controllers\PaymentController->actionCheckout() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   9. yii\base\Controller->render() /home/adamasantares/WebServer/crm-aist.dev/controllers/PaymentController.php:242
+PHP message: PHP  10. yii\base\View->render() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:378
+PHP message: PHP  11. yii\base\View->renderFile() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:149
+PHP message: PHP  12. yii\base\View->renderPhpFile() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:247" while reading response header from upstream, client: 127.0.0.1, server: crm-aist.dev, request: "GET /payment/checkout?id=8_1469468123&hash=8e283c36ff6cf0d18853801d7bbf3119 HTTP/1.1", upstream: "fastcgi://12
+2016/08/02 19:16:05 [error] 1952#1952: *70 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Class 'app\controllers\JobSearch' not found in /home/adamasantares/WebServer/crm-aist.dev/controllers/ErpController.php on line 86
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:0
+PHP message: PHP   2. yii\base\Application->run() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:12
+PHP message: PHP   3. yii\web\Application->handleRequest() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Application.php:375
+PHP message: PHP   4. yii\base\Module->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/Application.php:87
+PHP message: PHP   5. yii\base\Controller->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Module.php:454
+PHP message: PHP   6. yii\base\InlineAction->runWithParams() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:154
+PHP message: PHP   7. call_user_func_array() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   8. app\controllers\ErpController->actionIndex() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55" while reading response header from upstream, client: 127.0.0.1, server: crm-aist.dev, request: "GET /erp/index HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "erp.crm-aist.dev", referrer: "http://erp.crm-aist.dev/payment/index"
+2016/08/03 00:35:20 [error] 1951#1951: *831 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Class 'app\controllers\Yii' not found in /home/adamasantares/WebServer/crm-aist.dev/controllers/LeadController.php on line 19
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:0
+PHP message: PHP   2. yii\base\Application->run() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:12
+PHP message: PHP   3. yii\web\Application->handleRequest() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Application.php:375
+PHP message: PHP   4. yii\base\Module->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/Application.php:87
+PHP message: PHP   5. yii\base\Controller->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Module.php:454
+PHP message: PHP   6. yii\base\InlineAction->runWithParams() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:154
+PHP message: PHP   7. call_user_func_array() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   8. app\controllers\LeadController->actionAdd() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55" while reading response header from upstream, client: 127.0.0.1, server: crm-aist.dev, request: "GET /lead/add HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "erp.crm-aist.dev", referrer: "http://erp.crm-aist.dev/erp/index"
+2016/08/03 00:35:36 [error] 1951#1951: *831 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Class 'ActiveForm' not found in /home/adamasantares/WebServer/crm-aist.dev/views/lead/add.php on line 15
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:0
+PHP message: PHP   2. yii\base\Application->run() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:12
+PHP message: PHP   3. yii\web\Application->handleRequest() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Application.php:375
+PHP message: PHP   4. yii\base\Module->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/Application.php:87
+PHP message: PHP   5. yii\base\Controller->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Module.php:454
+PHP message: PHP   6. yii\base\InlineAction->runWithParams() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:154
+PHP message: PHP   7. call_user_func_array() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   8. app\controllers\LeadController->actionAdd() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   9. yii\base\Controller->render() /home/adamasantares/WebServer/crm-aist.dev/controllers/LeadController.php:31
+PHP message: PHP  10. yii\base\View->render() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:378
+PHP message: PHP  11. yii\base\View->renderFile() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:149
+PHP message: PHP  12. yii\base\View->renderPhpFile() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:247
+PHP message: PHP  13. require() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:325" while reading response header from upstream, client: 127.0.0.1, server: crm-aist.dev, request: "GET /lead/add HTTP
+2016/08/03 00:58:28 [error] 1951#1951: *859 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Class 'app\controllers\AccessControl' not found in /home/adamasantares/WebServer/crm-aist.dev/controllers/LeadController.php on line 15
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:0
+PHP message: PHP   2. yii\base\Application->run() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:12
+PHP message: PHP   3. yii\web\Application->handleRequest() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Application.php:375
+PHP message: PHP   4. yii\base\Module->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/Application.php:87
+PHP message: PHP   5. yii\base\Controller->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Module.php:454
+PHP message: PHP   6. yii\web\Controller->beforeAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:152
+PHP message: PHP   7. yii\base\Controller->beforeAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/Controller.php:108
+PHP message: PHP   8. yii\base\Component->trigger() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:269
+PHP message: PHP   9. yii\base\Component->ensureBehaviors() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Component.php:529
+PHP message: PHP  10. app\controllers\LeadController->behaviors() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Component.php:646" while reading response header from upstream, client: 127.0.0.1, server: crm-aist.dev, request: "GET /lead/add HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "erp.crm-aist.dev"
+2016/08/07 23:22:31 [error] 1951#1951: *3473 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Class 'app\controllers\MoneySearch' not found in /home/adamasantares/WebServer/crm-aist.dev/controllers/MoneyController.php on line 32
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:0
+PHP message: PHP   2. yii\base\Application->run() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:12
+PHP message: PHP   3. yii\web\Application->handleRequest() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Application.php:375
+PHP message: PHP   4. yii\base\Module->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/Application.php:87
+PHP message: PHP   5. yii\base\Controller->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Module.php:454
+PHP message: PHP   6. yii\base\InlineAction->runWithParams() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:154
+PHP message: PHP   7. call_user_func_array() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   8. app\controllers\MoneyController->actionIndex() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55" while reading response header from upstream, client: 127.0.0.1, server: crm-aist.dev, request: "GET /money/index HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "money.crm-aist.dev"
+2016/08/08 13:57:11 [error] 1952#1952: *3561 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Class 'app\controllers\MoneySearch' not found in /home/adamasantares/WebServer/crm-aist.dev/controllers/MoneyController.php on line 32
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:0
+PHP message: PHP   2. yii\base\Application->run() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:12
+PHP message: PHP   3. yii\web\Application->handleRequest() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Application.php:375
+PHP message: PHP   4. yii\base\Module->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/Application.php:87
+PHP message: PHP   5. yii\base\Controller->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Module.php:454
+PHP message: PHP   6. yii\base\InlineAction->runWithParams() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:154
+PHP message: PHP   7. call_user_func_array() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   8. app\controllers\MoneyController->actionIndex() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55" while reading response header from upstream, client: 127.0.0.1, server: crm-aist.dev, request: "GET /money/index HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "money.crm-aist.dev"
+2016/08/08 22:39:17 [error] 1951#1951: *3647 FastCGI sent in stderr: "PHP message: PHP Parse error:  syntax error, unexpected end of file in /home/adamasantares/WebServer/crm-aist.dev/views/money/index.php on line 321
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:0
+PHP message: PHP   2. yii\base\Application->run() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:12
+PHP message: PHP   3. yii\web\Application->handleRequest() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Application.php:375
+PHP message: PHP   4. yii\base\Module->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/Application.php:87
+PHP message: PHP   5. yii\base\Controller->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Module.php:454
+PHP message: PHP   6. yii\base\InlineAction->runWithParams() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:154
+PHP message: PHP   7. call_user_func_array() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   8. app\controllers\MoneyController->actionIndex() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   9. yii\base\Controller->render() /home/adamasantares/WebServer/crm-aist.dev/controllers/MoneyController.php:40
+PHP message: PHP  10. yii\base\View->render() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:378
+PHP message: PHP  11. yii\base\View->renderFile() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:149
+PHP message: PHP  12. yii\base\View->renderPhpFile() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:247" while reading response header from upstream, client: 127.0.0.1, server: crm-aist.dev, request: "GET /money/index HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "money.crm-aist.dev"
+2016/08/09 21:48:38 [error] 1951#1951: *4048 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Call to undefined method Faker\Provider\sv_SE\Payment::className() in /home/adamasantares/WebServer/crm-aist.dev/models/Money.php on line 136
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:0
+PHP message: PHP   2. yii\base\Application->run() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:12
+PHP message: PHP   3. yii\web\Application->handleRequest() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Application.php:375
+PHP message: PHP   4. yii\base\Module->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/Application.php:87
+PHP message: PHP   5. yii\base\Controller->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Module.php:454
+PHP message: PHP   6. yii\base\InlineAction->runWithParams() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:154
+PHP message: PHP   7. call_user_func_array() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   8. app\controllers\MoneyController->actionIndex() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   9. app\models\Money::search() /home/adamasantares/WebServer/crm-aist.dev/controllers/MoneyController.php:35
+PHP message: PHP  10. yii\db\ActiveQuery->all() /home/adamasantares/WebServer/crm-aist.dev/models/Money.php:181
+PHP message: PHP  11. yii\db\Query->all() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/db/ActiveQuery.php:133
+PHP message: PHP  12. yii\db\ActiveQuery->populate() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/db/Query.php:211
+PHP message: PHP  13. yii\db\ActiveQuery->findWith() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/db/ActiveQuery.php:215
+PHP message: PHP  14. yii\db\ActiveQuery->normalizeRelations() /home/adamas
+2016/08/10 18:27:48 [error] 1951#1951: *4381 FastCGI sent in stderr: "PHP message: PHP Parse error:  syntax error, unexpected ')' in /home/adamasantares/WebServer/crm-aist.dev/views/money/index.php on line 77
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:0
+PHP message: PHP   2. yii\base\Application->run() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:12
+PHP message: PHP   3. yii\web\Application->handleRequest() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Application.php:375
+PHP message: PHP   4. yii\base\Module->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/Application.php:87
+PHP message: PHP   5. yii\base\Controller->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Module.php:454
+PHP message: PHP   6. yii\base\InlineAction->runWithParams() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:154
+PHP message: PHP   7. call_user_func_array() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   8. app\controllers\MoneyController->actionIndex() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   9. yii\base\Controller->render() /home/adamasantares/WebServer/crm-aist.dev/controllers/MoneyController.php:42
+PHP message: PHP  10. yii\base\View->render() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:378
+PHP message: PHP  11. yii\base\View->renderFile() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:149
+PHP message: PHP  12. yii\base\View->renderPhpFile() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:247" while reading response header from upstream, client: 127.0.0.1, server: crm-aist.dev, request: "GET /money/index HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "money.crm-aist.dev"
+2016/08/10 21:19:58 [error] 1951#1951: *4715 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Class 'Html' not found in /home/adamasantares/WebServer/crm-aist.dev/views/money/index.php on line 249
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:0
+PHP message: PHP   2. yii\base\Application->run() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:12
+PHP message: PHP   3. yii\web\Application->handleRequest() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Application.php:375
+PHP message: PHP   4. yii\base\Module->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/Application.php:87
+PHP message: PHP   5. yii\base\Controller->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Module.php:454
+PHP message: PHP   6. yii\base\InlineAction->runWithParams() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:154
+PHP message: PHP   7. call_user_func_array() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   8. app\controllers\MoneyController->actionIndex() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   9. yii\base\Controller->render() /home/adamasantares/WebServer/crm-aist.dev/controllers/MoneyController.php:42
+PHP message: PHP  10. yii\base\View->render() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:378
+PHP message: PHP  11. yii\base\View->renderFile() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:149
+PHP message: PHP  12. yii\base\View->renderPhpFile() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:247
+PHP message: PHP  13. require() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:325" while reading response header from upstream, client: 127.0.0.1, server: crm-aist.dev, request: "GET /money/inde
+2016/08/10 21:49:17 [error] 1951#1951: *4742 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Class 'MoneyAsset' not found in /home/adamasantares/WebServer/crm-aist.dev/views/money/index.php on line 15
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:0
+PHP message: PHP   2. yii\base\Application->run() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:12
+PHP message: PHP   3. yii\web\Application->handleRequest() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Application.php:375
+PHP message: PHP   4. yii\base\Module->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/Application.php:87
+PHP message: PHP   5. yii\base\Controller->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Module.php:454
+PHP message: PHP   6. yii\base\InlineAction->runWithParams() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:154
+PHP message: PHP   7. call_user_func_array() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   8. app\controllers\MoneyController->actionIndex() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   9. yii\base\Controller->render() /home/adamasantares/WebServer/crm-aist.dev/controllers/MoneyController.php:42
+PHP message: PHP  10. yii\base\View->render() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:378
+PHP message: PHP  11. yii\base\View->renderFile() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:149
+PHP message: PHP  12. yii\base\View->renderPhpFile() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:247
+PHP message: PHP  13. require() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:325" while reading response header from upstream, client: 127.0.0.1, server: crm-aist.dev, request: "GET /money
+2016/08/11 08:05:48 [error] 1951#1951: *5254 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "studconsult/default/error".' in /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Module.php:460
+Stack trace:
+#0 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/ErrorHandler.php(93): yii\base\Module->runAction('studconsult/def...')
+#1 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/ErrorHandler.php(109): yii\web\ErrorHandler->renderException(Object(yii\web\BadRequestHttpException))
+#2 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\BadRequestHttpException))
+#3 {main}
+Previous exception:
+exception 'yii\web\BadRequestHttpException' with message 'Missing required parameters: num' in /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/Controller.php:93
+Stack trace:
+#0 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php(49): yii\web\C" while reading upstream, client: 127.0.0.1, server: crm-aist.dev, request: "GET /money/waybill HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "money.crm-aist.dev"
+2016/08/11 08:05:50 [error] 1951#1951: *5254 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "studconsult/default/error".' in /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Module.php:460
+Stack trace:
+#0 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/ErrorHandler.php(93): yii\base\Module->runAction('studconsult/def...')
+#1 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/ErrorHandler.php(109): yii\web\ErrorHandler->renderException(Object(yii\web\NotFoundHttpException))
+#2 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\NotFoundHttpException))
+#3 {main}
+Previous exception:
+exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: money/update2' in /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:125
+Stack trace:
+#0 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Module.php(454): yii\b" while reading upstream, client: 127.0.0.1, server: crm-aist.dev, request: "GET /money/update2 HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "money.crm-aist.dev"
+2016/08/11 08:08:51 [error] 1951#1951: *5279 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "puper/site/error".' in /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Module.php:460
+Stack trace:
+#0 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/ErrorHandler.php(93): yii\base\Module->runAction('puper/site/erro...')
+#1 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/ErrorHandler.php(109): yii\web\ErrorHandler->renderException(Object(yii\web\NotFoundHttpException))
+#2 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\NotFoundHttpException))
+#3 {main}
+Previous exception:
+exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: money/update2' in /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:125
+Stack trace:
+#0 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Contr" while reading upstream, client: 127.0.0.1, server: crm-aist.dev, request: "GET /money/update2 HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "money.crm-aist.dev"
+2016/08/11 08:10:43 [error] 1951#1951: *5281 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "puper/site/error".' in /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Module.php:460
+Stack trace:
+#0 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/ErrorHandler.php(93): yii\base\Module->runAction('puper/site/erro...')
+#1 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/ErrorHandler.php(109): yii\web\ErrorHandler->renderException(Object(yii\web\NotFoundHttpException))
+#2 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\NotFoundHttpException))
+#3 {main}
+Previous exception:
+exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: money/update2' in /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:125
+Stack trace:
+#0 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Contr" while reading upstream, client: 127.0.0.1, server: crm-aist.dev, request: "GET /money/update2 HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "money.crm-aist.dev"
+2016/08/11 08:11:18 [error] 1951#1951: *5281 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: site/error' in /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:125
+Stack trace:
+#0 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('error', Array)
+#1 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/ErrorHandler.php(93): yii\base\Module->runAction('site/error')
+#2 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/ErrorHandler.php(109): yii\web\ErrorHandler->renderException(Object(yii\web\NotFoundHttpException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\NotFoundHttpException))
+#4 {main}
+Previous exception:
+exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: money/update2' in /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller" while reading upstream, client: 127.0.0.1, server: crm-aist.dev, request: "GET /money/update2 HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "money.crm-aist.dev"
+2016/08/11 08:11:59 [error] 1951#1951: *5281 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+exception 'yii\base\InvalidConfigException' with message 'Object configuration must be an array containing a "class" element.' in /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/BaseYii.php:348
+Stack trace:
+#0 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php(222): yii\BaseYii::createObject(Array, Array)
+#1 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php(123): yii\base\Controller->createAction('error')
+#2 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('error', Array)
+#3 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/ErrorHandler.php(93): yii\base\Module->runAction('site/error')
+#4 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/ErrorHandler.php(109): yii\web\ErrorHandler->renderException(Object(yii\web\NotFoundHttpException))
+#5 [internal function]: yii\bas" while reading upstream, client: 127.0.0.1, server: crm-aist.dev, request: "GET /money/update2 HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "money.crm-aist.dev"
+2016/08/11 08:28:22 [error] 1951#1951: *5301 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: site/error' in /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:125
+Stack trace:
+#0 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('error', Array)
+#1 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/ErrorHandler.php(93): yii\base\Module->runAction('site/error')
+#2 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/ErrorHandler.php(109): yii\web\ErrorHandler->renderException(Object(yii\web\NotFoundHttpException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\NotFoundHttpException))
+#4 {main}
+Previous exception:
+exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: money/update2' in /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller" while reading upstream, client: 127.0.0.1, server: crm-aist.dev, request: "GET /money/update2 HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "money.crm-aist.dev"
+2016/08/11 08:28:31 [error] 1951#1951: *5301 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: site/error' in /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:125
+Stack trace:
+#0 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('error', Array)
+#1 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/ErrorHandler.php(93): yii\base\Module->runAction('site/error')
+#2 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/ErrorHandler.php(109): yii\web\ErrorHandler->renderException(Object(yii\web\BadRequestHttpException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\BadRequestHttpException))
+#4 {main}
+Previous exception:
+exception 'yii\web\BadRequestHttpException' with message 'Missing required parameters: num' in /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/Controller.php:93
+S" while reading upstream, client: 127.0.0.1, server: crm-aist.dev, request: "GET /money/waybill HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "money.crm-aist.dev"
+2016/08/11 08:28:33 [error] 1951#1951: *5301 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: site/error' in /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:125
+Stack trace:
+#0 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('error', Array)
+#1 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/ErrorHandler.php(93): yii\base\Module->runAction('site/error')
+#2 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/ErrorHandler.php(109): yii\web\ErrorHandler->renderException(Object(yii\web\BadRequestHttpException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\BadRequestHttpException))
+#4 {main}
+Previous exception:
+exception 'yii\web\BadRequestHttpException' with message 'Missing required parameters: num' in /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/Controller.php:93
+S" while reading upstream, client: 127.0.0.1, server: crm-aist.dev, request: "GET /money/waybill HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "money.crm-aist.dev"
+2016/08/11 08:28:40 [error] 1951#1951: *5301 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: site/error' in /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:125
+Stack trace:
+#0 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('error', Array)
+#1 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/ErrorHandler.php(93): yii\base\Module->runAction('site/error')
+#2 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/ErrorHandler.php(109): yii\web\ErrorHandler->renderException(Object(yii\web\NotFoundHttpException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\NotFoundHttpException))
+#4 {main}
+Previous exception:
+exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "money/waybill/num/123".' in /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/M" while reading upstream, client: 127.0.0.1, server: crm-aist.dev, request: "GET /money/waybill/num/123 HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "money.crm-aist.dev"
+2016/08/11 08:31:36 [error] 1951#1951: *5308 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: site/error' in /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:125
+Stack trace:
+#0 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('error', Array)
+#1 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/ErrorHandler.php(93): yii\base\Module->runAction('site/error')
+#2 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/ErrorHandler.php(109): yii\web\ErrorHandler->renderException(Object(yii\web\NotFoundHttpException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\NotFoundHttpException))
+#4 {main}
+Previous exception:
+exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "money/waybill/num/123".' in /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/M" while reading upstream, client: 127.0.0.1, server: crm-aist.dev, request: "GET /money/waybill/num/123 HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "money.crm-aist.dev"
+2016/08/11 08:35:32 [error] 1951#1951: *5311 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: site/error' in /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:125
+Stack trace:
+#0 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('error', Array)
+#1 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/ErrorHandler.php(93): yii\base\Module->runAction('site/error')
+#2 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/ErrorHandler.php(109): yii\web\ErrorHandler->renderException(Object(yii\web\NotFoundHttpException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\NotFoundHttpException))
+#4 {main}
+Previous exception:
+exception 'yii\web\NotFoundHttpException' with message 'The requested page does not exist.' in /home/adamasantares/WebServer/crm-aist.dev/controllers/MoneyController.php:109
+Stack trace" while reading upstream, client: 127.0.0.1, server: crm-aist.dev, request: "GET /money/waybill?num=123_345 HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "money.crm-aist.dev"
+2016/08/11 08:35:46 [error] 1951#1951: *5311 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: site/error' in /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:125
+Stack trace:
+#0 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('error', Array)
+#1 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/ErrorHandler.php(93): yii\base\Module->runAction('site/error')
+#2 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/ErrorHandler.php(109): yii\web\ErrorHandler->renderException(Object(yii\web\NotFoundHttpException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\NotFoundHttpException))
+#4 {main}
+Previous exception:
+exception 'yii\web\NotFoundHttpException' with message 'The requested page does not exist.' in /home/adamasantares/WebServer/crm-aist.dev/controllers/MoneyController.php:109
+Stack trace" while reading upstream, client: 127.0.0.1, server: crm-aist.dev, request: "GET /money/waybill?num=1_@ HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "money.crm-aist.dev"
+2016/08/11 08:38:54 [error] 1951#1951: *5328 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: site/error' in /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:125
+Stack trace:
+#0 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('error', Array)
+#1 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/ErrorHandler.php(93): yii\base\Module->runAction('site/error')
+#2 /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/ErrorHandler.php(109): yii\web\ErrorHandler->renderException(Object(yii\web\NotFoundHttpException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\NotFoundHttpException))
+#4 {main}
+Previous exception:
+exception 'yii\web\NotFoundHttpException' with message 'The requested page does not exist.' in /home/adamasantares/WebServer/crm-aist.dev/controllers/MoneyController.php:109
+Stack trace" while reading upstream, client: 127.0.0.1, server: crm-aist.dev, request: "GET /money/waybill?num=1_5 HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "money.crm-aist.dev"
+2016/08/11 10:14:13 [error] 1951#1951: *5663 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Class 'Money' not found in /home/adamasantares/WebServer/crm-aist.dev/views/money/waybill.php on line 87
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:0
+PHP message: PHP   2. yii\base\Application->run() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:14
+PHP message: PHP   3. yii\web\Application->handleRequest() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Application.php:375
+PHP message: PHP   4. yii\base\Module->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/Application.php:87
+PHP message: PHP   5. yii\base\Controller->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Module.php:454
+PHP message: PHP   6. yii\base\InlineAction->runWithParams() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:154
+PHP message: PHP   7. call_user_func_array() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   8. app\controllers\MoneyController->actionWaybill() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   9. yii\base\Controller->render() /home/adamasantares/WebServer/crm-aist.dev/controllers/MoneyController.php:113
+PHP message: PHP  10. yii\base\View->render() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:378
+PHP message: PHP  11. yii\base\View->renderFile() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:149
+PHP message: PHP  12. yii\base\View->renderPhpFile() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:247
+PHP message: PHP  13. require() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:325" while reading response header from upstream, client: 127.0.0.1, server: crm-aist.dev, request: "GET /money
+2016/08/11 10:16:34 [error] 1951#1951: *5675 FastCGI sent in stderr: "PHP message: PHP Parse error:  syntax error, unexpected '?>' in /home/adamasantares/WebServer/crm-aist.dev/views/money/waybill.php on line 101
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:0
+PHP message: PHP   2. yii\base\Application->run() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:14
+PHP message: PHP   3. yii\web\Application->handleRequest() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Application.php:375
+PHP message: PHP   4. yii\base\Module->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/Application.php:87
+PHP message: PHP   5. yii\base\Controller->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Module.php:454
+PHP message: PHP   6. yii\base\InlineAction->runWithParams() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:154
+PHP message: PHP   7. call_user_func_array() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   8. app\controllers\MoneyController->actionWaybill() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   9. yii\base\Controller->render() /home/adamasantares/WebServer/crm-aist.dev/controllers/MoneyController.php:113
+PHP message: PHP  10. yii\base\View->render() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:378
+PHP message: PHP  11. yii\base\View->renderFile() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:149
+PHP message: PHP  12. yii\base\View->renderPhpFile() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:247" while reading response header from upstream, client: 127.0.0.1, server: crm-aist.dev, request: "GET /money/waybill?num=1_2 HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "money.crm-aist.dev"
+2016/08/12 16:21:28 [error] 1952#1952: *6288 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Call to undefined function getColor() in /home/adamasantares/WebServer/crm-aist.dev/views/money/index.php on line 76
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:0
+PHP message: PHP   2. yii\base\Application->run() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:14
+PHP message: PHP   3. yii\web\Application->handleRequest() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Application.php:375
+PHP message: PHP   4. yii\base\Module->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/Application.php:87
+PHP message: PHP   5. yii\base\Controller->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Module.php:454
+PHP message: PHP   6. yii\base\InlineAction->runWithParams() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:154
+PHP message: PHP   7. call_user_func_array() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   8. app\controllers\MoneyController->actionIndex() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   9. yii\base\Controller->render() /home/adamasantares/WebServer/crm-aist.dev/controllers/MoneyController.php:52
+PHP message: PHP  10. yii\base\View->render() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:378
+PHP message: PHP  11. yii\base\View->renderFile() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:149
+PHP message: PHP  12. yii\base\View->renderPhpFile() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:247
+PHP message: PHP  13. require() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:325" while reading response header from upstream, client: 127.0.0.1, server: crm-aist.dev, request: "G
+2016/08/14 15:58:52 [error] 1961#1961: *297 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Class 'app\models\Url' not found in /home/adamasantares/WebServer/crm-aist.dev/models/Money.php on line 230
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:0
+PHP message: PHP   2. yii\base\Application->run() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:14
+PHP message: PHP   3. yii\web\Application->handleRequest() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Application.php:375
+PHP message: PHP   4. yii\base\Module->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/Application.php:87
+PHP message: PHP   5. yii\base\Controller->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Module.php:454
+PHP message: PHP   6. yii\base\InlineAction->runWithParams() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:154
+PHP message: PHP   7. call_user_func_array() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   8. app\controllers\MoneyController->actionUpdate() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   9. app\models\Money->prepareColumnsValues() /home/adamasantares/WebServer/crm-aist.dev/controllers/MoneyController.php:108" while reading response header from upstream, client: 127.0.0.1, server: crm-aist.dev, request: "POST /money/update HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "crm-aist.dev", referrer: "http://crm-aist.dev/money/index"
+2016/08/14 17:50:28 [error] 1961#1961: *392 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Call to undefined function getQueryString() in /home/adamasantares/WebServer/crm-aist.dev/views/money/index.php on line 33
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:0
+PHP message: PHP   2. yii\base\Application->run() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:14
+PHP message: PHP   3. yii\web\Application->handleRequest() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Application.php:375
+PHP message: PHP   4. yii\base\Module->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/Application.php:87
+PHP message: PHP   5. yii\base\Controller->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Module.php:454
+PHP message: PHP   6. yii\base\InlineAction->runWithParams() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:154
+PHP message: PHP   7. call_user_func_array() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   8. app\controllers\MoneyController->actionIndex() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   9. yii\base\Controller->render() /home/adamasantares/WebServer/crm-aist.dev/controllers/MoneyController.php:73
+PHP message: PHP  10. yii\base\View->render() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:378
+PHP message: PHP  11. yii\base\View->renderFile() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:149
+PHP message: PHP  12. yii\base\View->renderPhpFile() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:247
+PHP message: PHP  13. require() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:325" while reading response header from upstream, client: 127.0.0.1, server: crm-aist.dev, reques
+2016/08/15 08:59:47 [error] 1960#1960: *871 FastCGI sent in stderr: "PHP message: PHP Parse error:  syntax error, unexpected '}' in /home/adamasantares/WebServer/crm-aist.dev/views/erp/view.php on line 181
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:0
+PHP message: PHP   2. yii\base\Application->run() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:14
+PHP message: PHP   3. yii\web\Application->handleRequest() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Application.php:375
+PHP message: PHP   4. yii\base\Module->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/Application.php:87
+PHP message: PHP   5. yii\base\Controller->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Module.php:454
+PHP message: PHP   6. yii\base\InlineAction->runWithParams() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:154
+PHP message: PHP   7. call_user_func_array() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   8. app\controllers\ErpController->actionView() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   9. yii\base\Controller->render() /home/adamasantares/WebServer/crm-aist.dev/controllers/ErpController.php:134
+PHP message: PHP  10. yii\base\View->render() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:378
+PHP message: PHP  11. yii\base\View->renderFile() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:149
+PHP message: PHP  12. yii\base\View->renderPhpFile() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:247" while reading response header from upstream, client: 127.0.0.1, server: crm-aist.dev, request: "GET /factory/view?id=114 HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "crm-aist.dev", referrer: "http://crm-aist.dev/fac
+2016/08/16 16:02:34 [error] 1991#1991: *604 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Class 'app\controllers\VerbFilter' not found in /home/adamasantares/WebServer/crm-aist.dev/controllers/MoneyController.php on line 48
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:0
+PHP message: PHP   2. yii\base\Application->run() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:14
+PHP message: PHP   3. yii\web\Application->handleRequest() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Application.php:375
+PHP message: PHP   4. yii\base\Module->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/Application.php:87
+PHP message: PHP   5. yii\base\Controller->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Module.php:454
+PHP message: PHP   6. yii\web\Controller->beforeAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:152
+PHP message: PHP   7. yii\base\Controller->beforeAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/Controller.php:108
+PHP message: PHP   8. yii\base\Component->trigger() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:269
+PHP message: PHP   9. yii\base\Component->ensureBehaviors() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Component.php:529
+PHP message: PHP  10. app\controllers\MoneyController->behaviors() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Component.php:646" while reading response header from upstream, client: 127.0.0.1, server: crm-aist.dev, request: "POST /money/delete?id=1 HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "crm-aist.dev", referrer: "http://crm-aist.dev/money/index"
+2016/08/21 18:48:35 [error] 11603#11603: *458 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 127.0.0.1, server: crm-aist.dev, request: "HEAD /PhpStorm-2b4a0170-8d8b-48ef-a8d6-c6e7d5404a56.php HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "art-prog.dev"
+2016/09/12 13:15:28 [error] 1740#1740: *13103 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Class 'Job' not found in /home/adamasantares/WebServer/crm-aist.dev/views/payment/index.php on line 161
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:0
+PHP message: PHP   2. yii\base\Application->run() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:14
+PHP message: PHP   3. yii\web\Application->handleRequest() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Application.php:375
+PHP message: PHP   4. yii\base\Module->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/Application.php:87
+PHP message: PHP   5. yii\base\Controller->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Module.php:454
+PHP message: PHP   6. yii\base\InlineAction->runWithParams() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:154
+PHP message: PHP   7. call_user_func_array() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   8. app\controllers\PaymentController->actionIndex() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   9. yii\base\Controller->render() /home/adamasantares/WebServer/crm-aist.dev/controllers/PaymentController.php:91
+PHP message: PHP  10. yii\base\View->render() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:378
+PHP message: PHP  11. yii\base\View->renderFile() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:149
+PHP message: PHP  12. yii\base\View->renderPhpFile() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:247
+PHP message: PHP  13. require() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:325" while reading response header from upstream, client: 127.0.0.1, server: crm-aist.dev, request: "GET /paym
+2016/09/12 13:38:26 [error] 1740#1740: *13105 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Class 'Job' not found in /home/adamasantares/WebServer/crm-aist.dev/views/payment/index.php on line 161
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:0
+PHP message: PHP   2. yii\base\Application->run() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:14
+PHP message: PHP   3. yii\web\Application->handleRequest() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Application.php:375
+PHP message: PHP   4. yii\base\Module->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/Application.php:87
+PHP message: PHP   5. yii\base\Controller->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Module.php:454
+PHP message: PHP   6. yii\base\InlineAction->runWithParams() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:154
+PHP message: PHP   7. call_user_func_array() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   8. app\controllers\PaymentController->actionIndex() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   9. yii\base\Controller->render() /home/adamasantares/WebServer/crm-aist.dev/controllers/PaymentController.php:91
+PHP message: PHP  10. yii\base\View->render() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:378
+PHP message: PHP  11. yii\base\View->renderFile() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:149
+PHP message: PHP  12. yii\base\View->renderPhpFile() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:247
+PHP message: PHP  13. require() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:325" while reading response header from upstream, client: 127.0.0.1, server: crm-aist.dev, request: "GET /paym
+2016/09/12 13:39:15 [error] 1740#1740: *13105 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Class 'Job' not found in /home/adamasantares/WebServer/crm-aist.dev/views/payment/index.php on line 161
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:0
+PHP message: PHP   2. yii\base\Application->run() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:14
+PHP message: PHP   3. yii\web\Application->handleRequest() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Application.php:375
+PHP message: PHP   4. yii\base\Module->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/Application.php:87
+PHP message: PHP   5. yii\base\Controller->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Module.php:454
+PHP message: PHP   6. yii\base\InlineAction->runWithParams() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:154
+PHP message: PHP   7. call_user_func_array() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   8. app\controllers\PaymentController->actionIndex() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   9. yii\base\Controller->render() /home/adamasantares/WebServer/crm-aist.dev/controllers/PaymentController.php:91
+PHP message: PHP  10. yii\base\View->render() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:378
+PHP message: PHP  11. yii\base\View->renderFile() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:149
+PHP message: PHP  12. yii\base\View->renderPhpFile() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:247
+PHP message: PHP  13. require() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:325" while reading response header from upstream, client: 127.0.0.1, server: crm-aist.dev, request: "GET /paym
+2016/09/12 14:02:37 [error] 1740#1740: *13111 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Class 'Url' not found in /home/adamasantares/WebServer/crm-aist.dev/views/payment/index.php on line 172
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:0
+PHP message: PHP   2. yii\base\Application->run() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:14
+PHP message: PHP   3. yii\web\Application->handleRequest() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Application.php:375
+PHP message: PHP   4. yii\base\Module->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/Application.php:87
+PHP message: PHP   5. yii\base\Controller->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Module.php:454
+PHP message: PHP   6. yii\base\InlineAction->runWithParams() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:154
+PHP message: PHP   7. call_user_func_array() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   8. app\controllers\PaymentController->actionIndex() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   9. yii\base\Controller->render() /home/adamasantares/WebServer/crm-aist.dev/controllers/PaymentController.php:94
+PHP message: PHP  10. yii\base\View->render() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:378
+PHP message: PHP  11. yii\base\View->renderFile() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:149
+PHP message: PHP  12. yii\base\View->renderPhpFile() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:247
+PHP message: PHP  13. require() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:325" while reading response header from upstream, client: 127.0.0.1, server: crm-aist.dev, request: "GET /paym
+2016/09/13 23:22:16 [error] 13022#13022: *154 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Class 'Job' not found in /home/adamasantares/WebServer/crm-aist.dev/views/money/index.php on line 138
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:0
+PHP message: PHP   2. yii\base\Application->run() /home/adamasantares/WebServer/crm-aist.dev/web/index.php:14
+PHP message: PHP   3. yii\web\Application->handleRequest() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Application.php:375
+PHP message: PHP   4. yii\base\Module->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/web/Application.php:87
+PHP message: PHP   5. yii\base\Controller->runAction() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Module.php:454
+PHP message: PHP   6. yii\base\InlineAction->runWithParams() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:154
+PHP message: PHP   7. call_user_func_array() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   8. app\controllers\MoneyController->actionIndex() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   9. yii\base\Controller->render() /home/adamasantares/WebServer/crm-aist.dev/controllers/MoneyController.php:85
+PHP message: PHP  10. yii\base\View->render() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/Controller.php:378
+PHP message: PHP  11. yii\base\View->renderFile() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:149
+PHP message: PHP  12. yii\base\View->renderPhpFile() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:247
+PHP message: PHP  13. require() /home/adamasantares/WebServer/crm-aist.dev/vendor/yiisoft/yii2/base/View.php:325" while reading response header from upstream, client: 127.0.0.1, server: crm-aist.dev, request: "GET /money/inde
+2016/10/28 17:02:44 [error] 1382#0: *662 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/adamasantares/WebServer/sscrm.dev/controllers/SiteController.php on line 453
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /home/adamasantares/WebServer/sscrm.dev/web/index.php:0
+PHP message: PHP   2. yii\base\Application->run() /home/adamasantares/WebServer/sscrm.dev/web/index.php:14
+PHP message: PHP   3. yii\web\Application->handleRequest() /home/adamasantares/WebServer/sscrm.dev/vendor/yiisoft/yii2/base/Application.php:375
+PHP message: PHP   4. yii\base\Module->runAction() /home/adamasantares/WebServer/sscrm.dev/vendor/yiisoft/yii2/web/Application.php:87
+PHP message: PHP   5. yii\base\Controller->runAction() /home/adamasantares/WebServer/sscrm.dev/vendor/yiisoft/yii2/base/Module.php:454
+PHP message: PHP   6. yii\base\InlineAction->runWithParams() /home/adamasantares/WebServer/sscrm.dev/vendor/yiisoft/yii2/base/Controller.php:154
+PHP message: PHP   7. call_user_func_array:{/home/adamasantares/WebServer/sscrm.dev/vendor/yiisoft/yii2/base/InlineAction.php:55}() /home/adamasantares/WebServer/sscrm.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   8. app\controllers\SiteController->actionIndex() /home/adamasantares/WebServer/sscrm.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   9. app\controllers\SiteController->getStatictics() /home/adamasantares/WebServer/sscrm.dev/controllers/SiteController.php:128" while reading response header from upstream, client: 127.0.0.1, server: sscrm.dev, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "sscrm.dev"
+2016/10/28 17:09:56 [error] 1383#0: *693 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/adamasantares/WebServer/sscrm.dev/controllers/SiteController.php on line 455
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /home/adamasantares/WebServer/sscrm.dev/web/index.php:0
+PHP message: PHP   2. yii\base\Application->run() /home/adamasantares/WebServer/sscrm.dev/web/index.php:14
+PHP message: PHP   3. yii\web\Application->handleRequest() /home/adamasantares/WebServer/sscrm.dev/vendor/yiisoft/yii2/base/Application.php:375
+PHP message: PHP   4. yii\base\Module->runAction() /home/adamasantares/WebServer/sscrm.dev/vendor/yiisoft/yii2/web/Application.php:87
+PHP message: PHP   5. yii\base\Controller->runAction() /home/adamasantares/WebServer/sscrm.dev/vendor/yiisoft/yii2/base/Module.php:454
+PHP message: PHP   6. yii\base\InlineAction->runWithParams() /home/adamasantares/WebServer/sscrm.dev/vendor/yiisoft/yii2/base/Controller.php:154
+PHP message: PHP   7. call_user_func_array:{/home/adamasantares/WebServer/sscrm.dev/vendor/yiisoft/yii2/base/InlineAction.php:55}() /home/adamasantares/WebServer/sscrm.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   8. app\controllers\SiteController->actionIndex() /home/adamasantares/WebServer/sscrm.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   9. app\controllers\SiteController->getStatictics() /home/adamasantares/WebServer/sscrm.dev/controllers/SiteController.php:128
+PHP message: PHP  10. strtotime() /home/adamasantares/WebServer/sscrm.dev/controllers/SiteController.php:455" while reading response header from upstream, client: 127.0.0.1, server: sscrm.dev, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "sscrm.dev"
+2016/10/31 16:00:53 [error] 1388#0: *53 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/adamasantares/WebServer/sscrm.dev/components/StatisticsHelper.php on line 319
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /home/adamasantares/WebServer/sscrm.dev/web/index.php:0
+PHP message: PHP   2. yii\base\Application->run() /home/adamasantares/WebServer/sscrm.dev/web/index.php:14
+PHP message: PHP   3. yii\web\Application->handleRequest() /home/adamasantares/WebServer/sscrm.dev/vendor/yiisoft/yii2/base/Application.php:375
+PHP message: PHP   4. yii\base\Module->runAction() /home/adamasantares/WebServer/sscrm.dev/vendor/yiisoft/yii2/web/Application.php:87
+PHP message: PHP   5. yii\base\Controller->runAction() /home/adamasantares/WebServer/sscrm.dev/vendor/yiisoft/yii2/base/Module.php:454
+PHP message: PHP   6. yii\base\InlineAction->runWithParams() /home/adamasantares/WebServer/sscrm.dev/vendor/yiisoft/yii2/base/Controller.php:154
+PHP message: PHP   7. call_user_func_array:{/home/adamasantares/WebServer/sscrm.dev/vendor/yiisoft/yii2/base/InlineAction.php:55}() /home/adamasantares/WebServer/sscrm.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   8. app\controllers\SiteController->actionDiagram() /home/adamasantares/WebServer/sscrm.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   9. app\components\StatisticsHelper::fillEmptyDates() /home/adamasantares/WebServer/sscrm.dev/controllers/SiteController.php:281" while reading response header from upstream, client: 127.0.0.1, server: sscrm.dev, request: "GET /site/diagram?period=3month&group_by=day&type%5B0%5D%5Bname%5D=trade_leads&type%5B0%5D%5Bvalue%5D=trade_leads HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "sscrm.dev", referrer: "http://sscrm.dev/"
+2016/10/31 16:01:53 [error] 1388#0: *52 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/adamasantares/WebServer/sscrm.dev/components/StatisticsHelper.php on line 320
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /home/adamasantares/WebServer/sscrm.dev/web/index.php:0
+PHP message: PHP   2. yii\base\Application->run() /home/adamasantares/WebServer/sscrm.dev/web/index.php:14
+PHP message: PHP   3. yii\web\Application->handleRequest() /home/adamasantares/WebServer/sscrm.dev/vendor/yiisoft/yii2/base/Application.php:375
+PHP message: PHP   4. yii\base\Module->runAction() /home/adamasantares/WebServer/sscrm.dev/vendor/yiisoft/yii2/web/Application.php:87
+PHP message: PHP   5. yii\base\Controller->runAction() /home/adamasantares/WebServer/sscrm.dev/vendor/yiisoft/yii2/base/Module.php:454
+PHP message: PHP   6. yii\base\InlineAction->runWithParams() /home/adamasantares/WebServer/sscrm.dev/vendor/yiisoft/yii2/base/Controller.php:154
+PHP message: PHP   7. call_user_func_array:{/home/adamasantares/WebServer/sscrm.dev/vendor/yiisoft/yii2/base/InlineAction.php:55}() /home/adamasantares/WebServer/sscrm.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   8. app\controllers\SiteController->actionDiagram() /home/adamasantares/WebServer/sscrm.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   9. app\components\StatisticsHelper::fillEmptyDates() /home/adamasantares/WebServer/sscrm.dev/controllers/SiteController.php:281" while reading response header from upstream, client: 127.0.0.1, server: sscrm.dev, request: "GET /site/diagram?period=3month&group_by=day&type%5B0%5D%5Bname%5D=trade_leads&type%5B0%5D%5Bvalue%5D=trade_leads HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "sscrm.dev", referrer: "http://sscrm.dev/"
+2016/10/31 16:02:14 [error] 1388#0: *53 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 127.0.0.1, server: sscrm.dev, request: "GET /site/diagram?period=3month&group_by=day&type%5B0%5D%5Bname%5D=trade_leads&type%5B0%5D%5Bvalue%5D=trade_leads HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "sscrm.dev", referrer: "http://sscrm.dev/"
+2016/10/31 17:06:15 [error] 1390#0: *182 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/adamasantares/WebServer/sscrm.dev/controllers/SiteController.php on line 315
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /home/adamasantares/WebServer/sscrm.dev/web/index.php:0
+PHP message: PHP   2. yii\base\Application->run() /home/adamasantares/WebServer/sscrm.dev/web/index.php:14
+PHP message: PHP   3. yii\web\Application->handleRequest() /home/adamasantares/WebServer/sscrm.dev/vendor/yiisoft/yii2/base/Application.php:375
+PHP message: PHP   4. yii\base\Module->runAction() /home/adamasantares/WebServer/sscrm.dev/vendor/yiisoft/yii2/web/Application.php:87
+PHP message: PHP   5. yii\base\Controller->runAction() /home/adamasantares/WebServer/sscrm.dev/vendor/yiisoft/yii2/base/Module.php:454
+PHP message: PHP   6. yii\base\InlineAction->runWithParams() /home/adamasantares/WebServer/sscrm.dev/vendor/yiisoft/yii2/base/Controller.php:154
+PHP message: PHP   7. call_user_func_array:{/home/adamasantares/WebServer/sscrm.dev/vendor/yiisoft/yii2/base/InlineAction.php:55}() /home/adamasantares/WebServer/sscrm.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   8. app\controllers\SiteController->actionDiagram() /home/adamasantares/WebServer/sscrm.dev/vendor/yiisoft/yii2/base/InlineAction.php:55
+PHP message: PHP   9. app\controllers\SiteController->renderDiagram() /home/adamasantares/WebServer/sscrm.dev/controllers/SiteController.php:190
+PHP message: PHP  10. app\controllers\SiteController->groupDigramDataByPeriod() /home/adamasantares/WebServer/sscrm.dev/controllers/SiteController.php:450
+PHP message: PHP  11. date() /home/adamasantares/WebServer/sscrm.dev/controllers/SiteController.php:315" while reading response header from upstream, client: 127.0.0.1, server: sscrm.dev, request: "GET /site/diagram?period=3month&group_by=3days&type%5B0%5D%5Bname%5D=trade_leads&type%5B0%5D%5Bvalue%5D=trade_leads HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", h

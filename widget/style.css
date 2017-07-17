@@ -1,0 +1,58 @@
+
+.messagepop {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    margin-left: -150px;
+    width: 394px;
+    padding: 25px 25px 20px;
+    z-index: 5000;
+    background-color: #FFFFFF;
+    border: 2px solid #000000;
+    cursor: default;
+    text-align: left;
+}
+
+.messagepop label {
+    display: block;
+    margin-bottom: 3px;
+    padding-left: 15px;
+    text-indent: -15px;
+}
+
+.messagepop a.selected {
+    background-color: #1F75CC;
+    color: white;
+    z-index: 100;
+}
+
+.messagepop p, .messagepop.div {
+    border-bottom: 1px solid #EFEFEF;
+    margin: 8px 0;
+    padding-bottom: 8px;
+}
+
+.messagepop .aw-buttons {
+    margin-top:8px;
+}
+
+.messagepop .aw-buttons a {
+    display: inline-block;
+    background: darkred;
+    color: #fff;
+    text-decoration: none;
+    padding: 1px 6px;
+    border-radius: 3px;
+}
+
+.messagepop .aw-buttons a:first-child {
+    background: green;
+    padding: 1px 10px;
+}
+
+#aw-timeout-value {
+    font-size: 13px;
+    color: darkgray;
+    padding-left: 20px;
+}

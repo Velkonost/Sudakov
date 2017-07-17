@@ -1,0 +1,31 @@
+{
+    "widget": {
+        "name": "widget.name",
+        "description": "widget.description",
+        "short_description": "widget.short_description",
+        "code": "rs1030",
+        "secret_key": "b82d990a6a4e4af5ecb38daec7fa9a64cbe8cca33329074c8380208c0bcc8e64",
+        "version": "1.0.30",
+        "interface_version": 2,
+        "init_once": true,
+        "locale": [
+            "ru",
+            "en"
+        ],
+        "installation": true
+    },
+    "locations": [
+        "ccard-1",
+        "clist-0",
+        "lcard-1",
+        "llist-0",
+        "settings"
+    ],
+    "settings": {
+        "login": {
+            "name": "settings.none",
+            "type": "text",
+            "required": false
+        }
+    }
+}

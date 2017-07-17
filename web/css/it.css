@@ -1,0 +1,41 @@
+.managersOptions {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+table.managersOptions td, th{
+    padding:  6px 5px;
+    text-align: center;
+}
+
+.it-coefficient{
+    width: 50px;
+}
+
+input[type="checkbox"] {
+    height: 20px;
+    width: 20px;
+}
+
+form#it-methodAssigmentChecks td{
+    padding: 2px 2px;
+}
+
+.it-methodAssigmentChecks-label{
+    font-size: 20px;
+    font-weight: 800;
+}
+
+#saved_status {
+    float: right;
+    margin-right: 2px;
+    line-height: 1.42857143;
+    border: 1px solid transparent;
+    border-radius: 4px 4px 0 0;
+    color: green;
+    padding: 10px 15px;
+}
+
+.it-tabs {
+    margin-top: 10px;
+}
