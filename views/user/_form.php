@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use app\models\User;
+use app\models\Manager;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\SignupUser */
@@ -25,6 +26,8 @@ $loginOptions = $model->isNewRecord ? [] : ['disabled' => 'disabled'];
     <?= $form->field($model, 'email')->textInput()->label('Email <b>*</b>') ?>
 
     <?= $form->field($model, 'role')->dropDownList(User::roles())->label('Роль <b>*</b>') ?>
+
+    <?= $form->field($model, 'manager_id')->dropDownList(Manager::managerIds(), ['prompt'=>'---'])->label('Связь с менеджером из АМО') ?>
 
     <?= $form->field($model, 'status')->dropDownList([
         User::STATUS_ACTIVE => 'Активен',

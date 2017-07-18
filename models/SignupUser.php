@@ -19,6 +19,8 @@ class SignupUser extends Model
 
     public $role;
 
+    public $manager_id;
+
     public $status;
 
     public $isNewRecord = true;
@@ -40,6 +42,7 @@ class SignupUser extends Model
             ['fio', 'string', 'max' => 255],
             ['email', 'unique', 'targetClass' => '\app\models\User', 'message' => 'This email address has already been taken.'],
             ['password', 'string', 'min' => 6],
+            ['manager_id', 'number'],
         ];
     }
 

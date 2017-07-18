@@ -40,7 +40,7 @@ class MoneyController extends Controller {
                     [
                         'actions' => ['delete'],
                         'allow' => true,
-                        'roles' => ['superadmin'],
+                        'roles' => ['superadmin', 'buh'],
                     ],
                     [
                         'actions' => ['all-periods-update','update-all', 'download'],
@@ -79,7 +79,7 @@ class MoneyController extends Controller {
             ->createCommand("SELECT responsible_user_id, name"
                 . " FROM `manager`")
             ->queryAll();
-
+        $manager = [];
         foreach($managername as $value){
             $manager[$value['responsible_user_id']] = $value['name'];
         }
@@ -500,6 +500,7 @@ class MoneyController extends Controller {
         ]);
     }
 
+
     /**
      * Обновляет все данные сверяясь с AMOCRM по текущему периоду
      * @return string
@@ -544,6 +545,7 @@ class MoneyController extends Controller {
             return json_encode(['code' => 2, 'len'=>sizeof($_SESSION['update_leads'])]);
         }
     }
+
 
     /*
      *

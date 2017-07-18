@@ -58,7 +58,7 @@ class InstagramMedia extends \yii\db\ActiveRecord
 
     /**
      * Добавляет media если оно не существует
-     * @param $media InstagramAPI\item
+     * @param $media InstagramAPI\Response\Model\Item
      * @return bool
      */
     public static function insertMedia($media, $noCheck = false)

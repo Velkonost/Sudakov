@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\models\AssigmentLeads;
+use app\models\Manager;
 use app\models\Option;
 use app\models\QueueLeads;
 use app\models\Lead;
@@ -63,10 +64,12 @@ class ItController extends Controller
     {
         $amo = new Amo(\Yii::$app->params);
         $queue = new ManagerOption();
+        $queue2 = new Manager();
         // Обновить менеджеров
         $managers = $amo->reloadManagersList();
         if (!empty($managers)) {
             $queue->changeUsersName($managers);
+            $queue2->changeUsersName($managers);
         }
         header('Location: ' . Url::to('/it/index'));
         exit;

@@ -34,26 +34,17 @@ $groupDropList = [
 ];
 
 $infoBlockData = $statisticsData;
-//$infoBlockData = array_merge($infoBlockData, $statisticsData);
-//$infoBlockData = $infoBlockData + $statisticsData;
-//var_dump($statisticsData);
-//var_dump($infoBlockData); exit();
+// плитки меню
 echo $this->render('main_menu', ['user' => $user]);
 ?>
 
-
-
 <div class="row intro-logo">
     <div class="col-xs-12">
-        <a href="<?= Yii::$app->homeUrl ?>" title="">
-            <img src="/images/index/logo-intro-sistem.jpg">
-        </a>
+
     </div>
 </div>
 
 <div class="site-index">
-
-
 
     <?php if ($user->hasRole(['superadmin'])) { ?>
         <!-- Diagram-->

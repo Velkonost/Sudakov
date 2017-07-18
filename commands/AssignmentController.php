@@ -65,6 +65,7 @@ class AssignmentController extends Controller
         // Проверяем в таблице хоть что-то есть?
         if (!empty($queueLead)) {
             $log = 0;
+            $status = AssigmentLeads::STATUS_NONE;
             $managerId = 0;
             $this->stdout("New lead found {$queueLead->lead_id}\n", Console::FG_GREEN);
             $lead = $amo->getLead($queueLead->lead_id);
@@ -108,12 +109,12 @@ class AssignmentController extends Controller
         }
 
         $this->stdout("Check managers reacts\n", Console::FG_GREEN);
-        //Теперь смотрим есть ли сделки которые не отработаны (status != 0 && status != 3 ) и при этом активны (log == 0) если да то копируем их обратно во входящие
+        //Теперь смотрим есть ли сделки которые не отработаны и при этом активны (log == 0) если да то копируем их обратно во входящие
         /* @var  $lead AssigmentLeads */
-        $leads = AssigmentLeads::find()->all();
+        $leads = AssigmentLeads::find()->where(['log' => 0])->all();
         foreach ($leads as $lead) {
             if ($lead->log == 0) {
-                // Если сделка пришла, но время вышло
+                // вышло время?
                 if ($lead->status == AssigmentLeads::STATUS_NONE && time() - $lead->created_at > 60) {
                     $lead->status = AssigmentLeads::STATUS_MISSED;
                 }
@@ -123,19 +124,6 @@ class AssignmentController extends Controller
                     $lead->log = 1;
                     $lead->save(false);
                     QueueLeads::addLeads($lead);
-                }
-                // Статус сделки сменился на отклонённый
-                if ($lead->status == AssigmentLeads::STATUS_REFUSED) {
-                    $this->stdout("Lead {$lead['lead_id']} reverted (refused)\n", Console::FG_YELLOW);
-                    $lead->log = 1;
-                    $lead->save(false);
-                    QueueLeads::addLeads($lead);
-                }
-                //Статус сделки сменился на выполнено
-                if ($lead->status == AssigmentLeads::STATUS_ACCEPTED) {
-                    $this->stdout("Lead {$lead['lead_id']} accepted!\n", Console::FG_GREEN);
-                    $lead->log = 1;
-                    $lead->save(false);
                 }
             }
         }

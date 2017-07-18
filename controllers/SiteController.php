@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\components\StatisticsHelper;
+use app\models\User;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -73,15 +74,19 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
+        if (Yii::$app->user->identity->hasRole('manager-payment')) {
+            return $this->redirect('manager');
+        }
+
         $fact = $data = StatisticsHelper::getStatictics();
         $paramNames = StatisticsHelper::parametersNames();
         $this->layout = 'empty';
-        $user = Yii::$app->user->identity;
+        $user = Yii::$app->user->identity; /* @var $user User */
         $period = empty($_SESSION['period']) ? 'month' : $_SESSION['period'];
         $calendar = (count(explode('-', $period)) > 1) ? true : false;
 
         $result = [];
-        if (!Yii::$app->user->isGuest && Yii::$app->user->identity->hasRole('superadmin')) {
+        if (!Yii::$app->user->isGuest && $user->hasRole('superadmin')) {
             $categories = [
                 'metriks' => ['label' => 'Основные метрики'],
                 'trade' => ['label' => 'Продажи'],
@@ -96,7 +101,12 @@ class SiteController extends Controller
                         if ($category == $name) {
                             $result[$category]['rows'][$key]['name'] = $paramNames[$category][$key];
                             $result[$category]['rows'][$key]['for30days'] = $value;
-                            $result[$category]['rows'][$key]['for_day'] = intval($value / 30);
+                            $value = str_replace('%', '', $value);
+                            if ($value == 0 || empty($value)) {
+                                $result[$category]['rows'][$key]['for_day'] = 0;
+                            } else {
+                                $result[$category]['rows'][$key]['for_day'] = intval($value / 30);
+                            }
                             $result[$category]['rows'][$key]['fact'] = [
                                 'value' => $fact[$category]['rows'][$key],
                                 'change' => '+0',

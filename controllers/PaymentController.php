@@ -33,7 +33,7 @@ class PaymentController extends Controller
                 'rules' => [
                     [
                         'allow' => true,
-                        'roles' => ['superadmin', 'manager-payment', 'acc_manager'],
+                        'roles' => ['superadmin', 'manager-payment', 'acc_manager', 'buh'],
                     ],
                     [
                         'actions' => ['delete'],

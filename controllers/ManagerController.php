@@ -71,10 +71,18 @@ class ManagerController extends Controller
         $calendar = (count(explode('-', $period)) > 1) ? true : false;
 
         $result = [];
-        if (!Yii::$app->user->isGuest && Yii::$app->user->identity->hasRole('superadmin')) {
-            $manager = Manager::find()
-                ->asArray()
-                ->all();
+        if (!Yii::$app->user->isGuest) {
+            $manager = null;
+            if (Yii::$app->user->identity->hasRole('superadmin')) {
+                $manager = Manager::find()->asArray()->all();
+            } elseif (Yii::$app->user->identity->hasRole('manager-payment')) {
+                $manager[0] = Manager::find()
+                    ->where(['responsible_user_id' => $user->manager_id])
+                    ->asArray()
+                    ->one();
+            }
+
+            $categories = [];
             foreach ($manager as $value){
                 $categories[$value['responsible_user_id']]= array('label' => $value['name']);
                 $paramNames[$value['responsible_user_id']]= array(
@@ -87,22 +95,19 @@ class ManagerController extends Controller
                     'trademanager' => 'Продажи',
                 );
             }
-            /* $categories = [
-                 'metriks' => ['label' => 'Основные метрики'],
-                 'trade' => ['label' => 'Продажи'],
-                 'money' => ['label' => 'Деньги'],
-                 'production' => ['label' => 'Производство'],
-                 'load-department' => ['label' => 'Загруженность отделов'],
-                 'cities' => ['label' => 'Города'],
-             ]; */
-            // var_dump($data); exit;
+
             foreach ($categories as $category => $categoryName) {
                 foreach ($data as $name => $item) {
                     foreach ($item['rows'] as $key => $value) {
                         if ($category == $name) {
                             $result[$category]['rows'][$key]['name'] = $paramNames[$category][$key];
+                            $value = str_replace('%', '', $value);
+                            if ($value == 0 || empty($value)) {
+                                $result[$category]['rows'][$key]['for_day'] = 0;
+                            } else {
+                                $result[$category]['rows'][$key]['for_day'] = intval($value / 30);
+                            }
                             $result[$category]['rows'][$key]['for30days'] = $value;
-                            $result[$category]['rows'][$key]['for_day'] = intval($value / 30);
                             $result[$category]['rows'][$key]['fact'] = [
                                 'value' => $fact[$category]['rows'][$key],
                                 'change' => '+0',
@@ -121,6 +126,7 @@ class ManagerController extends Controller
             }
         }
         return $this->render('index', [
+            'manager' => $manager,
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
             'user' => $user,

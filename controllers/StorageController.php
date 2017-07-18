@@ -24,6 +24,8 @@ use app\models\Metals;
 
 class StorageController extends Controller
 {
+
+    private $isAddFormSubmitted = false;
     /**
      * @inheritdoc
      */
@@ -67,6 +69,7 @@ class StorageController extends Controller
     }
 
 
+
     public function actionIndex() {
         return $this->render('index');
     }
@@ -81,19 +84,21 @@ class StorageController extends Controller
 
     public function actionAdd()
     {
+
         $form = new StorageFormAdd();
         $text = "";
         if (($form->load(Yii::$app->request->post())) && ($form->validate())){
+
             $post = new Metals;
             $post->type_title = Html::encode($form->type_title_send);
             $post->type_desc = Html::encode($form->type_desc_send);
             $post->img_type = Html::encode($form->type_img_name);
             $post->img_name = Html::encode($form->name_img_name);
-            $post->massa=Html::encode($form->massa);
-            $post->value=Html::encode($form->value);
-            $post->status=Html::encode($form->status);
-            $post->from=Html::encode($form->from);
-            $post->to=Html::encode($form->to);
+            $post->massa = Html::encode($form->massa);
+            $post->value = Html::encode($form->value);
+            $post->status = Html::encode($form->status);
+            $post->from = Html::encode($form->from);
+            $post->to = Html::encode($form->to);
             $post->operation = Html::encode($form->operation);
             $post->name_title = Html::encode($form->name_title_send);
             $post->name_desc = Html::encode($form->name_desc_send);
@@ -102,6 +107,8 @@ class StorageController extends Controller
             $post->time = Html::encode($form->time_send);
             
             $post->save();
+           
+            $this->redirect("add?r=true");
             
             $form->massa = "";
             $form->value = "";
@@ -109,10 +116,9 @@ class StorageController extends Controller
             $form->operation = "Операция";
             $form->to = "Кому";
             $form->from = "От кого";
-            $text = "Успешно сохранено";
 
-            $this->redirect("add");
         }
+
         
         $items = [
             '' => 'Операция',
@@ -121,9 +127,8 @@ class StorageController extends Controller
         ];
         $items2 = [
             '' => 'От кого',
-            'Анна' => 'Анна',
+            'Склад' => 'Склад',
             'Петр' => 'Петр',
-            'Никита' => 'Никита',
             'Галина' => 'Галина',
             'Жоомарт' => 'Жоомарт',
             'Поставщик' => 'Поставщик',
@@ -131,9 +136,8 @@ class StorageController extends Controller
         ];
         $items3 = [
             '' => 'Кому',
-            'Анна' => 'Анна',
+            'Склад' => 'Склад',
             'Петр' => 'Петр',
-            'Никита' => 'Никита',
             'Галина' => 'Галина',
             'Жоомарт' => 'Жоомарт',
         ];

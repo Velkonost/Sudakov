@@ -17,9 +17,11 @@ $user = Yii::$app->user->identity;
 
 
 ?>
-<?php if (!$user->hasRole(['superadmin', 'worker'])) { 
-    Yii::$app->response->redirect(Url::to(['site/index']));
-} ?>
+<?php 
+// if (!$user->hasRole(['superadmin'])) { 
+//     Yii::$app->response->redirect(Url::to(['site/index']));
+// } 
+?>
 
 <table class="inputTable" >
     <tbody  style="min-width: 1170px; width: 1170px; max-width: 1170px">
@@ -57,27 +59,10 @@ $user = Yii::$app->user->identity;
                         echo "<td style='text-align: center; background-color:#f1f2f3'>".$key->operation."</td>";
                         echo "<td style='text-align: center; background-color:#f1f2f3'>".$key->massa."</td>";
                         echo "<td style='text-align: center; background-color:#f1f2f3'>".$key->value."</td>";
-                        echo "<td style='text-align: left; background-color:#f1f2f3'>
+                        echo "<td style='text-align: center; background-color:#f1f2f3'>".$key->status."</td>";
 
-                            <div id = \"selectStatus_div\">
-                            <select id=\"countires\" name=\"countires\" id=\"selectStatus\" style=\"box-shadow: inset 0px 0px 0px 0px black;border: 0px;width:100px; background-color: #fff8ca\"><option value=\"\"><?=$key->status?></option>
-                            <option>Russia</option>
-                            <option>USA</option>
-                            <option>Canada</option>
-                            <option>France</option>
-</select></div>
-
-                        " ?>
-                        < <?php
-
-
-
-                         "</td>";?>
-
-
-                        
-                         </tr>;
-                    <?php } ?>
+                         echo "</tr>";
+                     } ?>
     </tbody>
 </table>
 

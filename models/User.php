@@ -65,6 +65,7 @@ class User extends ActiveRecord implements IdentityInterface
             ['password', 'string', 'min' => 4, 'max' => 255],
             ['status', 'default', 'value' => self::STATUS_ACTIVE],
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED, self::STATUS_INACTIVE]],
+            ['manager_id', 'number'],
         ];
     }
 

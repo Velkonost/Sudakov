@@ -21,6 +21,7 @@ class LeadForm extends Model
     public $email;
     public $source;
 
+    private $lastError = '';
 
     /**
      * @return array the validation rules.
@@ -48,6 +49,7 @@ class LeadForm extends Model
             $custom['roistat'] = $this->source;
             $result = $amo->createLead($caption, $custom);
             if ($amo->getErrorCode() != 0) {
+                $this->lastError = 'Не удалось создать сделку: ' . var_export($result, true);
                 return false;
             }
             $leadId = @$result[0]['id'];
@@ -55,6 +57,7 @@ class LeadForm extends Model
                 $custom = ['phone' => $this->phone, 'email' => $this->email, 'city' => $this->city];
                 $contact = $amo->createContact($this->name, $custom, $leadId);
                 if (!is_array($contact)) {
+                    $this->lastError = 'Не удалось создать контакт: ' . var_export($contact, true);
                     return false;
                 }
                 $anketa = 'http://sergeysudakov.ru/zaponki/anketa/index.php?id=' . $leadId;
@@ -62,7 +65,13 @@ class LeadForm extends Model
             }
             return true;
         }
+        $this->lastError = 'Не удалось подключиться к АМО: ' . $amo->getErrorCode() . ' ' . $amo->getError();
         return false;
     }
 
+
+    public function getLastError()
+    {
+        return $this->lastError;
+    }
 }

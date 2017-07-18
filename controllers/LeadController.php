@@ -48,7 +48,7 @@ class LeadController extends \yii\web\Controller
             if ($model->saveLead()) {
                 $this->redirect(['lead/done']);
             } else {
-                $error = 'Ошибка сохранения. Не удалось создать сделку в AMOCRM.';
+                $error = 'Ошибка сохранения.<br>' . $model->getLastError();
             }
         }
         return $this->render('add', [

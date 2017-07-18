@@ -231,6 +231,13 @@ class AmoController extends Controller
                                 file_put_contents($path . "_save_job_{$lead['id']}.log", "Успешно сохранено\n");
                             }
                         }
+                        if (@$lead['status_id'] == Amo::STATUS_SHIPPING) { // если был изменен статус сделки на "доставка", то отправляем ссылку на форму отзыва
+                            $amo = new Amo(\Yii::$app->params);
+                            if ($amo->getErrorCode() == 0) {
+                                $fbLink = "Ссылка на форму отзыва:\n http://sergeysudakov.ru/feedback/index.php?id=" . base64_encode($lead['id']);
+                                $amo->addLeadComment($lead['id'], $fbLink);
+                            }
+                        }
                         // обновляем статус в money
                         $money = Money::find()->where(['ext_id' => $lead['id']])->one();
                         /* @var $money Money */
@@ -350,8 +357,10 @@ class AmoController extends Controller
     public function actionAllocationRequest()
     {
         // запускаем скрипт распределения заявок
-        exec('php /var/www/crm-erp/yii assignment/lead-assignment', $output, $res);
-        // и только потом проверяем заявки для текущего менеджера
+        // TODO не уверен на этот счет
+        //exec('php /var/www/crm-erp/yii assignment/lead-assignment', $output, $res);
+
+        // потом проверяем заявки для текущего менеджера
         if (\Yii::$app->request->getMethod() == 'GET') {
             $managerId = intval(\Yii::$app->request->get('manager_id', 0));
         } else {
@@ -360,7 +369,7 @@ class AmoController extends Controller
         // проверяем существование менеджера
         $manager = ManagerOption::find()->where(['user_ext_id' => $managerId])->one();
         if (empty($manager)) {
-            return Json::encode(['status' => '400']);
+            return $this->sendJsonp(['status' => '400']);
         }
         $managerId = $manager->user_ext_id;
         // Есть ли вообще заявки для этого менеджера?
@@ -368,17 +377,17 @@ class AmoController extends Controller
             ->where(['manager_id' => $managerId, 'log' => 0, 'status' => 0])
             ->orderBy(['created_at' => SORT_DESC])->one();
         if (empty($assignmentLead)) {
-            return Json::encode(['status' => '202', 'message' => 'Нет заявок', 'shell' => $output, 'shellr' => $res]);
+            return $this->sendJsonp(['status' => '202', 'message' => 'Нет заявок']);
         }
         $lead = Lead::findOne(['ext_id' => $assignmentLead->lead_id]);
         if (empty($lead)) {
             // заявка не найдена, значит нужно удалить эту запись
             $assignmentLead->delete();
-            return Json::encode(['status' => '203', 'message' => 'Заявка не найдена', 'shell' => $output, 'shellr' => $res]);
+            return $this->sendJsonp(['status' => '203', 'message' => 'Заявка не найдена']);
         }
         // Если пришёл именно тот менеджер и заявка корректная
         if($lead->ext_id == $assignmentLead->lead_id) {
-            return Json::encode([
+            return $this->sendJsonp([
                 'status' => '200',
                 'lead' => [
                     'id' => $lead->ext_id,
@@ -387,13 +396,13 @@ class AmoController extends Controller
                     'status' => $assignmentLead->status,
                     'log' => $assignmentLead->log,
                 ],
-                'shell' => $output,
-                'shellr' => $res
+                //'shell' => $output,
+                //'shellr' => $res
             ]);
         }
-        return Json::encode(['status' => '500', 'message' => 'Параметры не совпадают',
+        return $this->sendJsonp(['status' => '500', 'message' => 'Параметры не совпадают',
             'debug' => ['id' => $lead->ext_id, 'name' => $lead->name],
-            'shell' => $output, 'shellr' => $res
+            //'shell' => $output, 'shellr' => $res
         ]);
     }
 
@@ -414,31 +423,51 @@ class AmoController extends Controller
             $status = intval(\Yii::$app->request->post('status', AssigmentLeads::STATUS_MISSED));
         }
         if (!in_array($status, [AssigmentLeads::STATUS_MISSED, AssigmentLeads::STATUS_REFUSED, AssigmentLeads::STATUS_ACCEPTED])) {
-            return Json::encode(['status' => '500', 'message' => 'Неверный статус', 'debug_status' => $status]);
+            return $this->sendJsonp(['status' => '500', 'message' => 'Неверный статус', 'debug_status' => $status]);
         }
         // проверяем существование менеджера
         $manager = ManagerOption::find()->where(['user_ext_id' => $managerId])->one();
         if (empty($manager)) {
-            return Json::encode(['status' => '400', 'message' => 'Менеджер не найден']);
+            return $this->sendJsonp(['status' => '400', 'message' => 'Менеджер не найден']);
         }
         $managerId = $manager->user_ext_id;
         if (!$managerId || !$leadId || !$status) {
-            return Json::encode(['status' => '500', 'message' => 'Один или несколько параметров некорректны', 'debug' => [$managerId, $leadId, $status]]);
+            return $this->sendJsonp(['status' => '500', 'message' => 'Один или несколько параметров некорректны', 'debug' => [$managerId, $leadId, $status]]);
         }
-        $lead = AssigmentLeads::findOne(['lead_id' => $leadId, 'status' => 0]);
-        if (!empty($lead)) {
-            $lead->setAttribute('status', $status);
-            if ($lead->save()) {
-                // Назначаем менеджера на принятую сделку
-                if ($status == AssigmentLeads::STATUS_ACCEPTED) {
-                    $amo->setLeadField($leadId, ['responsible_user_id' => $managerId]);
+        $assigmentLead = AssigmentLeads::findOne(['lead_id' => $leadId, 'status' => 0, 'log' => 0]);
+        if (!empty($assigmentLead)) {
+            // меняем статус у заявки
+            $assigmentLead->setAttribute('status', $status);
+            // Назначаем менеджера на принятую сделку, если он ее принял
+            if ($status == AssigmentLeads::STATUS_ACCEPTED) {
+                $assigmentLead->setAttribute('log', 1); // отмечаем, что сделка была обработана
+                $amo->setLeadField($leadId, ['responsible_user_id' => $managerId]);
+            } else if ($status == AssigmentLeads::STATUS_REFUSED) {
+                // если он отказался от сделки, то мы сразу отмечаем ее как отработанную
+                $assigmentLead->setAttribute('log', 1);
+            }
+            if ($assigmentLead->save(false)) {
+                if ($status == AssigmentLeads::STATUS_REFUSED) {
+                    QueueLeads::addLeads($assigmentLead); // в случае отказа, перекидывваем снова в очередь
                 }
-                // вне зависимости от ответа менеджера, мы считаем, что распределили ему сделку
-                return Json::encode(['status' => '200', 'lead' => $lead->getAttributes()]);
+                return $this->sendJsonp(['status' => '200', 'lead' => $assigmentLead->getAttributes()]);
             } else {
-                return Json::encode(['status' => '500', 'message' => $lead->getErrors()]);
+                return $this->sendJsonp(['status' => '500', 'message' => $assigmentLead->getErrors()]);
             }
         }
-        return Json::encode(['status' => '500', 'message' => 'Сделка не найдена']);
+        return $this->sendJsonp(['status' => '500', 'message' => 'Сделка не найдена']);
+    }
+
+
+    /**
+     * Sends JSONP data
+     * @param array $array
+     */
+    public function sendJsonp($array)
+    {
+        header('Content-Type: application/javascript; charset=utf-8');
+        $json = Json::encode($array);
+        $callbackName = \Yii::$app->request->get('callback');
+        return $callbackName . '(' . $json . ');';
     }
 }

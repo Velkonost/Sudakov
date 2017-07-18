@@ -92,13 +92,23 @@ class InstagramController  extends Controller
     {
         $this->auth();
         $medias = InstagramMedia::find()->all();
+        $this->stdout("ВСЕГО в базе: " . count($medias) . " medias\n", Console::FG_CYAN);
         foreach ($medias as $media) {
             $this->stdout("Проверяю {$media['media_id']} ... ", Console::FG_GREEN);
-            $data = $this->instagram->getMediaComments($media['media_id']);
-            $this->stdout("{$data->comment_count} комментариев\n", Console::FG_GREEN);
+            try {
+                $data = $this->instagram->getMediaComments($media['media_id']);
+            } catch (Exception $exception) {
+                $this->stdout("эта публикация более не существует\n", Console::FG_RED);
+                continue;
+            }
+            $this->stdout("{$data->comment_count} комментариев.  ", Console::FG_GREEN);
             if (!empty($data->comments)) {
                 $this->stdout("Анализ ... ", Console::FG_GREEN);
-                $this->process($data->comments, $media['media_url']);
+                if ($this->process($data->comments, $media['media_url'])) {
+                    $this->stdout("OK\n", Console::FG_GREEN);
+                } else {
+                    $this->stdout("FAIL\n", Console::FG_RED);
+                }
             } else {
                 $this->stdout("Нет данных для анализа\n", Console::FG_GREEN);
             }
@@ -137,7 +147,7 @@ class InstagramController  extends Controller
 
     /**
      * Анализ комментариев и создание сделок
-     * @param $comments \InstagramAPI\Comment[]
+     * @param $comments \InstagramAPI\Response\Model\Comment[]
      * @param $mediaUrl string
      * @return bool
      */
@@ -214,7 +224,7 @@ class InstagramController  extends Controller
 
     /**
      * Создаём новую сделку в амо из комментария и если её небыло в таблице заносим туда.
-     * @param \InstagramAPI\Comment $comment
+     * @param \InstagramAPI\Response\Model\Comment $comment
      * @param Amo $amo
      * @param $url string
      * @param AmoLeadsLog $log
@@ -244,7 +254,7 @@ class InstagramController  extends Controller
             'created_at' => $comment->created_at,
             'text' => $comment->text,
             'status' => $comment->status,
-            'roistat' => 'Инстаграм',
+            'roistat' => 'Инстаграм_треш',
             'URL' => $url
         ];
         $amoLead = $amo->createLead('Заявка Instagram (' . date('d-m-Y H:i', $comment->created_at) . ')', $commentArray)[0];

@@ -28,7 +28,13 @@ $user = Yii::$app->user->identity;
 <body class="<?= $pageId ?>">
     <?php $this->beginBody() ?>
     <div class="wrap">
-        <div class="container">
+        <?php
+        if (!Yii::$app->user->isGuest && $pageId != 'site-login') {
+            echo $this->render('_top_nav', ['user' => $user]);
+        }
+        ?>
+        <div class="clearfix"></div>
+        <div class="container" style="margin-top: 80px; ">
             <?= $content ?>
         </div>
     </div>

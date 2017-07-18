@@ -15,8 +15,6 @@ use yii\web\helpers\CHtml;
 $this->title = 'Склад';
 $user = Yii::$app->user->identity;
 
-
-
 ?>
 <?php 
 // if (!$user->hasRole(['admin', 'superadmin'])) { 
@@ -276,8 +274,8 @@ $user = Yii::$app->user->identity;
 <table class="inputTable" >
     <tbody  style="min-width: 1170px; width: 1170px; max-width: 1170px">
                 <tr class='hidden-row'>
-                    <td><?=$f->field($form, 'from')->dropDownList($froms, ['onchange' => 'checkFrom("selectFrom", "selectOperation")', 'onclick'=>'compareStrings("selectFrom","selectTo");', 'id' => "selectFrom", 'style' => 'box-shadow: inset 0px 0px 0px 0px black;border: 0px;width:100px; background-color: #fff8ca', 'options' => [''=>['selected'=>true]]])->label('');?></td>
-                    <td><?=$f->field($form, 'to')->dropDownList($tos, ['onchange' => 'compareStrings("selectFrom","selectTo")','id' => "selectTo", 'style' => 'box-shadow: inset 0px 0px 0px 0px black;border: 0px;width:100px; background-color: #fff8ca', 'options' => [''=>['selected'=>true]]])->label('');?></td>
+                    <td><?=$f->field($form, 'from')->dropDownList($froms, ['onchange' => 'checkFrom("selectFrom", "selectOperation");', 'onclick'=>'', 'id' => "selectFrom", 'style' => 'box-shadow: inset 0px 0px 0px 0px black;border: 0px;width:100px; background-color: #fff8ca', 'options' => [''=>['selected'=>true]]])->label('');?></td>
+                    <td><?=$f->field($form, 'to')->dropDownList($tos, ['onchange' => 'checkTo("selectFrom","selectTo")','id' => "selectTo", 'style' => 'box-shadow: inset 0px 0px 0px 0px black;border: 0px;width:100px; background-color: #fff8ca', 'options' => [''=>['selected'=>true]]])->label('');?></td>
 
                     <td id="date" style="max-width: 58.5px; min-width: 58.5px;text-align: center; padding: 0"></td>
 
@@ -296,8 +294,8 @@ $user = Yii::$app->user->identity;
                     <td><?=$f->field($form, 'operation')->dropDownList($operations, ['onchange' => 'checkFrom("selectFrom", "selectOperation")', 'id' => "selectOperation", 'style' => 'box-shadow: inset 0px 0px 0px 0px black;border: 0px;width:100px;background-color: #fff8ca', 'options' => [''=>['selected'=>true]]])->label('');?></td>
 
 
-                    <td><?=$f->field($form, 'massa')->textInput(['id'=>'massa','style' => 'width:70px', 'type'=>'number', 'placeholder' => 'Грамм', "autocomplete"=>"off"])->label('')?></td>
-                    <td><?= $f->field($form, 'value')->textInput(['id'=>'value', 'style' => 'width:70px', 'type'=>'number', 'placeholder' => 'Штук', "autocomplete"=>"off"])->label('')?></td>
+                    <td><?=$f->field($form, 'massa')->textInput(['id'=>'massa', 'style' => 'width:70px', 'type'=>'number', 'step'=> '0.01', 'min'=>'0', 'placeholder' => 'Грамм', "autocomplete"=>"off", 'oninput'=>'checkField()', 'onchange'=>'checkMassaFormat()'])->label('')?></td>
+                    <td><?= $f->field($form, 'value')->textInput(['id'=>'value', 'style' => 'width:70px', 'type'=>'number', 'placeholder' => 'Штук', "autocomplete"=>"off", 'oninput'=>'checkField()'])->label('')?></td>
 
                     <td><div id = "selectStatus_div"><select onchange="selectOnChange()" id="selectStatus" style="box-shadow: inset 0px 0px 0px 0px black;border: 0px;width:100px; background-color: #fff8ca">
                                 <option value = ''>Статус</option>
@@ -322,7 +320,7 @@ $user = Yii::$app->user->identity;
 <!-- <?=$f->field($form, 'name_img_name')->dropDownList($froms, ['id' => "name_img_name", 'style' => 'display:none'])->label('') ?> -->
 
 <?= Html::submitButton('Ввод', ['id'=>'future', 'name' => 'button_save','onclick'=>'checkField()', 'class' => 'btn_submit']) ?>
-<h5 id="textSave" class = 'text_submit' color="#008000"><?=$textSave?></h5>
+<h5 id="textSave" class = 'text_submit' color="#008000" style="display: none">Успешно сохранено</h5>
 <?php ActiveForm::end(); ?>
 
     <div name="grey_table_types" style="left:0; margin-top:30px;width: 100%; position: absolute; height:260px; z-index: -1"></div>
@@ -498,6 +496,7 @@ $user = Yii::$app->user->identity;
                    
                 </tr>
         </table>
+        <div id="dpol">
         <table class="types">
                 <caption><h2>Детали</h2></caption>
                 
@@ -632,8 +631,9 @@ $user = Yii::$app->user->identity;
                    
                 </tr>
         </table>
+        </div>
     </div>
-     <div class="wrap_names" id = "wrap_names">
+    <div class="wrap_names" id = "wrap_names">
             <table class="types">
                 <tr>
                     <td>
@@ -1571,10 +1571,28 @@ $user = Yii::$app->user->identity;
                     </td>
                 </tr>
             </table>        
-	</div>
+    </div>
 </section>
 
 <script>
+if (localStorage['success'] == 'true') {
+    document.getElementById('textSave').style.display = 'inline-block';
+    setTimeout(function(){
+        // document.getElementById('textSave').style.display = 'none';
+        $('#textSave').fadeOut('fast')
+    },2000);
+}
+
+localStorage['success'] = 'false';
+var url = window.location.href;
+var pieces = url.split(/[=]+/);
+if(pieces[pieces.length-1] == 'true') {
+    localStorage['success'] = 'true';
+    document.location.href = "http://crm.dev:9898/web/storage/add";
+
+}
+
+
 // document.getElementById('value').style.color = "#CCCCCC";
 // $("#value").prop('disabled', 'disabled');
 
@@ -1613,7 +1631,9 @@ var isSelectedName2;
 var greys_types = document.getElementsByName('grey_table_types');
 var greys_names = document.getElementsByName('grey_table_names');
 
-var names = ['Щит под дерево с просветом', 'Квадрат под дерево с просветом', 'Круг под дерево с просветом', 'Щит под дерево с орнаментом', 'Квадрат под дерево с орнаментом', 'Круг под дерево с орнаментом', '8 граней с орнаментом', '8 граней с желобом', '8 граней под гравировку', 'Спаси и сохрани с надписью', 'Спаси и сохрани основа с орнаментом', 'Спаси и сохрани под гравировку', 'Щит европа стандартный', 'Щит европа с орнаментом', 'Круг косичка', 'Квадрат косичка', 'Прямоугольная косичка', 'Прямоугольник готика под бриллиант', 'под премиум круглый', 'под премиум квадратный', 'Щит ФСБ', 'Омниа квадрат', 'Омниа круг', 'Щит облегченный', 'Фантом', 'Созвездие круг большой', 'Созвездие фон', 'Круг малый', 'Пупырки', 'под винтажный куб', 'Геральдика под монограмму', 'Геральдика классическая', 'Геральдика ребристая с камнями', 'Геральдика под эмаль со сферами по периметру', 'Геральдика под эмаль с орнаментом по ободку', 'Геральдика <br> Щит и меч', 'Круг орел', 'Фантом', 'под премиум круглый', 'под премиум квадратный', 'Лев плоский (царь зверей)', 'Щит под гравировку', 'Лев классический (царь зверей)', 'Лев античный (царь зверей)', 'Тигр (царь зверей)', 'Лис (царь зверей)', 'Бульдог (царь зверей)', 'Волк (царь зверей)', 'Медведь (царь зверей)', '8 граней под гравировку большая', '8 граней под гравировку малая', 'Грани характера под гравировку круглая', 'Грани характера <br> Звери', 'Грани характера <br> Георгий победоносец', 'Грани характера <br> Рыбы', 'Грани характера <br> Оружие', 'Созвездие <br> Круг большой', 'Созвездие <br> Круг малый', 'Фантом', 'под винтажный куб', 'Лев плоский (царь зверей)', 'Цельнолитая рефленая', 'малая поворотная', 'Задняя часть малой поворотной ножки', 'Пружина малой поворотной ножки', 'Большая поворотная', 'Задняя часть большой поворотной ножки', 'Пружина большой поворотной ножки'];
+isFormFilled = false;
+
+var names = ['Щит под дерево с просветом', 'Квадрат под дерево с просветом', 'Круг под дерево с просветом', 'Щит под дерево с орнаментом', 'Квадрат под дерево с орнаментом', 'Круг под дерево с орнаментом', '8 граней с орнаментом', '8 граней с желобом', '8 граней под гравировку', 'Спаси и сохрани с надписью', 'Спаси и сохрани основа с орнаментом', 'Спаси и сохрани под гравировку', 'Щит европа стандартный', 'Щит европа с орнаментом', 'Круг косичка', 'Квадрат косичка', 'Прямоугольная косичка', 'Прямоугольник готика под бриллиант', 'под премиум круглый', 'под премиум квадратный', 'Щит ФСБ', 'Омниа квадрат', 'Омниа круг', 'Щит облегченный', 'Фантом', 'Созвездие круг большой', 'Созвездие фон', 'Круг малый', 'Пупырки', 'под винтажный куб', 'Геральдика под монограмму', 'Геральдика классическая', 'Геральдика ребристая с камнями', 'Геральдика под эмаль со сферами по периметру', 'Геральдика под эмаль с орнаментом по ободку', 'Геральдика Щит и меч', 'Круг орел', 'Фантом', 'под премиум круглый', 'под премиум квадратный', 'Лев плоский (царь зверей)', 'Щит под гравировку', 'Лев классический (царь зверей)', 'Лев античный (царь зверей)', 'Тигр (царь зверей)', 'Лис (царь зверей)', 'Бульдог (царь зверей)', 'Волк (царь зверей)', 'Медведь (царь зверей)', '8 граней под гравировку большая', '8 граней под гравировку малая', 'Грани характера под гравировку круглая', 'Грани характера Звери', 'Грани характера Георгий победоносец', 'Грани характера Рыбы', 'Грани характера Оружие', 'Созвездие Круг большой', 'Созвездие Круг малый', 'Фантом', 'под винтажный куб', 'Лев плоский (царь зверей)', 'Цельнолитая рефленая', 'малая поворотная', 'Задняя часть малой поворотной ножки', 'Пружина малой поворотной ножки', 'Большая поворотная', 'Задняя часть большой поворотной ножки', 'Пружина большой поворотной ножки'];
 
 var names2 = ['Фантом (задняя часть с малой поворотной ножкой)','Фантом основа с покрытием','Созвездие (основа + задняя часть с малой поворотной ножкой)','Круг малый  (основа + задняя часть с малой поворотной ножкой)','Щит под дерево с орнаментом (основа + ножка)','Круг под дерево с орнаментом (основа + ножка)','Квадрат под дерево с орнаментом (основа + ножка)','Щит под дерево с просветом  (основа + ножка)','Круг под дерево с просветом (основа + ножка)', 'Квадрат под дерево с просветом (основа + ножка)', '8 граней с орнаментом (основа + ножка)', '8 граней с орнаментом (основа + ножка)', '8 граней с орнаментом (основа + ножка)', 'Щит европа стандартный (основа + ножка)','Щит европа стандартный (основа + ножка)','Щит европа стандартный (основа + ножка)', 'Прямоугольник косичка (основа + ножка)', 'Круг косичка (основа + ножка)', 'Спаси и сохрани с орнаментом (основа + ножка)','Спаси и сохрани под гравировку (основа + ножка)','Спаси и сохрани с надписью (основа + ножка)', 'Премиум квадратный (основа + ножка)','Накладка под премиум квадратный (отполированная)','Премиум круглый (основа + ножка)','Накладка под премиум круглый (отполированная)','Винтажный куб (основа + ножка)','Омниа круг (основа + ножка)','Омниа квадрат (основа + ножка)','Прямоугольник готика под бриллиант (основа + ножка)'];
 
@@ -1652,32 +1672,68 @@ function show_greys_names() {
 }
 
 
+function checkMassaFormat() {
+    var massa = Number(document.getElementById('massa').value);
+    document.getElementById('massa').value = massa.toFixed(2);
+}
+
+
 function checkField(){
+
+    isFormFilled = true;
     
     if(document.getElementById("selectTo").value==""){
         document.getElementById("selectTo").style.border = "1px solid #8B0000";
         document.getElementById("selectTo").style.borderRadius = "5px";
+        isFormFilled = false;
+    } else {
+        document.getElementById("selectTo").style.border = "";
+        document.getElementById("selectTo").style.borderRadius = "";
     }
     if(document.getElementById("selectFrom").value==""){
         document.getElementById("selectFrom").style.border = "1px solid #8B0000";
         document.getElementById("selectFrom").style.borderRadius = "5px";
+        isFormFilled = false;
+    } else {
+        document.getElementById("selectFrom").style.border = "";
+        document.getElementById("selectFrom").style.borderRadius = "";
     }
     if(document.getElementById("type_title_send").value==""){
         document.getElementById("selectType").style.border = "1px solid #8B0000";
         document.getElementById("selectType").style.borderRadius = "5px";
+        isFormFilled = false;
+    } else {
+        document.getElementById("selectType").style.border = "";
+        document.getElementById("selectType").style.borderRadius = "";
     }
     if(document.getElementById("selectOperation").value==""){
         document.getElementById("selectOperation").style.border = "1px solid #8B0000";
         document.getElementById("selectOperation").style.borderRadius = "5px";
+        isFormFilled = false;
+    } else {
+        document.getElementById("selectOperation").style.border = "";
+        document.getElementById("selectOperation").style.borderRadius = "";
     }
     if(document.getElementById("name_title_send").value==""){
         document.getElementById("selectName").style.border = "1px solid #8B0000";
         document.getElementById("selectName").style.borderRadius = "5px";
+        isFormFilled = false;
+    } else {
+        document.getElementById("selectName").style.border = "";
+        document.getElementById("selectName").style.borderRadius = "";
     }
     if(document.getElementById("selectStatus_send").value==""){
         document.getElementById("selectStatus").style.border = "1px solid #8B0000";
         document.getElementById("selectStatus").style.borderRadius = "5px";
+        isFormFilled = false;
+    } else {
+        document.getElementById("selectStatus").style.border = "";
+        document.getElementById("selectStatus").style.borderRadius = "";
     }
+
+    if (isFormFilled)
+        $('#future').removeAttr('disabled');
+        // document.getElementById('future').setAttribute('disabled', 'disabled');
     
 }
 
@@ -1685,24 +1741,6 @@ function selectOnChange(){
     document.getElementById('selectStatus_send').value=document.getElementById('selectStatus').value;
 }
 
-function compareStrings(id1, id2){
-	if(document.getElementById(id1).value == document.getElementById(id2).value && document.getElementById(id1).value!='' && document.getElementById(id2).value!=''){
-		$("#selectName").prop('disabled', 'disabled');
-		$("#selectOperation").prop('disabled', 'disabled');
-		$("#selectType").prop('disabled', 'disabled');
-		document.getElementById("selectType").onclick = function(){};
-		$("#value").prop('disabled', 'disabled');
-		$("#massa").prop('disabled', 'disabled');
-	}else{
-		
-		$("#selectName").removeAttr("disabled");
-		$("#selectOperation").removeAttr("disabled");
-		$("#selectType").removeAttr("disabled");
-		document.getElementById("selectType").onclick = showFun;
-		$("#value").removeAttr("disabled");
-		$("#massa").removeAttr("disabled");
-	}
-}
 
 function showFun() {
     if(visible) {
@@ -1722,8 +1760,35 @@ function showFun() {
         show_greys_types();
         hide_greys_names();
 
+        if(document.getElementById("dpol").style.display == 'none'){
+            hide_greys_types();
+            hide_greys_names();
+            greys_types[0].style.display = 'block';
+        } else {
+            show_greys_types();
+        }
+
         visible = true;
         arrow.classList.toggle('rotated');
+    }
+}
+
+function compareStrings(id1, id2){
+    if(document.getElementById(id1).value == document.getElementById(id2).value && document.getElementById(id1).value!='' && document.getElementById(id2).value!=''){
+        $("#selectName").prop('disabled', 'disabled');
+        $("#selectOperation").prop('disabled', 'disabled');
+        $("#selectType").prop('disabled', 'disabled');
+        document.getElementById("selectType").onclick = function(){};
+        $("#value").prop('disabled', 'disabled');
+        $("#massa").prop('disabled', 'disabled');
+    }else{
+        
+        $("#selectName").removeAttr("disabled");
+        $("#selectOperation").removeAttr("disabled");
+        $("#selectType").removeAttr("disabled");
+        document.getElementById("selectType").onclick = showFun;
+        $("#value").removeAttr("disabled");
+        $("#massa").removeAttr("disabled");
     }
 }
 
@@ -1799,12 +1864,11 @@ function selectType(type, name, desc, src) {
     
     if(name == "Металл" || name == "Лигатура"){
 
-		document.getElementById('value').value = 0;
-		$("#value").prop('disabled', 'disabled');
-		
-		
-		
-       document.getElementById('selectStatus_send').value='null';
+        document.getElementById('value').value = 0;
+        document.getElementById('value').setAttribute('onfocus', 'this.blur()');
+        document.getElementById('value').style.color = "#e2e2e2";
+
+        document.getElementById('selectStatus_send').value='null';
         //document.getElementById('selectStatus').value = 'null';
         document.getElementById("name_title_send").value = "null"; 
         document.getElementById('selectStatus').style.color = "#CCCCCC";
@@ -1819,11 +1883,14 @@ function selectType(type, name, desc, src) {
         document.getElementById("selectName").style.borderRadius = "0px";
         
         $("#selectName").prop('disabled', 'disabled');
+
         selectNameOfType('1', (document.getElementById('type_img_name').value).slice(0,-4));
-		
-		
-        usingName = false;//НЕ ЗАБУДЬ ИЗМЕНИТЬ НА FALSE
+        
+        usingName = false;
     } else {
+
+        $("#value").removeAttr("onfocus");
+        document.getElementById('value').style.color = "";
        document.getElementById('selectStatus_send').value=document.getElementById('selectStatus').value;
         document.getElementById("selectStatus").style.border = "0px solid #fff8ca";
         document.getElementById("selectStatus").style.borderRadius = "0px";
@@ -1867,9 +1934,19 @@ function selectType(type, name, desc, src) {
     document.getElementById('select_title_in_name').innerText = name;
     document.getElementById('select_desc_in_name').innerText = desc;
     $("#select_img_in_name").attr("src", "../images/storage/" + src);
-    generateNames(name, name + "<br>" + desc);
-	selectNameOfType('1', (document.getElementById('type_img_name').value).slice(0,-4));
+    generateNames(name, name + "" + desc);
+    if(name == "Металл" || name == "Лигатура")
+        selectNameOfType('1', (document.getElementById('type_img_name').value).slice(0,-4));
+    else resetName();
     
+}
+
+function resetName() {
+    document.getElementById('nonselected_name').setAttribute('class', '');
+    document.getElementById('selected_name').setAttribute('class', 'hidden');
+
+     document.getElementById('name_title_send').value = "";
+    document.getElementById('name_desc_send').value = "";
 }
 
 function selectNameOfType(number, number_img) {
@@ -2015,7 +2092,7 @@ function generateNames(type, selected_type_title) {
         var type_of_name = document.getElementsByName('type_of_name_2');
 
 
-        var names2 = ['Фантом (задняя часть с малой поворотной ножкой)','Фантом основа с покрытием','Созвездие (основа + задняя часть с малой поворотной ножкой)','Круг малый  (основа + задняя часть с малой поворотной ножкой)','Щит под дерево с орнаментом (основа + ножка)','Круг под дерево с орнаментом (основа + ножка)','Квадрат под дерево с орнаментом (основа + ножка)','Щит под дерево с просветом  (основа + ножка)','Круг под дерево с просветом (основа + ножка)', 'Квадрат под дерево с просветом (основа + ножка)', '8 граней с орнаментом (основа + ножка)', '8 граней с орнаментом (основа + ножка)', '8 граней с орнаментом (основа + ножка)', 'Щит европа стандартный (основа + ножка)','Щит европа стандартный (основа + ножка)','Щит европа стандартный (основа + ножка)', 'Прямоугольник косичка (основа + ножка)', 'Круг косичка (основа + ножка)', 'Спаси и сохрани с орнаментом (основа + ножка)','Спаси и сохрани под гравировку (основа + ножка)','Спаси и сохрани с надписью (основа + ножка)', 'Премиум квадратный (основа + ножка)','Накладка под премиум квадратный (отполированная)','Премиум круглый (основа + ножка)','Накладка под премиум круглый (отполированная)','Винтажный куб (основа + ножка)','Омниа круг (основа + ножка)','Омниа квадрат (основа + ножка)','Прямоугольник готика под бриллиант (основа + ножка)'];
+        var names2 = ['Фантом (задняя часть с малой поворотной ножкой)','Фантом основа с покрытием','Созвездие (основа + задняя часть с малой поворотной ножкой)','Круг малый  (основа + задняя часть с малой поворотной ножкой)','Щит под дерево с орнаментом (основа + ножка)','Круг под дерево с орнаментом (основа + ножка)','Квадрат под дерево с орнаментом (основа + ножка)','Щит под дерево с просветом  (основа + ножка)','Круг под дерево с просветом (основа + ножка)', 'Квадрат под дерево с просветом (основа + ножка)', '8 граней с орнаментом (основа + ножка)', '8 граней с желобом (основа + ножка)', '8 граней под гравировку (основа + ножка)', 'Щит европа стандартный (основа + ножка)','Щит европа с орнаментом (основа + ножка)','Пупырки (основа + ножка)', 'Прямоугольник косичка (основа + ножка)', 'Круг косичка (основа + ножка)', 'Спаси и сохрани с орнаментом (основа + ножка)','Спаси и сохрани под гравировку (основа + ножка)','Спаси и сохрани с надписью (основа + ножка)', 'Премиум квадратный (основа + ножка)','Накладка под премиум квадратный (отполированная)','Премиум круглый (основа + ножка)','Накладка под премиум круглый (отполированная)','Винтажный куб (основа + ножка)','Омниа круг (основа + ножка)','Омниа квадрат (основа + ножка)','Прямоугольник готика под бриллиант (основа + ножка)'];
 
         
         //29
@@ -2045,18 +2122,108 @@ function generateNames(type, selected_type_title) {
 }
 
 $('#form').submit(function(ev) {
-    document.getElementById('future').setAttribute('disabled', 'disabled');
+    if (isFormFilled)
+        document.getElementById('future').setAttribute('disabled', 'disabled');
 });
 
-function checkFrom(id1, id2){
-    if(document.getElementById(id1).value=='Анна' && document.getElementById(id2).value=='Приход'){
-        document.getElementById("dpol").style.display="none";
-    }else{
-        document.getElementById("dpol").style.display="block";
+function checkTo(id1, id2) {
+
+    if(document.getElementById("selectTo").value == "") { 
+        document.getElementById("selectFrom").value = "";
+        $('#selectFrom').removeAttr('onfocus');
+        document.getElementById('selectFrom').style.color = "";
     }
-	
+    else if(document.getElementById("selectTo").value == "Склад") {
+        $("#selectFrom option").css("display","block");
+        $("#selectFrom option[value='Склад']").css("display","none");
+
+        document.getElementById("selectFrom").value = "";
+        // $('#selectFrom').removeAttr('disabled');
+
+        document.getElementById('selectFrom').style.color = "";
+    } else {
+
+        document.getElementById("selectFrom").value = "Склад";
+        // document.getElementById("selectFrom").setAttribute('disabled', 'disabled');
+        $("#selectFrom option").css("display","none");
+
+        document.getElementById('selectFrom').style.color = "#CCCCCC";
+        $("#selectFrom option[value='Склад']").css("display","none");
+
+        $("#selectFrom option[value='Склад']").css("display","block");
+        $('#selectOperation').removeAttr('disabled');
+        document.getElementById('selectOperation').style.color = "";
+    }
+
+    compareStrings("selectFrom","selectTo");
+
 }
 
+function checkFrom(id1, id2){
+    compareStrings("selectFrom","selectTo");
 
-setTimeout(function(){$('.text_submit').fadeOut('fast')},2000);
+    if((document.getElementById(id1).value=='Склад' && document.getElementById(id2).value=='Приход') || (document.getElementById(id1).value=='Поставщик')){
+        document.getElementById("dpol").style.display="none";
+        hide_greys_types();
+        hide_greys_names();
+        greys_types[0].style.display = 'block';
+    }else{
+        document.getElementById("dpol").style.display="block";
+        show_greys_types();
+    }
+
+    if(document.getElementById("selectFrom").value == "") { 
+        document.getElementById("selectTo").value = "";
+        // $('#selectTo').removeAttr('disabled');
+        $("#selectTo option").css("display","block");
+        document.getElementById('selectTo').style.color = "";
+    } else if(document.getElementById("selectFrom").value == "Поставщик") {
+
+        $("#selectTo option[value='Склад']").css("display","block");
+        document.getElementById("selectOperation").value = "Приход";
+        // document.getElementById("selectOperation").setAttribute('disabled', 'disabled');
+        $("#selectOperation option").css("display","block");
+        document.getElementById('selectOperation').style.color = "#CCCCCC";
+
+        document.getElementById("selectTo").value = "";
+        // $('#selectTo').removeAttr('disabled');
+        $("#selectTo option").css("display","block");
+
+        document.getElementById('selectTo').style.color = "";
+
+        document.getElementById("selectTo").value = "Склад";
+        // document.getElementById("selectTo").setAttribute('disabled', 'disabled');
+        $("#selectTo option").css("display","none");
+        $("#selectTo option[value='Склад']").css("display","block");
+        document.getElementById('selectTo').style.color = "#CCCCCC";
+
+    } else if(document.getElementById("selectFrom").value == "Склад") {
+        $("#selectTo option[value='Склад']").css("display","none");
+
+        document.getElementById("selectOperation").value = "Расход";
+        // document.getElementById("selectOperation").setAttribute('disabled', 'disabled');
+        $("#selectOperation option").css("display","none");
+        $("#selectOperation option[value='Расход']").css("display","block");
+        document.getElementById('selectOperation').style.color = "#CCCCCC";
+
+        document.getElementById("selectTo").value = "";
+        // $('#selectTo').removeAttr('disabled');
+        $("#selectTo option").css("display","block");
+        document.getElementById('selectTo').style.color = "";
+
+    } else {
+
+        document.getElementById("selectTo").value = "Склад";
+        // document.getElementById("selectTo").setAttribute('disabled', 'disabled');
+        $("#selectTo option").css("display","none");
+        document.getElementById('selectTo').style.color = "#CCCCCC";
+
+        $("#selectTo option[value='Склад']").css("display","block");
+        // $('#selectOperation').removeAttr('disabled');
+        $("#selectOperation option").css("display","block");
+        document.getElementById('selectOperation').style.color = "";
+    }
+
+}
+
 </script>

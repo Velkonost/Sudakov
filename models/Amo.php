@@ -130,6 +130,8 @@ class Amo
      *      pay_method_2_cash, pay_method_2_yandex, pay_method_2_card, pay_method_2_bso, pay_method_2_bank, pay_method_2_bank_rs,
      * @param string $value
      * @return array
+     *
+     * TODO переименовать метод
      */
     public function getCustomField($name, $value = null)
     {
@@ -272,6 +274,7 @@ class Amo
             $this->authToken = $res['response']['auth'];
             return true;
         }
+        $this->errorCode = 9000;
         return false;
     }
 

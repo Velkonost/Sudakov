@@ -10,16 +10,19 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 
 $menuItems = [];
+if ($user->hasRole(['superadmin', 'manager-payment', 'acc_manager'])) {
+    $menuItems[] = ['label' => 'Отзывы', 'url' => ['/feedback/index']];
+}
 if ($user->hasRole(['superadmin', 'manager-payment'])) {
     $menuItems[] = ['label' => 'Внести лид', 'url' => ['/lead/add']];
 }
-if ($user->hasRole(['superadmin', 'manager-payment', 'acc_manager'])) {
+if ($user->hasRole(['superadmin', 'manager-payment', 'acc_manager', 'buh'])) {
     $menuItems[] = ['label' => 'Счета', 'url' => ['/payment/index']];
 }
 if ($user->hasRole(['superadmin', 'admin', 'worker', 'acc_manager'])) {
     $menuItems[] = ['label' => 'Производство', 'url' => ['/erp/index']];
 }
-if ($user->hasRole(['superadmin', 'buh'])) {
+if ($user->hasRole(['superadmin', 'manager-payment', 'buh'])) {
     $menuItems[] = ['label' => 'Фин. мониторинг', 'url' => ['/money/index']];
 }
 if ($user->hasRole('superadmin')) {

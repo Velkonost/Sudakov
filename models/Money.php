@@ -74,9 +74,9 @@ class Money extends \yii\db\ActiveRecord
                 'goods_bill_num', 'goods_bill_date', 'deadline', 'finished_at', 'first_payment_valid',
                 'second_payment_valid', 'count', 'lead_status'], 'integer'],
             [['total_amount', 'first_payment_amount', 'second_payment_amount'], 'number'],
-            //[['client_name', 'collection'], 'string', 'max' => 50],
-            //[['phone'], 'string', 'max' => 20],
-            //[['city'], 'string', 'max' => 30],
+            [['client_name', 'collection'], 'string', 'max' => 200],
+            [['phone'], 'string', 'max' => 200],
+            [['city'], 'string', 'max' => 200],
             //[['goods_bill_comment'], 'string', 'max' => 1000],
             //[['comment', 'comment_fin'], 'string', 'max' => 3000],
             //[['units'], 'string', 'max' => 10],
@@ -400,7 +400,7 @@ class Money extends \yii\db\ActiveRecord
             if (!empty($contact)) {
                 $this->client_name = !empty($contact['company_name'])
                     ? $contact['company_name'] : (!empty($contact['name']) ? $contact['name'] : '--нет имени--');
-                $this->responsible_user_id = $contact['responsible_user_id'];
+                $this->responsible_user_id = $lead['responsible_user_id'];
                 foreach ($contact['custom_fields'] as $cf) {
                     if ($cf['id'] == Amo::USER_FIELD_CITY) {
                         $this->city = mb_substr($cf['values'][0]['value'], 0, 30, 'utf8');
