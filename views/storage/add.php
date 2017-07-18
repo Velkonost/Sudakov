@@ -2024,5 +2024,5 @@ function checkFrom(id1, id2){
 }
 
 
-
+setTimeout(function(){$('.text_submit').fadeOut('fast')},2000);
 </script>
