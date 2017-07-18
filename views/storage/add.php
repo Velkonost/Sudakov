@@ -268,14 +268,14 @@ $user = Yii::$app->user->identity;
         margin: 0 !important;
         height: 0 !important;
     }
-	input::-webkit-outer-spin-button,
-	input::-webkit-outer-spin-button,
-	input::-webkit-inner-spin-button {
+    input::-webkit-outer-spin-button,
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
 /* display: none; <- Crashes Chrome on hover */
-	-webkit-appearance: none;
-	margin: 0; /* <— Apparently some margin are still there even though it's hidden */
-	}
-	</style>
+    -webkit-appearance: none;
+    margin: 0; /* <— Apparently some margin are still there even though it's hidden */
+    }
+    </style>
 <section>
 <table class="inputTable" >
     <tbody  style="min-width: 1170px; width: 1170px; max-width: 1170px">
@@ -456,13 +456,13 @@ $user = Yii::$app->user->identity;
             </table>
         </div>
 
-		
-		
-		
-		
-		
-		
-		
+        
+        
+        
+        
+        
+        
+        
         <table class="types">
                 <caption><h2>Лигатуры</h2></caption>
                 
@@ -1881,11 +1881,11 @@ function selectType(type, name, desc, src) {
         
         //document.getElementById('selectStatus').value = 'null';
         document.getElementById("name_title_send").value = "null";
-		
+        
         document.getElementById('selectStatus').style.color = "#CCCCCC";
         $("#selectStatus").prop('disabled', 'disabled');
         document.getElementById('selectStatus_send').value='null';
-		
+        
         document.getElementById('nonselected_name').setAttribute('class', '');
         document.getElementById('selected_name').setAttribute('class', 'hidden');
 
@@ -1903,17 +1903,17 @@ function selectType(type, name, desc, src) {
 
         $("#value").removeAttr("onfocus");
         document.getElementById('value').style.color = "";
-		document.getElementById('selectStatus_send').value=document.getElementById('selectStatus').value;
+        document.getElementById('selectStatus_send').value=document.getElementById('selectStatus').value;
         document.getElementById("selectStatus").style.border = "0px solid #fff8ca";
         document.getElementById("selectStatus").style.borderRadius = "0px";
         
         document.getElementById("name_title_send").value = ""; 
-		if(testStatus == true){
-		//	$("#selectStatus option[value='']").css("display","block");
-		//	$("#selectStatus").removeAttr("disabled");
-		//	document.getElementById('selectStatus').style.color = "#3d3d3d";
+        if(testStatus == true){
+        //  $("#selectStatus option[value='']").css("display","block");
+        //  $("#selectStatus").removeAttr("disabled");
+        //  document.getElementById('selectStatus').style.color = "#3d3d3d";
         //document.getElementById('selectStatus_send').value=document.getElementById('selectStatus').value;
-		}
+        }
         
         usingName = true;
         
@@ -2189,27 +2189,27 @@ function checkFrom(id1, id2){
     }
 
     if(document.getElementById("selectFrom").value == "") { 
-	
-		
-		$("#selectStatus").removeAttr("disabled");
-		document.getElementById('selectStatus').style.color = "#3d3d3d";
+    
+        
+        $("#selectStatus").removeAttr("disabled");
+        document.getElementById('selectStatus').style.color = "#3d3d3d";
         document.getElementById('selectStatus_send').value=document.getElementById('selectStatus').value;
-		
-		
+        
+        
         document.getElementById("selectTo").value = "";
         // $('#selectTo').removeAttr('disabled');
         $("#selectTo option").css("display","block");
         document.getElementById('selectTo').style.color = "";
-		
-		testStatus = false;
+        
+        testStatus = false;
     } else if(document.getElementById("selectFrom").value == "Поставщик") {
 
-		
-		$("#selectStatus").removeAttr("disabled");
-		document.getElementById('selectStatus').style.color = "#3d3d3d";
+        
+        $("#selectStatus").removeAttr("disabled");
+        document.getElementById('selectStatus').style.color = "#3d3d3d";
         document.getElementById('selectStatus_send').value=document.getElementById('selectStatus').value;
-		
-		
+        
+        
         $("#selectTo option[value='Склад']").css("display","block");
         document.getElementById("selectOperation").value = "Приход";
         // document.getElementById("selectOperation").setAttribute('disabled', 'disabled');
@@ -2226,19 +2226,19 @@ function checkFrom(id1, id2){
         // document.getElementById("selectTo").setAttribute('disabled', 'disabled');
         $("#selectTo option").css("display","none");
         $("#selectTo option[value='Склад']").css("display","block");
-		
-		
+        
+        
         document.getElementById('selectTo').style.color = "#CCCCCC";
 
-		testStatus = true;
+        testStatus = true;
     } else if(document.getElementById("selectFrom").value == "Склад") {
-        $("#selectTo option[value='Склад']").css("display","none");
-		document.getElementById('selectStatus').style.color = "#CCCCCC";
+        
+        document.getElementById('selectStatus').style.color = "#CCCCCC";
         $("#selectStatus").prop('disabled', 'disabled');
         document.getElementById('selectStatus_send').value='null';
-		
-		testStatus = false;
-		
+        
+        testStatus = false;
+        
         document.getElementById("selectOperation").value = "Расход";
         // document.getElementById("selectOperation").setAttribute('disabled', 'disabled');
         $("#selectOperation option").css("display","none");
@@ -2248,15 +2248,16 @@ function checkFrom(id1, id2){
         document.getElementById("selectTo").value = "";
         // $('#selectTo').removeAttr('disabled');
         $("#selectTo option").css("display","block");
+        $("#selectTo option[value='Склад']").css("display","none");
         document.getElementById('selectTo').style.color = "";
 
     } else {
-		
-		
-		$("#selectStatus").removeAttr("disabled");
-		document.getElementById('selectStatus').style.color = "#3d3d3d";
+        
+        
+        $("#selectStatus").removeAttr("disabled");
+        document.getElementById('selectStatus').style.color = "#3d3d3d";
         document.getElementById('selectStatus_send').value=document.getElementById('selectStatus').value;
-		
+        
         document.getElementById("selectTo").value = "Склад";
         // document.getElementById("selectTo").setAttribute('disabled', 'disabled');
         $("#selectTo option").css("display","none");
@@ -2266,7 +2267,7 @@ function checkFrom(id1, id2){
         // $('#selectOperation').removeAttr('disabled');
         $("#selectOperation option").css("display","block");
         document.getElementById('selectOperation').style.color = "";
-		//testStatus = true;
+        //testStatus = true;
     }
 
 }
