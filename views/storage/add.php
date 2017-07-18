@@ -297,7 +297,7 @@ $user = Yii::$app->user->identity;
 
                     <td id="selected_name" class="hidden"><div onclick="showNames()" class="in_selected_name"><img id="img_name" class="selected_name_img"><div id="name_selected"><h6 id="name_selected_title" style="margin-top: 0px"></h6><p style="margin-bottom: 3px; font-size: 11px" id="name_selected_desc"></p><p style="margin: 0;font-size: 11px" id="name_selected_type"></p> </div></div></td>
                     
-                    <td><?=$f->field($form, 'operation')->dropDownList($operations, ['onchange' => 'checkFrom("selectFrom", "selectOperation")', 'id' => "selectOperation", 'style' => 'box-shadow: inset 0px 0px 0px 0px black;border: 0px;width:100px;background-color: #fff8ca', 'options' => [''=>['selected'=>true]]])->label('');?></td>
+                    <td><?=$f->field($form, 'operation')->dropDownList($operations, [ 'id' => "selectOperation", 'style' => 'box-shadow: inset 0px 0px 0px 0px black;border: 0px;width:100px;background-color: #fff8ca', 'options' => [''=>['selected'=>true]]])->label('');?></td>
 
 
                     <td><?=$f->field($form, 'massa')->textInput(['id'=>'massa', 'style' => 'width:70px', 'type'=>'number', 'step'=> '0.01', 'min'=>'0', 'placeholder' => 'Грамм', "autocomplete"=>"off", 'oninput'=>'checkField()', 'onchange'=>'checkMassaFormat()'])->label('')?></td>
