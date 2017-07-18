@@ -1697,48 +1697,48 @@ function checkField(){
         document.getElementById("selectTo").style.borderRadius = "5px";
         isFormFilled = false;
     } else {
-        document.getElementById("selectTo").style.border = "";
-        document.getElementById("selectTo").style.borderRadius = "";
+        document.getElementById("selectTo").style.border = "0px solid #8B0000";
+        document.getElementById("selectTo").style.borderRadius = "0px";
     }
     if(document.getElementById("selectFrom").value==""){
         document.getElementById("selectFrom").style.border = "1px solid #8B0000";
         document.getElementById("selectFrom").style.borderRadius = "5px";
         isFormFilled = false;
     } else {
-        document.getElementById("selectFrom").style.border = "";
-        document.getElementById("selectFrom").style.borderRadius = "";
+        document.getElementById("selectFrom").style.border = "0px solid #8B0000";
+        document.getElementById("selectFrom").style.borderRadius = "0px";
     }
     if(document.getElementById("type_title_send").value==""){
         document.getElementById("selectType").style.border = "1px solid #8B0000";
         document.getElementById("selectType").style.borderRadius = "5px";
         isFormFilled = false;
     } else {
-        document.getElementById("selectType").style.border = "";
-        document.getElementById("selectType").style.borderRadius = "";
+        document.getElementById("selectType").style.border = "0px solid #8B0000";
+        document.getElementById("selectType").style.borderRadius = "0px";
     }
     if(document.getElementById("selectOperation").value==""){
         document.getElementById("selectOperation").style.border = "1px solid #8B0000";
         document.getElementById("selectOperation").style.borderRadius = "5px";
         isFormFilled = false;
     } else {
-        document.getElementById("selectOperation").style.border = "";
-        document.getElementById("selectOperation").style.borderRadius = "";
+        document.getElementById("selectOperation").style.border = "0px solid #8B0000";
+        document.getElementById("selectOperation").style.borderRadius = "0px";
     }
     if(document.getElementById("name_title_send").value==""){
         document.getElementById("selectName").style.border = "1px solid #8B0000";
         document.getElementById("selectName").style.borderRadius = "5px";
         isFormFilled = false;
     } else {
-        document.getElementById("selectName").style.border = "";
-        document.getElementById("selectName").style.borderRadius = "";
+        document.getElementById("selectName").style.border = "0px solid #8B0000";
+        document.getElementById("selectName").style.borderRadius = "0px";
     }
     if(document.getElementById("selectStatus_send").value==""){
         document.getElementById("selectStatus").style.border = "1px solid #8B0000";
         document.getElementById("selectStatus").style.borderRadius = "5px";
         isFormFilled = false;
     } else {
-        document.getElementById("selectStatus").style.border = "";
-        document.getElementById("selectStatus").style.borderRadius = "";
+        document.getElementById("selectStatus").style.border = "0px solid #8B0000";
+        document.getElementById("selectStatus").style.borderRadius = "0px";
     }
 
     if (isFormFilled)
