@@ -446,12 +446,19 @@ $user = Yii::$app->user->identity;
 
                         </table>
                        
-                    </td>
+                    </td> 
                 </tr>
                
             </table>
         </div>
 
+		
+		
+		
+		
+		
+		
+		
         <table class="types">
                 <caption><h2>Лигатуры</h2></caption>
                 
