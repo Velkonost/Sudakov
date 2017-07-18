@@ -1774,6 +1774,11 @@ function selectType(type, name, desc, src) {
     
     if(name == "Металл" || name == "Лигатура"){
 
+		document.getElementById('value').value = 0;
+		$("#value").prop('disabled', 'disabled');
+		
+		
+		
        document.getElementById('selectStatus_send').value='null';
         //document.getElementById('selectStatus').value = 'null';
         document.getElementById("name_title_send").value = "null"; 
