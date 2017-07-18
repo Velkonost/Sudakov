@@ -11,7 +11,7 @@
 			return [
 				// username and password are both required
 				//[['type','massa','value', 'status', 'from', 'to', 'operation', 'name'], 'required', message => ''],
-				[['massa','value', 'from', 'to', 'operation'], 'required', 'message' => ''],
+				[['massa','value', 'from', 'to', 'operation', 'status'], 'required', 'message' => ''],
 				// rememberMe must be a boolean value
 				['type', 'default', 'message' => ''],
 				['date_send', 'default', 'message' => ''],
