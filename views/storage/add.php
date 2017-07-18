@@ -276,8 +276,8 @@ $user = Yii::$app->user->identity;
 <table class="inputTable" >
     <tbody  style="min-width: 1170px; width: 1170px; max-width: 1170px">
                 <tr class='hidden-row'>
-                    <td><?=$f->field($form, 'from')->dropDownList($froms, ['onchange' => 'checkFrom("selectFrom", "selectOperation")', 'id' => "selectFrom", 'style' => 'box-shadow: inset 0px 0px 0px 0px black;border: 0px;width:100px; background-color: #fff8ca', 'options' => [''=>['selected'=>true]]])->label('');?></td>
-                    <td><?=$f->field($form, 'to')->dropDownList($tos, ['id' => "selectTo", 'style' => 'box-shadow: inset 0px 0px 0px 0px black;border: 0px;width:100px; background-color: #fff8ca', 'options' => [''=>['selected'=>true]]])->label('');?></td>
+                    <td><?=$f->field($form, 'from')->dropDownList($froms, ['onchange' => 'checkFrom("selectFrom", "selectOperation")', 'onclick'=>'compareStrings("selectFrom","selectTo");', 'id' => "selectFrom", 'style' => 'box-shadow: inset 0px 0px 0px 0px black;border: 0px;width:100px; background-color: #fff8ca', 'options' => [''=>['selected'=>true]]])->label('');?></td>
+                    <td><?=$f->field($form, 'to')->dropDownList($tos, ['onchange' => 'compareStrings("selectFrom","selectTo")','id' => "selectTo", 'style' => 'box-shadow: inset 0px 0px 0px 0px black;border: 0px;width:100px; background-color: #fff8ca', 'options' => [''=>['selected'=>true]]])->label('');?></td>
 
                     <td id="date" style="max-width: 58.5px; min-width: 58.5px;text-align: center; padding: 0"></td>
 
@@ -296,7 +296,7 @@ $user = Yii::$app->user->identity;
                     <td><?=$f->field($form, 'operation')->dropDownList($operations, ['onchange' => 'checkFrom("selectFrom", "selectOperation")', 'id' => "selectOperation", 'style' => 'box-shadow: inset 0px 0px 0px 0px black;border: 0px;width:100px;background-color: #fff8ca', 'options' => [''=>['selected'=>true]]])->label('');?></td>
 
 
-                    <td><?=$f->field($form, 'massa')->textInput(['style' => 'width:70px', 'type'=>'number', 'placeholder' => 'Грамм', "autocomplete"=>"off"])->label('')?></td>
+                    <td><?=$f->field($form, 'massa')->textInput(['id'=>'massa','style' => 'width:70px', 'type'=>'number', 'placeholder' => 'Грамм', "autocomplete"=>"off"])->label('')?></td>
                     <td><?= $f->field($form, 'value')->textInput(['id'=>'value', 'style' => 'width:70px', 'type'=>'number', 'placeholder' => 'Штук', "autocomplete"=>"off"])->label('')?></td>
 
                     <td><div id = "selectStatus_div"><select onchange="selectOnChange()" id="selectStatus" style="box-shadow: inset 0px 0px 0px 0px black;border: 0px;width:100px; background-color: #fff8ca">
@@ -1678,6 +1678,24 @@ function selectOnChange(){
     document.getElementById('selectStatus_send').value=document.getElementById('selectStatus').value;
 }
 
+function compareStrings(id1, id2){
+	if(document.getElementById(id1).value == document.getElementById(id2).value && document.getElementById(id1).value!='' && document.getElementById(id2).value!=''){
+		$("#selectName").prop('disabled', 'disabled');
+		$("#selectOperation").prop('disabled', 'disabled');
+		$("#selectType").prop('disabled', 'disabled');
+		document.getElementById("selectType").onclick = function(){};
+		$("#value").prop('disabled', 'disabled');
+		$("#massa").prop('disabled', 'disabled');
+	}else{
+		
+		$("#selectName").removeAttr("disabled");
+		$("#selectOperation").removeAttr("disabled");
+		$("#selectType").removeAttr("disabled");
+		document.getElementById("selectType").onclick = showFun;
+		$("#value").removeAttr("disabled");
+		$("#massa").removeAttr("disabled");
+	}
+}
 
 function showFun() {
     if(visible) {
