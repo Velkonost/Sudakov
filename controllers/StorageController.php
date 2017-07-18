@@ -82,6 +82,7 @@ class StorageController extends Controller
     public function actionAdd()
     {
         $form = new StorageFormAdd();
+        $text = "";
         if (($form->load(Yii::$app->request->post())) && ($form->validate())){
             $post = new Metals;
             $post->type_title = Html::encode($form->type_title_send);
@@ -101,8 +102,16 @@ class StorageController extends Controller
             $post->time = Html::encode($form->time_send);
             
             $post->save();
+            
+            $form->massa = "";
+            $form->value = "";
+            $form->status = "Статус";
+            $form->operation = "Операция";
+            $form->to = "Кому";
+            $form->from = "От кого";
+            $text = "Успешно сохранено";
 
-            $this->redirect('storage/add');
+            $this->redirect("add");
         }
         
         $items = [
@@ -136,6 +145,6 @@ class StorageController extends Controller
     
 
         return $this->render('add',
-            [ 'form' => $form, 'operations'=>$items, 'froms'=>$items2, 'tos'=>$items3, 'statuses'=>$items4]);
+            [ 'textSave' => $text, 'form' => $form, 'operations'=>$items, 'froms'=>$items2, 'tos'=>$items3, 'statuses'=>$items4]);
     }
 }
