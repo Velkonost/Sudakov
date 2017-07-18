@@ -17,12 +17,7 @@ $user = Yii::$app->user->identity;
 
 
 ?>
-<?php if ($user->hasRole(['admin'])) { 
-    Yii::$app->response->redirect(Url::to(['storage/add']));
-} else if ($user->hasRole(['worker'])) {
-    Yii::$app->response->redirect(Url::to(['storage/view']));
-}
-?> 
+
 
 <button class = 'btn_submit' onclick = "return location.href = 'view'" style = "text-decoration: none;"><span style="text-align:center;">Показать товары</span></button>
 <button class = 'btn_submit'  onclick = "return location.href = 'add'" style = "text-decoration: none; display:inline-block; margin-bottom: 20px"><span style="text-align:center;">Добавить товары</span></button>
