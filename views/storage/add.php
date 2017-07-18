@@ -1,5 +1,5 @@
 <head>
-	<meta charset="utf-8">
+    <meta charset="utf-8">
 </head>
 <?php
 
@@ -18,9 +18,11 @@ $user = Yii::$app->user->identity;
 
 
 ?>
-<?php if (!$user->hasRole(['admin', 'superadmin'])) { 
-    Yii::$app->response->redirect(Url::to(['site/index']));
-} ?>
+<?php 
+// if (!$user->hasRole(['admin', 'superadmin'])) { 
+//     Yii::$app->response->redirect(Url::to(['site/index']));
+// }
+?>
 <?php $f = ActiveForm::begin(['id' => 'form'])?>
 
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -86,19 +88,19 @@ $user = Yii::$app->user->identity;
         width: 1170px;      
 
 
-		display: none;
-		
+        display: none;
+        
         margin-top: 30px;
         width: 100%;
         position: relative;
         left: 0;
     }
-	.wrap_names {
+    .wrap_names {
         min-width: 1170px;
         width: 1170px;
 
-		display: none;
-		
+        display: none;
+        
         margin-top: 30px;
         
         position: relative;
@@ -134,9 +136,9 @@ $user = Yii::$app->user->identity;
     -ms-transform : rotate(180deg); 
     -o-transform : rotate(180deg); 
     transform : rotate(180deg); 
-	}
+    }
 
-	#arroww {
+    #arroww {
         display: inline-block;
     }
 
@@ -250,6 +252,14 @@ $user = Yii::$app->user->identity;
         border-radius: 5px;
         cursor: pointer;
     }
+    
+    .text_submit {
+        margin-left: 46%;
+        margin-top: 45px;
+        text-align: center;
+        color:#008000;
+        display: inline-block;
+    }
 
     .name_td {
         height: 38px;
@@ -266,34 +276,39 @@ $user = Yii::$app->user->identity;
 <table class="inputTable" >
     <tbody  style="min-width: 1170px; width: 1170px; max-width: 1170px">
                 <tr class='hidden-row'>
-					<td><?=$f->field($form, 'from')->dropDownList($froms, ['id' => "selectFrom", 'style' => 'box-shadow: inset 0px 0px 0px 0px black;border: 0px;width:100px; background-color: #fff8ca', 'options' => [''=>['selected'=>true]]])->label('');?></td>
+                    <td><?=$f->field($form, 'from')->dropDownList($froms, ['onchange' => 'checkFrom("selectFrom", "selectOperation")', 'id' => "selectFrom", 'style' => 'box-shadow: inset 0px 0px 0px 0px black;border: 0px;width:100px; background-color: #fff8ca', 'options' => [''=>['selected'=>true]]])->label('');?></td>
                     <td><?=$f->field($form, 'to')->dropDownList($tos, ['id' => "selectTo", 'style' => 'box-shadow: inset 0px 0px 0px 0px black;border: 0px;width:100px; background-color: #fff8ca', 'options' => [''=>['selected'=>true]]])->label('');?></td>
 
                     <td id="date" style="max-width: 58.5px; min-width: 58.5px;text-align: center; padding: 0"></td>
 
                     <td style="max-width: 58.5px; min-width: 58.5px;text-align: center; padding: 0"><div id="time"></div></td>
 
-					
+                    
                     <td id="nonselected_type"><div  class="testType" onclick="showFun()" id = "selectType"><span style="display: inline-block;">Тип</span><div id="arrow">&#9660;</div></div></td>
 
                     <td id="selected_type" class="hidden"><div onclick="showFun()" class="in_selected_type"><img id="img_type" class="selected_type_img"><div id="type_selected"><h6 id="type_selected_title" style="margin-top: 0px"></h6><p id="type_selected_desc"></p> </div></div></td>
-					
+                    
 
-					<td id="nonselected_name"><div onclick="showNames()" id = "selectName"><span style="display: inline-block;">Наименование</span><div id="arroww">&#9660;</div></div></td>
+                    <td id="nonselected_name"><div onclick="showNames()" id = "selectName"><span style="display: inline-block;">Наименование</span><div id="arroww">&#9660;</div></div></td>
 
                     <td id="selected_name" class="hidden"><div onclick="showNames()" class="in_selected_name"><img id="img_name" class="selected_name_img"><div id="name_selected"><h6 id="name_selected_title" style="margin-top: 0px"></h6><p style="margin-bottom: 3px; font-size: 11px" id="name_selected_desc"></p><p style="margin: 0;font-size: 11px" id="name_selected_type"></p> </div></div></td>
-					
-                    <td><?=$f->field($form, 'operation')->dropDownList($operations, ['id' => "selectOperation", 'style' => 'box-shadow: inset 0px 0px 0px 0px black;border: 0px;width:100px;background-color: #fff8ca', 'options' => [''=>['selected'=>true]]])->label('');?></td>
+                    
+                    <td><?=$f->field($form, 'operation')->dropDownList($operations, ['onchange' => 'checkFrom("selectFrom", "selectOperation")', 'id' => "selectOperation", 'style' => 'box-shadow: inset 0px 0px 0px 0px black;border: 0px;width:100px;background-color: #fff8ca', 'options' => [''=>['selected'=>true]]])->label('');?></td>
 
 
-                    <td><?=$f->field($form, 'massa')->textInput(['style' => 'width:70px', 'type'=>'text', 'placeholder' => 'Грамм', "autocomplete"=>"off"])->label('')?></td>
-                    <td><?= $f->field($form, 'value')->textInput(['id'=>'value', 'style' => 'width:70px', 'type'=>'text', 'placeholder' => 'Штук', "autocomplete"=>"off"])->label('')?></td>
+                    <td><?=$f->field($form, 'massa')->textInput(['style' => 'width:70px', 'type'=>'number', 'placeholder' => 'Грамм', "autocomplete"=>"off"])->label('')?></td>
+                    <td><?= $f->field($form, 'value')->textInput(['id'=>'value', 'style' => 'width:70px', 'type'=>'number', 'placeholder' => 'Штук', "autocomplete"=>"off"])->label('')?></td>
 
-                    <td><div id = "selectStatus_div"><?=$f->field($form, 'status')->dropDownList($statuses, ['id' => "selectStatus", 'style' => 'box-shadow: inset 0px 0px 0px 0px black;border: 0px;width:100px; background-color: #fff8ca', 'options' => [''=>['selected'=>true]]])->label('');?></div></td>
+                    <td><div id = "selectStatus_div"><select onchange="selectOnChange()" id="selectStatus" style="box-shadow: inset 0px 0px 0px 0px black;border: 0px;width:100px; background-color: #fff8ca">
+                                <option value = ''>Статус</option>
+                                <option value = "Годное">Годное</option>
+                                <option value = "Брак">Брак</option>
+                    </select></div></td>
                     
                 </tr>
     </tbody>
 </table>
+<?=$f->field($form, 'status')->textInput(['id' => "selectStatus_send", 'style' => 'display:none; height:0', 'type'=>'text'])->label('');?>
 <?=$f->field($form, 'type_img_name')->textInput(['id' => 'type_img_name', 'style' => 'display:none; height:0', 'type'=>'text'])->label('')?>
 <?=$f->field($form, 'name_img_name')->textInput(['id' => 'name_img_name', 'style' => 'display:none; height:0', 'type'=>'text'])->label('')?>
 <?=$f->field($form, 'type_title_send')->textInput(['id' => 'type_title_send', 'style' => 'display:none; height:0', 'type'=>'text'])->label('')?>
@@ -306,7 +321,8 @@ $user = Yii::$app->user->identity;
 
 <!-- <?=$f->field($form, 'name_img_name')->dropDownList($froms, ['id' => "name_img_name", 'style' => 'display:none'])->label('') ?> -->
 
-<?= Html::submitButton('Ввод', ['id'=>'future', 'name' => 'button_save', 'class' => 'btn_submit']) ?>
+<?= Html::submitButton('Ввод', ['id'=>'future', 'name' => 'button_save','onclick'=>'checkField()', 'class' => 'btn_submit']) ?>
+<h5 id="textSave" class = 'text_submit' color="#008000"><?=$textSave?></h5>
 <?php ActiveForm::end(); ?>
 
     <div name="grey_table_types" style="left:0; margin-top:30px;width: 100%; position: absolute; height:260px; z-index: -1"></div>
@@ -1548,7 +1564,7 @@ $user = Yii::$app->user->identity;
                     </td>
                 </tr>
             </table>        
-	</div>
+    </div>
 </section>
 
 <script>
@@ -1629,6 +1645,40 @@ function show_greys_names() {
 }
 
 
+function checkField(){
+    
+    if(document.getElementById("selectTo").value==""){
+        document.getElementById("selectTo").style.border = "1px solid #8B0000";
+        document.getElementById("selectTo").style.borderRadius = "5px";
+    }
+    if(document.getElementById("selectFrom").value==""){
+        document.getElementById("selectFrom").style.border = "1px solid #8B0000";
+        document.getElementById("selectFrom").style.borderRadius = "5px";
+    }
+    if(document.getElementById("type_title_send").value==""){
+        document.getElementById("selectType").style.border = "1px solid #8B0000";
+        document.getElementById("selectType").style.borderRadius = "5px";
+    }
+    if(document.getElementById("selectOperation").value==""){
+        document.getElementById("selectOperation").style.border = "1px solid #8B0000";
+        document.getElementById("selectOperation").style.borderRadius = "5px";
+    }
+    if(document.getElementById("name_title_send").value==""){
+        document.getElementById("selectName").style.border = "1px solid #8B0000";
+        document.getElementById("selectName").style.borderRadius = "5px";
+    }
+    if(document.getElementById("selectStatus_send").value==""){
+        document.getElementById("selectStatus").style.border = "1px solid #8B0000";
+        document.getElementById("selectStatus").style.borderRadius = "5px";
+    }
+    
+}
+
+function selectOnChange(){
+    document.getElementById('selectStatus_send').value=document.getElementById('selectStatus').value;
+}
+
+
 function showFun() {
     if(visible) {
         document.getElementById('wrap_types' ).style.display = 'none';
@@ -1636,7 +1686,7 @@ function showFun() {
         hide_greys_types();
 
         visible = false;
-		arrow.classList.toggle('rotated');
+        arrow.classList.toggle('rotated');
     } else {
         document.getElementById('wrap_types' ).style.display = 'block';
         if(visibleNames) {
@@ -1648,21 +1698,21 @@ function showFun() {
         hide_greys_names();
 
         visible = true;
-		arrow.classList.toggle('rotated');
+        arrow.classList.toggle('rotated');
     }
 }
 
 function showNames() {
     if(visibleNames && usingName) {
-		document.getElementById('wrap_types' ).style.display = 'none';
-		arrowName.classList.toggle('rotated');
+        document.getElementById('wrap_types' ).style.display = 'none';
+        arrowName.classList.toggle('rotated');
         document.getElementById('wrap_names' ).style.display = 'none';
 
         hide_greys_names();
 
         visibleNames = false;
     } else if(!visibleNames  && type_selected && usingName){
-		arrowName.classList.toggle('rotated');
+        arrowName.classList.toggle('rotated');
         document.getElementById('wrap_names' ).style.display = 'block';
 
         if (visible) {
@@ -1721,40 +1771,40 @@ function selectType(type, name, desc, src) {
 
     document.getElementById('type_selected_title').innerText = name;
     document.getElementById('type_selected_desc').innerText = desc;
-	
-	if(name == "Металл" || name == "Лигатура"){
+    
+    if(name == "Металл" || name == "Лигатура"){
 
-        document.getElementById('name_title_send').value = "";
-        document.getElementById('name_desc_send').value = "";
-        document.getElementById('name_type_send').value = "";
-
-        document.getElementById('selectStatus').value = '';
-
-		document.getElementById('selectStatus').style.color = "#CCCCCC";
-		$("#selectStatus").prop('disabled', 'disabled');
-
-        // document.getElementById('value').style.color = "#CCCCCC";
-        // $("#value").prop('disabled', 'disabled');
-		
-		document.getElementById('nonselected_name').setAttribute('class', '');
+       document.getElementById('selectStatus_send').value='null';
+        //document.getElementById('selectStatus').value = 'null';
+        document.getElementById("name_title_send").value = "null"; 
+        document.getElementById('selectStatus').style.color = "#CCCCCC";
+        $("#selectStatus").prop('disabled', 'disabled');
+        
+        document.getElementById('nonselected_name').setAttribute('class', '');
         document.getElementById('selected_name').setAttribute('class', 'hidden');
 
-		document.getElementById('selectName').style.color = "#CCCCCC";
-		$("#selectName").prop('disabled', 'disabled');
-		
-		usingName = false;
-	} else {
+        document.getElementById('selectName').style.color = "#CCCCCC";
+        
+        document.getElementById("selectName").style.border = "0px solid #fff8ca";
+        document.getElementById("selectName").style.borderRadius = "0px";
+        
+        $("#selectName").prop('disabled', 'disabled');
+        
+        usingName = false;
+    } else {
+       document.getElementById('selectStatus_send').value=document.getElementById('selectStatus').value;
+        document.getElementById("selectStatus").style.border = "0px solid #fff8ca";
+        document.getElementById("selectStatus").style.borderRadius = "0px";
+        
+        document.getElementById("name_title_send").value = ""; 
         $("#selectStatus").removeAttr("disabled");
-		document.getElementById('selectStatus').style.color = "#3d3d3d";
-
-        // document.getElementById('value').style.color = "#3d3d3d";        
-        // $("#value").removeAttr("disabled");
-		
-		usingName = true;
-		
-		$("#selectName").removeAttr("disabled");
-		document.getElementById('selectName').style.color = "#3d3d3d";
-	}
+        document.getElementById('selectStatus').style.color = "#3d3d3d";
+        
+        usingName = true;
+        
+        $("#selectName").removeAttr("disabled");
+        document.getElementById('selectName').style.color = "#3d3d3d";
+    }
 
     if (name == "Деталь") {
         if (isSelectedName2) {
@@ -1769,8 +1819,8 @@ function selectType(type, name, desc, src) {
         } 
         showGreyNamesAllowed = false;
     }
-	
-	document.getElementById('wrap_types' ).style.display = 'none';
+    
+    document.getElementById('wrap_types' ).style.display = 'none';
 
     hide_greys_types();
     hide_greys_names();
@@ -1778,7 +1828,7 @@ function selectType(type, name, desc, src) {
     document.getElementById('nonselected_type').setAttribute('class', 'hidden');
     document.getElementById('selected_type').setAttribute('class', 'select_tp');
     document.getElementById('selected_type').setAttribute('style', 'padding:0');
-	visible = false;
+    visible = false;
     type_selected = true;
 
     document.getElementById('select_type_in_name').innerText = type;
@@ -1787,6 +1837,35 @@ function selectType(type, name, desc, src) {
     $("#select_img_in_name").attr("src", "../images/storage/" + src);
     generateNames(name, name + "<br>" + desc);
     
+}
+
+function selectNameOfType(number, number_img) {
+
+
+    document.getElementById('name_img_name').value = number_img + '.png';
+    isSelectedName2 = false;
+
+    $("#img_name").attr("src", "../images/storage/" + number_img + '.png');
+    number--;
+
+  //  document.getElementById('name_title_send').value = number < 30 ? "Основы" : number < 56 ? "Накладки" : number < 61 ? "Задние части" : "Ножки";
+    document.getElementById('name_title_send').value = document.getElementById('select_type_in_name').innerHTML;
+    document.getElementById('name_desc_send').value = document.getElementById('select_desc_in_name').innerHTML;
+  //  document.getElementById('name_type_send').value = document.getElementById('select_desc_in_name').innerHTML;
+
+  //  document.getElementById('name_selected_title').innerText = number < 30 ? "Основы" : number < 56 ? "Накладки" : number < 61 ? "Задние части" : "Ножки";
+    document.getElementById('name_selected_title').innerText = document.getElementById('select_type_in_name').innerHTML;
+    document.getElementById('name_selected_desc').innerHTML = document.getElementById('select_desc_in_name').innerHTML;
+  //  document.getElementById('name_selected_type').innerHTML = document.getElementById('select_desc_in_name').innerHTML;
+    
+    document.getElementById('nonselected_name').setAttribute('class', 'hidden');
+    document.getElementById('selected_name').setAttribute('class', 'select_nm');
+    document.getElementById('selected_name').setAttribute('style', 'padding:0');
+    document.getElementById('wrap_names' ).style.display = 'none';
+    hide_greys_names();
+
+    type_selected = true;
+    visibleNames = false;
 }
 
 function selectName(number, number_img) {
@@ -1856,7 +1935,7 @@ function generateNames(type, selected_type_title) {
         var desc = document.getElementsByName('desc');
         var type_of_name = document.getElementsByName('type_of_name');
 
-		for (var i = 0; i < type_2.length; i++) {
+        for (var i = 0; i < type_2.length; i++) {
             type_2[i].style.display = 'none';
         }
         for (var i = 0; i < type_1.length; i++) {
@@ -1897,44 +1976,52 @@ function generateNames(type, selected_type_title) {
             desc[i].innerHTML = descs[i];
         }
     } else {
-		var name = document.getElementsByName('name_2');
+        var name = document.getElementsByName('name_2');
         var desc = document.getElementsByName('desc_2');
-		var kind_of_name = document.getElementsByName('kind_of_name_2');
+        var kind_of_name = document.getElementsByName('kind_of_name_2');
         var type_of_name = document.getElementsByName('type_of_name_2');
 
 
-		var names2 = ['Фантом (задняя часть с малой поворотной ножкой)','Фантом основа с покрытием','Созвездие (основа + задняя часть с малой поворотной ножкой)','Круг малый  (основа + задняя часть с малой поворотной ножкой)','Щит под дерево с орнаментом (основа + ножка)','Круг под дерево с орнаментом (основа + ножка)','Квадрат под дерево с орнаментом (основа + ножка)','Щит под дерево с просветом  (основа + ножка)','Круг под дерево с просветом (основа + ножка)', 'Квадрат под дерево с просветом (основа + ножка)', '8 граней с орнаментом (основа + ножка)', '8 граней с орнаментом (основа + ножка)', '8 граней с орнаментом (основа + ножка)', 'Щит европа стандартный (основа + ножка)','Щит европа стандартный (основа + ножка)','Щит европа стандартный (основа + ножка)', 'Прямоугольник косичка (основа + ножка)', 'Круг косичка (основа + ножка)', 'Спаси и сохрани с орнаментом (основа + ножка)','Спаси и сохрани под гравировку (основа + ножка)','Спаси и сохрани с надписью (основа + ножка)', 'Премиум квадратный (основа + ножка)','Накладка под премиум квадратный (отполированная)','Премиум круглый (основа + ножка)','Накладка под премиум круглый (отполированная)','Винтажный куб (основа + ножка)','Омниа круг (основа + ножка)','Омниа квадрат (основа + ножка)','Прямоугольник готика под бриллиант (основа + ножка)'];
+        var names2 = ['Фантом (задняя часть с малой поворотной ножкой)','Фантом основа с покрытием','Созвездие (основа + задняя часть с малой поворотной ножкой)','Круг малый  (основа + задняя часть с малой поворотной ножкой)','Щит под дерево с орнаментом (основа + ножка)','Круг под дерево с орнаментом (основа + ножка)','Квадрат под дерево с орнаментом (основа + ножка)','Щит под дерево с просветом  (основа + ножка)','Круг под дерево с просветом (основа + ножка)', 'Квадрат под дерево с просветом (основа + ножка)', '8 граней с орнаментом (основа + ножка)', '8 граней с орнаментом (основа + ножка)', '8 граней с орнаментом (основа + ножка)', 'Щит европа стандартный (основа + ножка)','Щит европа стандартный (основа + ножка)','Щит европа стандартный (основа + ножка)', 'Прямоугольник косичка (основа + ножка)', 'Круг косичка (основа + ножка)', 'Спаси и сохрани с орнаментом (основа + ножка)','Спаси и сохрани под гравировку (основа + ножка)','Спаси и сохрани с надписью (основа + ножка)', 'Премиум квадратный (основа + ножка)','Накладка под премиум квадратный (отполированная)','Премиум круглый (основа + ножка)','Накладка под премиум круглый (отполированная)','Винтажный куб (основа + ножка)','Омниа круг (основа + ножка)','Омниа квадрат (основа + ножка)','Прямоугольник готика под бриллиант (основа + ножка)'];
 
-		
+        
         //29
         for (var i = 0; i < type_1.length; i++) {
             type_1[i].style.display = 'none';
         }
-		for (var i = 0; i < type_2.length; i++) {
+        for (var i = 0; i < type_2.length; i++) {
             type_2[i].style.display = 'block';
         }
-		
-		for (var i = 0; i <= 3; i++) {
+        
+        for (var i = 0; i <= 3; i++) {
             kind_of_name[i].style.display = 'none';
         }
-		
-		
-		for (var i = 0; i < name.length; i++) {
+        
+        
+        for (var i = 0; i < name.length; i++) {
             name[i].innerHTML = names2[i];
-			desc[i].style.display = 'none';
+            desc[i].style.display = 'none';
             desc[i].innerHTML = descs[i];
         }
-		
-		for (var i = 0; i < type_of_name.length; i++) {
+        
+        for (var i = 0; i < type_of_name.length; i++) {
             type_of_name[i].innerHTML = selected_type_title;
         }
 
     }
 }
 
-$('#form-world').submit(function(ev) {
+$('#form').submit(function(ev) {
     document.getElementById('future').setAttribute('disabled', 'disabled');
 });
+
+function checkFrom(id1, id2){
+    if(document.getElementById(id1).value=='Анна' && document.getElementById(id2).value=='Приход'){
+        document.getElementById("dpol").style.display="none";
+    }else{
+        document.getElementById("dpol").style.display="block";
+    }
+}
 
 
 
