@@ -1312,7 +1312,7 @@ $user = Yii::$app->user->identity;
                 <tr>
                     <td>
                         <table class="type" onclick="selectName2('1')">
-                            <tr><td><img src="../images/storage/empty.jpg"></td></tr>
+                            <tr><td><img src="../images/storage/polu/1p.jpg"></td></tr>
                             <tr><td name="kind_of_name_2"></td></tr>
                             <tr><td name="name_2"></td></tr>
                             <tr><td name="desc_2"></td></tr>
@@ -1330,7 +1330,7 @@ $user = Yii::$app->user->identity;
                     </td>
                     <td>
                         <table class="type" onclick="selectName2('3')">
-                            <tr><td><img src="../images/storage/empty.jpg"></td></tr>
+                            <tr><td><img src="../images/storage/polu/3p.jpg"></td></tr>
                             <tr><td name="kind_of_name_2"></td></tr>
                             <tr><td name="name_2"></td></tr>
                             <tr><td name="desc_2"></td></tr>
@@ -1339,7 +1339,7 @@ $user = Yii::$app->user->identity;
                     </td>
                     <td>
                         <table class="type" onclick="selectName2('4')">
-                            <tr><td><img src="../images/storage/empty.jpg"></td></tr>
+                            <tr><td><img src="../images/storage/polu/4p.jpg"></td></tr>
                             <tr><td name="kind_of_name_2"></td></tr>
                             <tr><td name="name_2"></td></tr>
                             <tr><td name="desc_2"></td></tr>
@@ -1348,7 +1348,7 @@ $user = Yii::$app->user->identity;
                     </td>
                      <td>
                         <table class="type" onclick="selectName2('5')">
-                            <tr><td><img src="../images/storage/empty.jpg"></td></tr>
+                            <tr><td><img src="../images/storage/polu/5p.jpg"></td></tr>
                             <tr><td name="kind_of_name_2"></td></tr>
                             <tr><td name="name_2"></td></tr>
                             <tr><td name="desc_2"></td></tr>
@@ -1357,7 +1357,7 @@ $user = Yii::$app->user->identity;
                     </td>
                     <td>
                         <table class="type" onclick="selectName2('6')">
-                            <tr><td><img src="../images/storage/empty.jpg"></td></tr>
+                            <tr><td><img src="../images/storage/polu/6p.jpg"></td></tr>
                             <tr><td name="kind_of_name_2"></td></tr>
                             <tr><td name="name_2"></td></tr>
                             <tr><td name="desc_2"></td></tr>
@@ -1366,7 +1366,7 @@ $user = Yii::$app->user->identity;
                     </td>
                     <td>
                         <table class="type" onclick="selectName2('7')">
-                            <tr><td><img src="../images/storage/empty.jpg"></td></tr>
+                            <tr><td><img src="../images/storage/polu/7p.jpg"></td></tr>
                             <tr><td name="kind_of_name_2"></td></tr>
                             <tr><td name="name_2"></td></tr>
                             <tr><td name="desc_2"></td></tr>
@@ -1375,7 +1375,7 @@ $user = Yii::$app->user->identity;
                     </td>
                     <td>
                         <table class="type" onclick="selectName2('8')">
-                            <tr><td><img src="../images/storage/empty.jpg"></td></tr>
+                            <tr><td><img src="../images/storage/polu/8p.jpg"></td></tr>
                             <tr><td name="kind_of_name_2"></td></tr>
                             <tr><td name="name_2"></td></tr>
                             <tr><td name="desc_2"></td></tr>
@@ -1384,7 +1384,7 @@ $user = Yii::$app->user->identity;
                     </td>
                     <td>
                         <table class="type" onclick="selectName2('9')">
-                            <tr><td><img src="../images/storage/empty.jpg"></td></tr>
+                            <tr><td><img src="../images/storage/polu/9p.jpg"></td></tr>
                             <tr><td name="kind_of_name_2"></td></tr>
                             <tr><td name="name_2"></td></tr>
                             <tr><td name="desc_2"></td></tr>
@@ -1393,7 +1393,7 @@ $user = Yii::$app->user->identity;
                     </td>
                     <td>
                         <table class="type" onclick="selectName2('10')">
-                            <tr><td><img src="../images/storage/empty.jpg"></td></tr>
+                            <tr><td><img src="../images/storage/polu/10p.jpg"></td></tr>
                             <tr><td name="kind_of_name_2"></td></tr>
                             <tr><td name="name_2"></td></tr>
                             <tr><td name="desc_2"></td></tr>
@@ -1402,7 +1402,7 @@ $user = Yii::$app->user->identity;
                     </td>
                     <td>
                         <table class="type" onclick="selectName2('11')">
-                            <tr><td><img src="../images/storage/empty.jpg"></td></tr>
+                            <tr><td><img src="../images/storage/polu/11p.jpg"></td></tr>
                             <tr><td name="kind_of_name_2"></td></tr>
                             <tr><td name="name_2"></td></tr>
                             <tr><td name="desc_2"></td></tr>
@@ -1413,7 +1413,7 @@ $user = Yii::$app->user->identity;
                 <tr>
                     <td>
                         <table class="type" onclick="selectName2('12')">
-                            <tr><td><img src="../images/storage/empty.jpg"></td></tr>
+                            <tr><td><img src="../images/storage/polu/12p.jpg"></td></tr>
                             <tr><td name="kind_of_name_2"></td></tr>
                             <tr><td name="name_2"></td></tr>
                             <tr><td name="desc_2"></td></tr>
@@ -1422,7 +1422,7 @@ $user = Yii::$app->user->identity;
                     </td>
                     <td>
                         <table class="type" onclick="selectName2('13')">
-                            <tr><td><img src="../images/storage/empty.jpg"></td></tr>
+                            <tr><td><img src="../images/storage/polu/13p.jpg"></td></tr>
                             <tr><td name="kind_of_name_2"></td></tr>
                             <tr><td name="name_2"></td></tr>
                             <tr><td name="desc_2"></td></tr>
@@ -1431,7 +1431,7 @@ $user = Yii::$app->user->identity;
                     </td>
                     <td>
                         <table class="type" onclick="selectName2('14')">
-                            <tr><td><img src="../images/storage/empty.jpg"></td></tr>
+                            <tr><td><img src="../images/storage/polu/14p.jpg"></td></tr>
                             <tr><td name="kind_of_name_2"></td></tr>
                             <tr><td name="name_2"></td></tr>
                             <tr><td name="desc_2"></td></tr>
@@ -1440,7 +1440,7 @@ $user = Yii::$app->user->identity;
                     </td>
                     <td>
                         <table class="type" onclick="selectName2('15')">
-                            <tr><td><img src="../images/storage/empty.jpg"></td></tr>
+                            <tr><td><img src="../images/storage/polu/15p.jpg"></td></tr>
                             <tr><td name="kind_of_name_2"></td></tr>
                             <tr><td name="name_2"></td></tr>
                             <tr><td name="desc_2"></td></tr>
@@ -1449,7 +1449,7 @@ $user = Yii::$app->user->identity;
                     </td>
                      <td>
                         <table class="type" onclick="selectName2('16')">
-                            <tr><td><img src="../images/storage/empty.jpg"></td></tr>
+                            <tr><td><img src="../images/storage/polu/16p.jpg"></td></tr>
                             <tr><td name="kind_of_name_2"></td></tr>
                             <tr><td name="name_2"></td></tr>
                             <tr><td name="desc_2"></td></tr>
@@ -1458,7 +1458,7 @@ $user = Yii::$app->user->identity;
                     </td>
                     <td>
                         <table class="type" onclick="selectName2('17')">
-                            <tr><td><img src="../images/storage/empty.jpg"></td></tr>
+                            <tr><td><img src="../images/storage/polu/17p.jpg"></td></tr>
                             <tr><td name="kind_of_name_2"></td></tr>
                             <tr><td name="name_2"></td></tr>
                             <tr><td name="desc_2"></td></tr>
@@ -1467,7 +1467,7 @@ $user = Yii::$app->user->identity;
                     </td>
                     <td>
                         <table class="type" onclick="selectName2('18')">
-                            <tr><td><img src="../images/storage/empty.jpg"></td></tr>
+                            <tr><td><img src="../images/storage/polu/18p.jpg"></td></tr>
                             <tr><td name="kind_of_name_2"></td></tr>
                             <tr><td name="name_2"></td></tr>
                             <tr><td name="desc_2"></td></tr>
@@ -1476,7 +1476,7 @@ $user = Yii::$app->user->identity;
                     </td>
                     <td>
                         <table class="type" onclick="selectName2('19')">
-                            <tr><td><img src="../images/storage/empty.jpg"></td></tr>
+                            <tr><td><img src="../images/storage/polu/19p.jpg"></td></tr>
                             <tr><td name="kind_of_name_2"></td></tr>
                             <tr><td name="name_2"></td></tr>
                             <tr><td name="desc_2"></td></tr>
@@ -1485,7 +1485,7 @@ $user = Yii::$app->user->identity;
                     </td>
                     <td>
                         <table class="type" onclick="selectName2('20')">
-                            <tr><td><img src="../images/storage/empty.jpg"></td></tr>
+                            <tr><td><img src="../images/storage/polu/20p.jpg"></td></tr>
                             <tr><td name="kind_of_name_2"></td></tr>
                             <tr><td name="name_2"></td></tr>
                             <tr><td name="desc_2"></td></tr>
@@ -1494,7 +1494,7 @@ $user = Yii::$app->user->identity;
                     </td>
                     <td>
                         <table class="type" onclick="selectName2('21')">
-                            <tr><td><img src="../images/storage/empty.jpg"></td></tr>
+                            <tr><td><img src="../images/storage/polu/21p.jpg"></td></tr>
                             <tr><td name="kind_of_name_2"></td></tr>
                             <tr><td name="name_2"></td></tr>
                             <tr><td name="desc_2"></td></tr>
@@ -1503,7 +1503,7 @@ $user = Yii::$app->user->identity;
                     </td>
                     <td>
                         <table class="type" onclick="selectName2('22')">
-                            <tr><td><img src="../images/storage/empty.jpg"></td></tr>
+                            <tr><td><img src="../images/storage/polu/22p.jpg"></td></tr>
                             <tr><td name="kind_of_name_2"></td></tr>
                             <tr><td name="name_2"></td></tr>
                             <tr><td name="desc_2"></td></tr>
@@ -1523,7 +1523,7 @@ $user = Yii::$app->user->identity;
                     </td>
                     <td>
                         <table class="type" onclick="selectName2('24')">
-                            <tr><td><img src="../images/storage/empty.jpg"></td></tr>
+                            <tr><td><img src="../images/storage/polu/24p.jpg"></td></tr>
                             <tr><td name="kind_of_name_2"></td></tr>
                             <tr><td name="name_2"></td></tr>
                             <tr><td name="desc_2"></td></tr>
@@ -1550,7 +1550,7 @@ $user = Yii::$app->user->identity;
                     </td>
                      <td>
                         <table class="type" onclick="selectName2('27')">
-                            <tr><td><img src="../images/storage/empty.jpg"></td></tr>
+                            <tr><td><img src="../images/storage/polu/27p.jpg"></td></tr>
                             <tr><td name="kind_of_name_2"></td></tr>
                             <tr><td name="name_2"></td></tr>
                             <tr><td name="desc_2"></td></tr>
@@ -1559,7 +1559,7 @@ $user = Yii::$app->user->identity;
                     </td>
                     <td>
                         <table class="type" onclick="selectName2('28')">
-                            <tr><td><img src="../images/storage/empty.jpg"></td></tr>
+                            <tr><td><img src="../images/storage/polu/28p.jpg"></td></tr>
                             <tr><td name="kind_of_name_2"></td></tr>
                             <tr><td name="name_2"></td></tr>
                             <tr><td name="desc_2"></td></tr>
@@ -1568,7 +1568,7 @@ $user = Yii::$app->user->identity;
                     </td>
                     <td>
                         <table class="type" onclick="selectName2('29')">
-                            <tr><td><img src="../images/storage/empty.jpg"></td></tr>
+                            <tr><td><img src="../images/storage/polu/29p.jpg"></td></tr>
                             <tr><td name="kind_of_name_2"></td></tr>
                             <tr><td name="name_2"></td></tr>
                             <tr><td name="desc_2"></td></tr>
@@ -1582,7 +1582,7 @@ $user = Yii::$app->user->identity;
 
 <script>
 if (localStorage['success'] == 'true') {
-    document.getElementById('textSave').style.display = 'inline-block';
+    documentч.getElementById('textSave').style.display = 'inline-block';
     setTimeout(function(){
         // document.getElementById('textSave').style.display = 'none';
         $('#textSave').fadeOut('fast')
@@ -1986,13 +1986,19 @@ function resetName() {
 
 function selectNameOfType(number, number_img) {
 
-
-    document.getElementById('name_img_name').value = number_img + '.png';
-    isSelectedName2 = false;
-
-    $("#img_name").attr("src", "../images/storage/" + number_img + '.png');
+	if(document.getElementById('select_type_in_name').innerHTML=='Полуфабрикаты'){
+		document.getElementById('name_img_name').value = 'pfUnic.jpg';
+		$("#img_name").attr("src", "../images/storage/pfUnic.jpg");
+	}else if(document.getElementById('select_type_in_name').innerHTML=='Детали'){
+		document.getElementById('name_img_name').value = 'dtUnic.jpg';	
+		$("#img_name").attr("src", "../images/storage/dtUnic.jpg");
+	}else{
+		$("#img_name").attr("src", "../images/storage/" + number_img + '.png');
+		document.getElementById('name_img_name').value = number_img + '.png';
+	}
+    
     number--;
-
+	isSelectedName2 = false;
   //  document.getElementById('name_title_send').value = number < 30 ? "Основы" : number < 56 ? "Накладки" : number < 61 ? "Задние части" : "Ножки";
     document.getElementById('name_title_send').value = document.getElementById('select_type_in_name').innerHTML;
     document.getElementById('name_desc_send').value = document.getElementById('select_desc_in_name').innerHTML;
@@ -2050,8 +2056,22 @@ function selectName2(number) {
 
     document.getElementById('name_img_name').value = "empty.jpg";
     isSelectedName2 = true;
-
-    $("#img_name").attr("src", "../images/storage/empty.jpg");
+	
+	var scr = "../images/storage/polu/"+(number+1)+"p.jpg";
+	
+	$.ajax({
+		url:scr,
+		type:'HEAD',
+		error:
+			function(){
+				$("#img_name").attr("src", "../images/storage/empty.jpg");
+			},
+		success:
+			function(){
+				$("#img_name").attr("src", "../images/storage/polu/"+(number+1)+"p.jpg");
+			}
+	});
+	
     
 
     document.getElementById('name_selected_title').style.display = 'none';
