@@ -297,7 +297,7 @@ $user = Yii::$app->user->identity;
 
                     <td id="selected_name" class="hidden"><div onclick="showNames()" class="in_selected_name"><img id="img_name" class="selected_name_img"><div id="name_selected"><h6 id="name_selected_title" style="margin-top: 0px"></h6><p style="margin-bottom: 3px; font-size: 11px" id="name_selected_desc"></p><p style="margin: 0;font-size: 11px" id="name_selected_type"></p> </div></div></td>
                     
-                    <td><?=$f->field($form, 'operation')->dropDownList($operations, [ 'id' => "selectOperation", 'style' => 'box-shadow: inset 0px 0px 0px 0px black;border: 0px;width:100px;background-color: #fff8ca', 'options' => [''=>['selected'=>true]]])->label('');?></td>
+                    <td><?=$f->field($form, 'operation')->dropDownList($operations, ['onchange' => 'checkFrom("selectFrom", "selectOperation")', 'id' => "selectOperation", 'style' => 'box-shadow: inset 0px 0px 0px 0px black;border: 0px;width:100px;background-color: #fff8ca', 'options' => [''=>['selected'=>true]]])->label('');?></td>
 
 
                     <td><?=$f->field($form, 'massa')->textInput(['id'=>'massa', 'style' => 'width:70px', 'type'=>'number', 'step'=> '0.01', 'min'=>'0', 'placeholder' => 'Грамм', "autocomplete"=>"off", 'oninput'=>'checkField()', 'onchange'=>'checkMassaFormat()'])->label('')?></td>
@@ -1594,7 +1594,7 @@ var url = window.location.href;
 var pieces = url.split(/[=]+/);
 if(pieces[pieces.length-1] == 'true') {
     localStorage['success'] = 'true';
-    document.location.href = "http://crm.dev:9898/web/storage/add";
+    document.location.href = "http://erp.sergeysudakov.ru/storage/add";
 
 }
 
@@ -1697,7 +1697,7 @@ function checkField(){
         document.getElementById("selectTo").style.borderRadius = "5px";
         isFormFilled = false;
     } else {
-        document.getElementById("selectTo").style.border = "0px solid #8B0000";
+        document.getElementById("selectTo").style.border = "0px";
         document.getElementById("selectTo").style.borderRadius = "0px";
     }
     if(document.getElementById("selectFrom").value==""){
@@ -1705,7 +1705,7 @@ function checkField(){
         document.getElementById("selectFrom").style.borderRadius = "5px";
         isFormFilled = false;
     } else {
-        document.getElementById("selectFrom").style.border = "0px solid #8B0000";
+        document.getElementById("selectFrom").style.border = "0px";
         document.getElementById("selectFrom").style.borderRadius = "0px";
     }
     if(document.getElementById("type_title_send").value==""){
@@ -1713,7 +1713,7 @@ function checkField(){
         document.getElementById("selectType").style.borderRadius = "5px";
         isFormFilled = false;
     } else {
-        document.getElementById("selectType").style.border = "0px solid #8B0000";
+        document.getElementById("selectType").style.border = "0px";
         document.getElementById("selectType").style.borderRadius = "0px";
     }
     if(document.getElementById("selectOperation").value==""){
@@ -1721,7 +1721,7 @@ function checkField(){
         document.getElementById("selectOperation").style.borderRadius = "5px";
         isFormFilled = false;
     } else {
-        document.getElementById("selectOperation").style.border = "0px solid #8B0000";
+        document.getElementById("selectOperation").style.border = "0px";
         document.getElementById("selectOperation").style.borderRadius = "0px";
     }
     if(document.getElementById("name_title_send").value==""){
@@ -1729,7 +1729,7 @@ function checkField(){
         document.getElementById("selectName").style.borderRadius = "5px";
         isFormFilled = false;
     } else {
-        document.getElementById("selectName").style.border = "0px solid #8B0000";
+        document.getElementById("selectName").style.border = "0px";
         document.getElementById("selectName").style.borderRadius = "0px";
     }
     if(document.getElementById("selectStatus_send").value==""){
@@ -1737,7 +1737,7 @@ function checkField(){
         document.getElementById("selectStatus").style.borderRadius = "5px";
         isFormFilled = false;
     } else {
-        document.getElementById("selectStatus").style.border = "0px solid #8B0000";
+        document.getElementById("selectStatus").style.border = "0px";
         document.getElementById("selectStatus").style.borderRadius = "0px";
     }
 
@@ -1784,21 +1784,22 @@ function showFun() {
 }
 
 function compareStrings(id1, id2){
-    if(document.getElementById(id1).value == document.getElementById(id2).value && document.getElementById(id1).value!='' && document.getElementById(id2).value!=''){
-        $("#selectName").prop('disabled', 'disabled');
-        $("#selectOperation").prop('disabled', 'disabled');
-        $("#selectType").prop('disabled', 'disabled');
-        document.getElementById("selectType").onclick = function(){};
-        $("#value").prop('disabled', 'disabled');
-        $("#massa").prop('disabled', 'disabled');
+    if((document.getElementById(id1).value == document.getElementById(id2).value) && (document.getElementById(id1).value!='') && (document.getElementById(id2).value!='')){
+        // console.log(document.getElementById(id1).value);
+        // $("#selectName").prop('disabled', 'disabled');
+        // $("#selectOperation").prop('disabled', 'disabled');
+        // $("#selectType").prop('disabled', 'disabled');
+        // document.getElementById("selectType").onclick = function(){};
+        // $("#value").prop('disabled', 'disabled');
+        // $("#massa").prop('disabled', 'disabled');
     }else{
         
-        $("#selectName").removeAttr("disabled");
-        $("#selectOperation").removeAttr("disabled");
-        $("#selectType").removeAttr("disabled");
-        document.getElementById("selectType").onclick = showFun;
-        $("#value").removeAttr("disabled");
-        $("#massa").removeAttr("disabled");
+        // $("#selectName").removeAttr("disabled");
+        // $("#selectOperation").removeAttr("disabled");
+        // $("#selectType").removeAttr("disabled");
+        // document.getElementById("selectType").onclick = showFun;
+        // $("#value").removeAttr("disabled");
+        // $("#massa").removeAttr("disabled");
     }
 }
 
@@ -1906,6 +1907,11 @@ function selectType(type, name, desc, src) {
         document.getElementById('selectStatus_send').value=document.getElementById('selectStatus').value;
         document.getElementById("selectStatus").style.border = "0px solid #fff8ca";
         document.getElementById("selectStatus").style.borderRadius = "0px";
+
+        if (document.getElementById('selectFrom').value != "Склад") {
+            document.getElementById('selectStatus').style.color = "";
+            $("#selectStatus").removeAttr('disabled');
+        }
         
         document.getElementById("name_title_send").value = ""; 
         if(testStatus == true){
@@ -2188,7 +2194,7 @@ function checkFrom(id1, id2){
         show_greys_types();
     }
 
-    if(document.getElementById("selectFrom").value == "") { 
+    if(document.getElementById("selectFrom").value == "" && document.getElementById('type_title_send').value == "") { 
     
         
         $("#selectStatus").removeAttr("disabled");
@@ -2251,9 +2257,12 @@ function checkFrom(id1, id2){
         $("#selectTo option[value='Склад']").css("display","none");
         document.getElementById('selectTo').style.color = "";
 
-    } else {
-        
-        
+    } else if (document.getElementById('type_title_send').value == "Металл" || document.getElementById('type_title_send').value == "Лигатура") {
+        document.getElementById('selectStatus').style.color = "#CCCCCC";
+        $("#selectStatus").prop('disabled', 'disabled');
+        document.getElementById('selectStatus_send').value='null';
+    } else if (document.getElementById("selectFrom").value != ""){  
+        console.log()
         $("#selectStatus").removeAttr("disabled");
         document.getElementById('selectStatus').style.color = "#3d3d3d";
         document.getElementById('selectStatus_send').value=document.getElementById('selectStatus').value;
