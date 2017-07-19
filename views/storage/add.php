@@ -1968,7 +1968,15 @@ function selectType(type, name, desc, src) {
     document.getElementById('select_type_in_name').innerText = type;
     document.getElementById('select_title_in_name').innerText = name;
     document.getElementById('select_desc_in_name').innerText = desc;
-    $("#select_img_in_name").attr("src", "../images/storage/" + src);
+	if(document.getElementById('select_type_in_name').innerHTML=='Полуфабрикаты'){
+		$("#select_img_in_name").attr("src", "../images/storage/pfUnic.jpg");
+		$("#img_name").attr("src", "../images/storage/pfUnic.jpg");
+	}else if(document.getElementById('select_type_in_name').innerHTML=='Детали'){
+		$("#select_img_in_name").attr("src", "../images/storage/dtUnic.jpg");
+	}else{
+		$("#select_img_in_name").attr("src", "../images/storage/" + src);
+	}
+    
     generateNames(name, name + "" + desc);
     if(name == "Металл" || name == "Лигатура")
         selectNameOfType('1', (document.getElementById('type_img_name').value).slice(0,-4));
