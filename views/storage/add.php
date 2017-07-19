@@ -17,9 +17,9 @@ $user = Yii::$app->user->identity;
 
 ?>
 <?php 
-/*if (!$user->hasRole(['admin', 'superadmin'])) { 
+if (!$user->hasRole(['admin', 'superadmin'])) { 
     Yii::$app->response->redirect(Url::to(['site/index']));
-}*/
+}
 ?>
 <?php $f = ActiveForm::begin(['id' => 'form'])?>
 
@@ -1793,7 +1793,6 @@ function checkField(){
         document.getElementById("selectTo").style.borderRadius = "5px";
         isFormFilled = false;
     } else {
-
         document.getElementById("selectTo").style.border = "0px";
         document.getElementById("selectTo").style.borderRadius = "0px";
     }
@@ -1802,7 +1801,6 @@ function checkField(){
         document.getElementById("selectFrom").style.borderRadius = "5px";
         isFormFilled = false;
     } else {
-
         document.getElementById("selectFrom").style.border = "0px";
         document.getElementById("selectFrom").style.borderRadius = "0px";
 
@@ -1812,7 +1810,6 @@ function checkField(){
         document.getElementById("selectType").style.borderRadius = "5px";
         isFormFilled = false;
     } else {
-
         document.getElementById("selectType").style.border = "0px";
         document.getElementById("selectType").style.borderRadius = "0px";
 
@@ -1832,7 +1829,6 @@ function checkField(){
         document.getElementById("selectName").style.borderRadius = "5px";
         isFormFilled = false;
     } else {
-
         document.getElementById("selectName").style.border = "0px";
         document.getElementById("selectName").style.borderRadius = "0px";
     }
@@ -1841,7 +1837,6 @@ function checkField(){
         document.getElementById("selectStatus").style.borderRadius = "5px";
         isFormFilled = false;
     } else {
-
         document.getElementById("selectStatus").style.border = "0px";
         document.getElementById("selectStatus").style.borderRadius = "0px";
     }
@@ -2064,14 +2059,14 @@ function selectType(type, name, desc, src) {
     document.getElementById('select_type_in_name').innerText = type;
     document.getElementById('select_title_in_name').innerText = name;
     document.getElementById('select_desc_in_name').innerText = desc;
-	if(document.getElementById('select_type_in_name').innerHTML=='Полуфабрикаты'){
-		$("#select_img_in_name").attr("src", "../images/storage/pfUnic.jpg");
-		$("#img_name").attr("src", "../images/storage/pfUnic.jpg");
-	}else if(document.getElementById('select_type_in_name').innerHTML=='Детали'){
-		$("#select_img_in_name").attr("src", "../images/storage/dtUnic.jpg");
-	}else{
-		$("#select_img_in_name").attr("src", "../images/storage/" + src);
-	}
+    if(document.getElementById('select_type_in_name').innerHTML=='Полуфабрикаты'){
+        $("#select_img_in_name").attr("src", "../images/storage/pfUnic.jpg");
+        $("#img_name").attr("src", "../images/storage/pfUnic.jpg");
+    }else if(document.getElementById('select_type_in_name').innerHTML=='Детали'){
+        $("#select_img_in_name").attr("src", "../images/storage/dtUnic.jpg");
+    }else{
+        $("#select_img_in_name").attr("src", "../images/storage/" + src);
+    }
     
     generateNames(name, name + "" + desc);
     if(name == "Металл" || name == "Лигатура")
@@ -2090,19 +2085,19 @@ function resetName() {
 
 function selectNameOfType(number, number_img) {
 
-	if(document.getElementById('select_type_in_name').innerHTML=='Полуфабрикаты'){
-		document.getElementById('name_img_name').value = 'pfUnic.jpg';
-		$("#img_name").attr("src", "../images/storage/pfUnic.jpg");
-	}else if(document.getElementById('select_type_in_name').innerHTML=='Детали'){
-		document.getElementById('name_img_name').value = 'dtUnic.jpg';	
-		$("#img_name").attr("src", "../images/storage/dtUnic.jpg");
-	}else{
-		$("#img_name").attr("src", "../images/storage/" + number_img + '.png');
-		document.getElementById('name_img_name').value = number_img + '.png';
-	}
+    if(document.getElementById('select_type_in_name').innerHTML=='Полуфабрикаты'){
+        document.getElementById('name_img_name').value = 'pfUnic.jpg';
+        $("#img_name").attr("src", "../images/storage/pfUnic.jpg");
+    }else if(document.getElementById('select_type_in_name').innerHTML=='Детали'){
+        document.getElementById('name_img_name').value = 'dtUnic.jpg';  
+        $("#img_name").attr("src", "../images/storage/dtUnic.jpg");
+    }else{
+        $("#img_name").attr("src", "../images/storage/" + number_img + '.png');
+        document.getElementById('name_img_name').value = number_img + '.png';
+    }
     
     number--;
-	isSelectedName2 = false;
+    isSelectedName2 = false;
   //  document.getElementById('name_title_send').value = number < 30 ? "Основы" : number < 56 ? "Накладки" : number < 61 ? "Задние части" : "Ножки";
     document.getElementById('name_title_send').value = document.getElementById('select_type_in_name').innerHTML;
     document.getElementById('name_desc_send').value = document.getElementById('select_desc_in_name').innerHTML;
@@ -2160,22 +2155,22 @@ function selectName2(number) {
 
     document.getElementById('name_img_name').value = "empty.jpg";
     isSelectedName2 = true;
-	
-	var scr = "../images/storage/polu/"+(number+1)+"p.jpg";
-	
-	$.ajax({
-		url:scr,
-		type:'HEAD',
-		error:
-			function(){
-				$("#img_name").attr("src", "../images/storage/empty.jpg");
-			},
-		success:
-			function(){
-				$("#img_name").attr("src", "../images/storage/polu/"+(number+1)+"p.jpg");
-			}
-	});
-	
+    
+    var scr = "../images/storage/polu/"+(number+1)+"p.jpg";
+    
+    $.ajax({
+        url:scr,
+        type:'HEAD',
+        error:
+            function(){
+                $("#img_name").attr("src", "../images/storage/empty.jpg");
+            },
+        success:
+            function(){
+                $("#img_name").attr("src", "../images/storage/polu/"+(number+1)+"p.jpg");
+            }
+    });
+    
     
 
     document.getElementById('name_selected_title').style.display = 'none';
@@ -2292,10 +2287,10 @@ function checkTo(id1, id2) {
         $("#selectFrom option").css("display","block");
         $("#selectTo option").css("display","block");
         $('#selectFrom').removeAttr('onfocus');
-		
+        
         $("#selectOperation option").css("display","block");
         document.getElementById('selectOperation').style.color = "#3d3d3d";
-		
+        
         document.getElementById('selectFrom').style.color = "";
     }
     else if(document.getElementById("selectTo").value == "Склад") {
@@ -2320,13 +2315,13 @@ function checkTo(id1, id2) {
         $("#selectFrom option[value='Склад']").css("display","none");
 
         $("#selectFrom option[value='Склад']").css("display","block");
-		
+        
         document.getElementById("selectOperation").value = "Расход";
         // document.getElementById("selectOperation").setAttribute('disabled', 'disabled');
         $("#selectOperation option").css("display","none");
         $("#selectOperation option[value='Расход']").css("display","block");
         document.getElementById('selectOperation').style.color = "#CCCCCC";
-		
+        
     }
 
     compareStrings("selectFrom","selectTo");
@@ -2348,11 +2343,11 @@ function checkFrom(id1, id2){
 
     if(document.getElementById("selectFrom").value == "" && document.getElementById('type_title_send').value == "") { 
     
-		
+        
         $("#selectOperation option").css("display","block");
         document.getElementById('selectOperation').style.color = "#3d3d3d";
-		
-		
+        
+        
         $("#selectStatus").removeAttr("disabled");
         document.getElementById('selectStatus').style.color = "#3d3d3d";
         document.getElementById('selectStatus_send').value=document.getElementById('selectStatus').value;
@@ -2368,10 +2363,10 @@ function checkFrom(id1, id2){
     } else if(document.getElementById("selectFrom").value == "Поставщик") {
 
         
-		document.getElementById("selectOperation").value = "Приход";
+        document.getElementById("selectOperation").value = "Приход";
         $("#selectOperation option").css("display","block");
         document.getElementById('selectOperation').style.color = "#CCCCCC";
-		
+        
         $("#selectStatus").removeAttr("disabled");
         document.getElementById('selectStatus').style.color = "#3d3d3d";
         document.getElementById('selectStatus_send').value=document.getElementById('selectStatus').value;
@@ -2400,7 +2395,7 @@ function checkFrom(id1, id2){
         testStatus = true;
     } else if(document.getElementById("selectFrom").value == "Склад") {
         
-		
+        
         document.getElementById('selectStatus').style.color = "#CCCCCC";
         $("#selectStatus").prop('disabled', 'disabled');
         document.getElementById('selectStatus_send').value='null';
@@ -2440,7 +2435,7 @@ function checkFrom(id1, id2){
             $("#selectOperation option").css("display","block");
             document.getElementById('selectOperation').style.color = "";
         }
-		document.getElementById("selectOperation").value = "Приход";
+        document.getElementById("selectOperation").value = "Приход";
         $("#selectOperation option").css("display","block");
         document.getElementById('selectOperation').style.color = "#CCCCCC";
         //testStatus = true;
