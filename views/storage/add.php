@@ -275,6 +275,7 @@ $user = Yii::$app->user->identity;
     -webkit-appearance: none;
     margin: 0; /* <— Apparently some margin are still there even though it's hidden */
     }
+
     </style>
 <section>
 <table class="inputTable" >
@@ -1911,6 +1912,7 @@ function selectType(type, name, desc, src) {
         if (document.getElementById('selectFrom').value != "Склад") {
             document.getElementById('selectStatus').style.color = "";
             $("#selectStatus").removeAttr('disabled');
+			
         }
         
         document.getElementById("name_title_send").value = ""; 
@@ -1941,6 +1943,9 @@ function selectType(type, name, desc, src) {
         showGreyNamesAllowed = false;
     }
     
+	if(document.getElementById('selectFrom').value == 'Склад'){
+		document.getElementById('selectStatus_send').value = 'null';
+	}
     document.getElementById('wrap_types' ).style.display = 'none';
 
     hide_greys_types();
