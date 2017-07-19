@@ -17,9 +17,9 @@ $user = Yii::$app->user->identity;
 
 ?>
 <?php 
-// if (!$user->hasRole(['admin', 'superadmin'])) { 
-//     Yii::$app->response->redirect(Url::to(['site/index']));
-// }
+/*if (!$user->hasRole(['admin', 'superadmin'])) { 
+    Yii::$app->response->redirect(Url::to(['site/index']));
+}*/
 ?>
 <?php $f = ActiveForm::begin(['id' => 'form'])?>
 
@@ -275,7 +275,6 @@ $user = Yii::$app->user->identity;
     -webkit-appearance: none;
     margin: 0; /* <— Apparently some margin are still there even though it's hidden */
     }
-
     </style>
 <section>
 <table class="inputTable" >
@@ -1698,6 +1697,7 @@ function checkField(){
         document.getElementById("selectTo").style.borderRadius = "5px";
         isFormFilled = false;
     } else {
+
         document.getElementById("selectTo").style.border = "0px";
         document.getElementById("selectTo").style.borderRadius = "0px";
     }
@@ -1706,30 +1706,37 @@ function checkField(){
         document.getElementById("selectFrom").style.borderRadius = "5px";
         isFormFilled = false;
     } else {
+
         document.getElementById("selectFrom").style.border = "0px";
         document.getElementById("selectFrom").style.borderRadius = "0px";
+
     }
     if(document.getElementById("type_title_send").value==""){
         document.getElementById("selectType").style.border = "1px solid #8B0000";
         document.getElementById("selectType").style.borderRadius = "5px";
         isFormFilled = false;
     } else {
+
         document.getElementById("selectType").style.border = "0px";
         document.getElementById("selectType").style.borderRadius = "0px";
+
     }
     if(document.getElementById("selectOperation").value==""){
         document.getElementById("selectOperation").style.border = "1px solid #8B0000";
         document.getElementById("selectOperation").style.borderRadius = "5px";
         isFormFilled = false;
     } else {
+
         document.getElementById("selectOperation").style.border = "0px";
         document.getElementById("selectOperation").style.borderRadius = "0px";
+
     }
     if(document.getElementById("name_title_send").value==""){
         document.getElementById("selectName").style.border = "1px solid #8B0000";
         document.getElementById("selectName").style.borderRadius = "5px";
         isFormFilled = false;
     } else {
+
         document.getElementById("selectName").style.border = "0px";
         document.getElementById("selectName").style.borderRadius = "0px";
     }
@@ -1738,6 +1745,7 @@ function checkField(){
         document.getElementById("selectStatus").style.borderRadius = "5px";
         isFormFilled = false;
     } else {
+
         document.getElementById("selectStatus").style.border = "0px";
         document.getElementById("selectStatus").style.borderRadius = "0px";
     }
@@ -1912,7 +1920,6 @@ function selectType(type, name, desc, src) {
         if (document.getElementById('selectFrom').value != "Склад") {
             document.getElementById('selectStatus').style.color = "";
             $("#selectStatus").removeAttr('disabled');
-			
         }
         
         document.getElementById("name_title_send").value = ""; 
@@ -1943,9 +1950,10 @@ function selectType(type, name, desc, src) {
         showGreyNamesAllowed = false;
     }
     
-	if(document.getElementById('selectFrom').value == 'Склад'){
-		document.getElementById('selectStatus_send').value = 'null';
-	}
+
+    if(document.getElementById('selectFrom').value == 'Склад'){
+        document.getElementById('selectStatus_send').value = 'null';
+    }
     document.getElementById('wrap_types' ).style.display = 'none';
 
     hide_greys_types();
@@ -2157,6 +2165,8 @@ function checkTo(id1, id2) {
 
     if(document.getElementById("selectTo").value == "") { 
         document.getElementById("selectFrom").value = "";
+        $("#selectFrom option").css("display","block");
+        $("#selectTo option").css("display","block");
         $('#selectFrom').removeAttr('onfocus');
         document.getElementById('selectFrom').style.color = "";
     }
@@ -2165,7 +2175,10 @@ function checkTo(id1, id2) {
         $("#selectFrom option[value='Склад']").css("display","none");
 
         document.getElementById("selectFrom").value = "";
-        // $('#selectFrom').removeAttr('disabled');
+        
+        document.getElementById("selectOperation").value = "Приход";
+        $("#selectOperation option").css("display","block");
+        document.getElementById('selectOperation').style.color = "#CCCCCC";
 
         document.getElementById('selectFrom').style.color = "";
     } else {
@@ -2210,6 +2223,7 @@ function checkFrom(id1, id2){
         document.getElementById("selectTo").value = "";
         // $('#selectTo').removeAttr('disabled');
         $("#selectTo option").css("display","block");
+        $("#selectFrom option").css("display","block");
         document.getElementById('selectTo').style.color = "";
         
         testStatus = false;
@@ -2279,8 +2293,10 @@ function checkFrom(id1, id2){
 
         $("#selectTo option[value='Склад']").css("display","block");
         // $('#selectOperation').removeAttr('disabled');
-        $("#selectOperation option").css("display","block");
-        document.getElementById('selectOperation').style.color = "";
+        if (document.getElementById("selectTo").value != "Склад") {
+            $("#selectOperation option").css("display","block");
+            document.getElementById('selectOperation').style.color = "";
+        }
         //testStatus = true;
     }
 
