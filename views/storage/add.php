@@ -2168,6 +2168,10 @@ function checkTo(id1, id2) {
         $("#selectFrom option").css("display","block");
         $("#selectTo option").css("display","block");
         $('#selectFrom').removeAttr('onfocus');
+		
+        $("#selectOperation option").css("display","block");
+        document.getElementById('selectOperation').style.color = "#3d3d3d";
+		
         document.getElementById('selectFrom').style.color = "";
     }
     else if(document.getElementById("selectTo").value == "Склад") {
@@ -2177,7 +2181,8 @@ function checkTo(id1, id2) {
         document.getElementById("selectFrom").value = "";
         
         document.getElementById("selectOperation").value = "Приход";
-        $("#selectOperation option").css("display","block");
+        // document.getElementById("selectOperation").setAttribute('disabled', 'disabled');
+        $("#selectOperation option").css("display","none");
         document.getElementById('selectOperation').style.color = "#CCCCCC";
 
         document.getElementById('selectFrom').style.color = "";
@@ -2191,8 +2196,13 @@ function checkTo(id1, id2) {
         $("#selectFrom option[value='Склад']").css("display","none");
 
         $("#selectFrom option[value='Склад']").css("display","block");
-        $('#selectOperation').removeAttr('disabled');
+		
+        document.getElementById("selectOperation").value = "Расход";
+        // document.getElementById("selectOperation").setAttribute('disabled', 'disabled');
+        $("#selectOperation option").css("display","none");
+        $("#selectOperation option[value='Расход']").css("display","block");
         document.getElementById('selectOperation').style.color = "#CCCCCC";
+		
     }
 
     compareStrings("selectFrom","selectTo");
@@ -2214,7 +2224,11 @@ function checkFrom(id1, id2){
 
     if(document.getElementById("selectFrom").value == "" && document.getElementById('type_title_send').value == "") { 
     
-        
+		
+        $("#selectOperation option").css("display","block");
+        document.getElementById('selectOperation').style.color = "#3d3d3d";
+		
+		
         $("#selectStatus").removeAttr("disabled");
         document.getElementById('selectStatus').style.color = "#3d3d3d";
         document.getElementById('selectStatus_send').value=document.getElementById('selectStatus').value;
@@ -2230,6 +2244,10 @@ function checkFrom(id1, id2){
     } else if(document.getElementById("selectFrom").value == "Поставщик") {
 
         
+		document.getElementById("selectOperation").value = "Приход";
+        $("#selectOperation option").css("display","block");
+        document.getElementById('selectOperation').style.color = "#CCCCCC";
+		
         $("#selectStatus").removeAttr("disabled");
         document.getElementById('selectStatus').style.color = "#3d3d3d";
         document.getElementById('selectStatus_send').value=document.getElementById('selectStatus').value;
@@ -2238,7 +2256,7 @@ function checkFrom(id1, id2){
         $("#selectTo option[value='Склад']").css("display","block");
         document.getElementById("selectOperation").value = "Приход";
         // document.getElementById("selectOperation").setAttribute('disabled', 'disabled');
-        $("#selectOperation option").css("display","block");
+        $("#selectOperation option").css("display","none");
         document.getElementById('selectOperation').style.color = "#CCCCCC";
 
         document.getElementById("selectTo").value = "";
@@ -2258,6 +2276,7 @@ function checkFrom(id1, id2){
         testStatus = true;
     } else if(document.getElementById("selectFrom").value == "Склад") {
         
+		
         document.getElementById('selectStatus').style.color = "#CCCCCC";
         $("#selectStatus").prop('disabled', 'disabled');
         document.getElementById('selectStatus_send').value='null';
@@ -2297,6 +2316,9 @@ function checkFrom(id1, id2){
             $("#selectOperation option").css("display","block");
             document.getElementById('selectOperation').style.color = "";
         }
+		document.getElementById("selectOperation").value = "Приход";
+        $("#selectOperation option").css("display","block");
+        document.getElementById('selectOperation').style.color = "#CCCCCC";
         //testStatus = true;
     }
 
