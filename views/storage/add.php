@@ -1307,7 +1307,7 @@ $user = Yii::$app->user->identity;
                     </td>
                 </tr>
             </table> 
-            <table class="types" name="type_2">
+        <!--    <table class="types" name="type_2">
                 <caption><h2></h2></caption>  
                 <tr>
                     <td>
@@ -1577,7 +1577,103 @@ $user = Yii::$app->user->identity;
                     </td>
                 </tr>
             </table>        
-    </div>
+    -->
+			<table class="types" name = "type 2">
+				<caption><h2></h2></caption>  
+				<tr>
+					<td>
+                        <table class="type" onclick="selectName2('1')">
+                            <tr><td><img src="../images/storage/polu/1p.jpg"></td></tr>
+                            <tr><td name="kind_of_name_2"></td></tr>
+                            <tr><td name="name_2"></td></tr>
+                            <tr><td name="desc_2"></td></tr>
+                            <tr><td name="type_of_name_2"></td></tr>
+                        </table>
+                    </td>
+				
+					<td>
+							<table class="type" onclick="selectName2('1')">
+								<tr><td><img src="../images/storage/polu/1pRe.jpg"></td></tr>
+								<tr><td name="kind_of_name_2"></td></tr>
+								<tr><td name="name_2"></td></tr>
+								<tr><td name="desc_2"></td></tr>
+								<tr><td name="type_of_name_2"></td></tr>
+							</table>
+					</td>
+					<td>
+                        <table class="type" onclick="selectName2('2')">
+                            <tr><td><img src="../images/storage/polu/empty.jpg"></td></tr>
+                            <tr><td name="kind_of_name_2"></td></tr>
+                            <tr><td name="name_2"></td></tr>
+                            <tr><td name="desc_2"></td></tr>
+                            <tr><td name="type_of_name_2"></td></tr>
+                        </table>
+                    </td>
+					<td>
+                        <table class="type" onclick="selectName2('2')">
+                            <tr><td><img src="../images/storage/polu/empty.jpg"></td></tr>
+                            <tr><td name="kind_of_name_2"></td></tr>
+                            <tr><td name="name_2"></td></tr>
+                            <tr><td name="desc_2"></td></tr>
+                            <tr><td name="type_of_name_2"></td></tr>
+                        </table>
+                    </td>
+					<td>
+                        <table class="type" onclick="selectName2('3')">
+                            <tr><td><img src="../images/storage/polu/3p.jpg"></td></tr>
+                            <tr><td name="kind_of_name_2"></td></tr>
+                            <tr><td name="name_2"></td></tr>
+                            <tr><td name="desc_2"></td></tr>
+                            <tr><td name="type_of_name_2"></td></tr>
+                        </table>
+                    </td>
+					<td>
+                        <table class="type" onclick="selectName2('3')">
+                            <tr><td><img src="../images/storage/polu/3pRe.jpg"></td></tr>
+                            <tr><td name="kind_of_name_2"></td></tr>
+                            <tr><td name="name_2"></td></tr>
+                            <tr><td name="desc_2"></td></tr>
+                            <tr><td name="type_of_name_2"></td></tr>
+                        </table>
+                    </td>
+					<td>
+                        <table class="type" onclick="selectName2('4')">
+                            <tr><td><img src="../images/storage/polu/4p.jpg"></td></tr>
+                            <tr><td name="kind_of_name_2"></td></tr>
+                            <tr><td name="name_2"></td></tr>
+                            <tr><td name="desc_2"></td></tr>
+                            <tr><td name="type_of_name_2"></td></tr>
+                        </table>
+                    </td>
+					<td>
+                        <table class="type" onclick="selectName2('4')">
+                            <tr><td><img src="../images/storage/polu/4pRe.jpg"></td></tr>
+                            <tr><td name="kind_of_name_2"></td></tr>
+                            <tr><td name="name_2"></td></tr>
+                            <tr><td name="desc_2"></td></tr>
+                            <tr><td name="type_of_name_2"></td></tr>
+                        </table>
+                    </td>
+					<td>
+                        <table class="type" onclick="selectName2('5')">
+                            <tr><td><img src="../images/storage/polu/5p.jpg"></td></tr>
+                            <tr><td name="kind_of_name_2"></td></tr>
+                            <tr><td name="name_2"></td></tr>
+                            <tr><td name="desc_2"></td></tr>
+                            <tr><td name="type_of_name_2"></td></tr>
+                        </table>
+                    </td><td>
+                        <table class="type" onclick="selectName2('1')">
+                            <tr><td><img src="../images/storage/polu/5pRe.jpg"></td></tr>
+                            <tr><td name="kind_of_name_2"></td></tr>
+                            <tr><td name="name_2"></td></tr>
+                            <tr><td name="desc_2"></td></tr>
+                            <tr><td name="type_of_name_2"></td></tr>
+                        </table>
+                    </td>
+				</tr>
+			</table>
+	</div>
 </section>
 
 <script>
