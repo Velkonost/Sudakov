@@ -2179,7 +2179,7 @@ function checkTo(id1, id2) {
 
         $("#selectFrom option[value='Склад']").css("display","block");
         $('#selectOperation').removeAttr('disabled');
-        document.getElementById('selectOperation').style.color = "";
+        document.getElementById('selectOperation').style.color = "#CCCCCC";
     }
 
     compareStrings("selectFrom","selectTo");
