@@ -25,7 +25,7 @@
 				['name_type_send', 'default', 'message' => ''],
 				['name', 'default', 'message' => ''],
 				['value', 'number', 'message' => ''],
-				['massa', 'double', 'tooSmall'=>'', 'tooBig'=>'', 'min'=>1, 'message' => ''],
+				['massa', 'double', 'tooSmall'=>'', 'tooBig'=>'', 'min'=>0.01, 'message' => ''],
 				['status', 'default', 'message' => ''],
 				['from', 'default', 'message' => ''],
 				['to', 'default', 'message' => ''],
