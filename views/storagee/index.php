@@ -3,7 +3,7 @@
 </head>
 <?php
 
-
+// use Yii;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use app\models\Things;
@@ -17,71 +17,18 @@ $user = Yii::$app->user->identity;
 
 
 ?>
-<?php 
-if (!$user->hasRole(['superadmin'])) { 
+<?php
+
+if ($user->hasRole(['admin'])) { 
+    Yii::$app->response->redirect(Url::to(['storagee/add']));
+} else if(!$user->hasRole(['admin', 'superadmin'])) { 
     Yii::$app->response->redirect(Url::to(['site/index']));
-} 
+}
 ?>
 
-<table class="inputTable" >
-    <tbody  style="min-width: 1170px; width: 1170px; max-width: 1170px">
-                <tr class='hidden-row'>
-                    <td style = 'text-align: center;width:100px'>От кого</td>
-                    <td style = 'text-align: center;width:100px'>Кому</td>
-                    <td style="max-width: 58.5px; min-width: 58.5px;text-align: center; padding: 0">Дата</td>
-                    <td style="max-width: 58.5px; min-width: 58.5px;text-align: center; padding: 0">Время</td>
-                    <td style = 'text-align: center;width:215px'>Тип</td>
-                    <td style = 'text-align: center;width:215px'>Наименование</td>
-                    <td style="text-align: center;width:100px;">Операция</td>
-                    <td style="text-align: center;width:70px">Грамм</td>
-                    <td style="text-align: center;width:70px">Штук</td>
-                    <td style="text-align: center;width:100px">Статус</td>
-                </tr>
-                <?php
-                    foreach($all as $key){
-                        echo "<tr class='hidden-row'>";
-                        echo "<td style='text-align: center; background-color:#f1f2f3'>".$key->from."</td>";
-                        echo "<td style='text-align: center; background-color:#f1f2f3'>".$key->to."</td>";
-                        echo "<td style='text-align: center; background-color:#f1f2f3'>".$key->date."</td>";
-                        echo "<td style='text-align: center; background-color:#f1f2f3'>".$key->time."</td>";
-                        ?>
-                         <td class = "select_tp" style="padding:0; background-color:#f1f2f3" id="selected_type"><div class="in_selected_type"><img id="img_type" src="../images/storage/<?=$key->img_type?>" class="selected_type_img"><div id="type_selected"><h6 id="type_selected_title" style="margin-top: 0px"><?=$key->type_title?></h6>
-                         <h6 id="type_selected_title" style="margin-top: 0px"><?=$key->type_desc?></h6>
-                         <p id="type_selected_desc"></p> </div></div></td>
-                         
-                         
-                         <td class = "select_nm" style="padding:0; background-color:#f1f2f3" id="selected_name"><div class="in_selected_name"><img id="img_name" src="../images/storage/<?=$key->img_name?>" class="selected_name_img"><div id="name_selected">
-                         <h6 id="name_selected_title" style="margin-top: 0px"><?=$key->name_title?></h6>
-                         <h6 id="name_selected_title" style="margin-top: 0px"><?=$key->name_desc?></h6>
-                         <h6 id="name_selected_title" style="margin-top: 0px"><?=$key->name_type?></h6>
-                         <p style="margin-bottom: 3px; font-size: 11px" id="name_selected_desc"></p><p style="margin: 0;font-size: 11px" id="name_selected_type"></p> </div></div></td>
-                        <?php
-                        echo "<td style='text-align: center; background-color:#f1f2f3'>".$key->operation."</td>";
-                        echo "<td style='text-align: center; background-color:#f1f2f3'>".$key->massa."</td>";
-                        echo "<td style='text-align: center; background-color:#f1f2f3'>".$key->value."</td>";
-                        echo "<td style='text-align: center; background-color:#f1f2f3'>".$key->status."</td>";
 
-                         echo "</tr>";
-                     } ?>
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<button class = 'btn_submit' onclick = "return location.href = 'view'" style = "text-decoration: none;"><span style="text-align:center;">Показать товары</span></button>
+<button class = 'btn_submit'  onclick = "return location.href = 'add'" style = "text-decoration: none; display:inline-block; margin-bottom: 20px"><span style="text-align:center;">Добавить товары</span></button>
 
 
 
@@ -291,12 +238,12 @@ if (!$user->hasRole(['superadmin'])) {
     }
 
     .btn_submit {
-        margin-left: 45%;
+        margin-left: 40%;
         margin-top: 45px;
         font-family: inherit;
         font-size: 18px;
         background-color: #FCDA33;
-        width: 150px;
+        width: 300px;
         height: 50px;
         text-align: center;
         display: inline-block;
@@ -309,4 +256,5 @@ if (!$user->hasRole(['superadmin'])) {
     .name_td {
         height: 38px;
     }
+
 </style>

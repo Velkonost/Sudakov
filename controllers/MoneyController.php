@@ -495,7 +495,22 @@ class MoneyController extends Controller {
             ->add('Content-Disposition', 'attachment; filename="' . $fileName)
             ->add('Content-Type', 'text/xml; charset=utf-8');
         $searchModel = new MoneySearch();
+        $isYear = false;
+        if (Yii::$app->request->get('date_period') == 'year') $isYear = true;
+
+        $managername = Yii::$app->getDb()
+            ->createCommand("SELECT responsible_user_id, name"
+                . " FROM `manager`")
+            ->queryAll();
+        $manager = [];
+        foreach($managername as $value){
+            $manager[$value['responsible_user_id']] = $value['name'];
+        }
+
+
         return $this->renderPartial('csv', [
+            'year' => $isYear,
+            'manager' => $manager,
             'models' => $searchModel->search(Yii::$app->request->queryParams),
         ]);
     }

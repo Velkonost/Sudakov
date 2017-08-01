@@ -9,7 +9,12 @@ $sum = [Money::METHOD_YANDEX => 0, Money::METHOD_CARD => 0, Money::METHOD_BSO =>
 $method = [0=>"нет", Money::METHOD_YANDEX => "Эквайринг", Money::METHOD_BANK => "Банк", Money::METHOD_BANK_RS => "р/с", Money::METHOD_BSO => "БСО",
     Money::METHOD_CARD => "Карта", Money::METHOD_CASH => "Наличные"];
 
-$header = '"Имя Клиента";"Телефон";"Город";"Статус";"Бюджет финальный";"1-я оплата";"Как внесли 1-ю оплату";"Дата 1-й оплаты";"2-я оплата";"Как внесли 2-ю оплату";"Дата 2-й оплаты";"Комментарий";"Эквайринг";"Карта (НПК)";"БСО";"Нал";"Р/C";"1-я оплата";"Дата 1-й оплаты";"2-я оплата";"Дата 2-й оплаты";"Сверка с реестром";"№";"Дата";"Комментарий";"Коллекция";"Кол-во";"Единицы";"Дедлайн";"Успешно реализовано";"Предоплаты с прошлых месяцев";"Должны в текущем месяце";"Должны в следующих месяцах";"Дата добавления"' . "\n";
+if ($year) {
+    $header = '"Ответственный";"Имя Клиента";"Телефон";"Город";"Статус";"Бюджет финальный";"1-я оплата";"Как внесли 1-ю оплату";"Дата 1-й оплаты";"2-я оплата";"Как внесли 2-ю оплату";"Дата 2-й оплаты";"Комментарий";"Эквайринг";"Карта (НПК)";"БСО";"Нал";"Р/C";"1-я оплата";"Дата 1-й оплаты";"2-я оплата";"Дата 2-й оплаты";"Сверка с реестром";"№";"Дата";"Комментарий";"Коллекция";"Кол-во";"Единицы";"Дедлайн";"Успешно реализовано";"Предоплаты с прошлых месяцев";"Должны в текущем месяце";"Должны в следующих месяцах";"Дата добавления"' . "\n";
+} else {
+    $header = '"Имя Клиента";"Телефон";"Город";"Статус";"Бюджет финальный";"1-я оплата";"Как внесли 1-ю оплату";"Дата 1-й оплаты";"2-я оплата";"Как внесли 2-ю оплату";"Дата 2-й оплаты";"Комментарий";"Эквайринг";"Карта (НПК)";"БСО";"Нал";"Р/C";"1-я оплата";"Дата 1-й оплаты";"2-я оплата";"Дата 2-й оплаты";"Сверка с реестром";"№";"Дата";"Комментарий";"Коллекция";"Кол-во";"Единицы";"Дедлайн";"Успешно реализовано";"Предоплаты с прошлых месяцев";"Должны в текущем месяце";"Должны в следующих месяцах";"Дата добавления"' . "\n";    
+}
+
 echo mb_convert_encoding($header, 'Windows-1251', 'UTF-8');
 
 foreach ($models as $row) {
@@ -69,16 +74,35 @@ foreach ($models as $row) {
             $second_payment_date = date('d.m.y', $payment->paid_at);
         }
     }
-    $line = [$row->client_name, $row->phone, $row->city, $status, $row->total_amount, $row->first_payment_amount,
-        $method[$row->first_payment_method], (empty($row->first_payment_date) ? '' : date('d.m.y', $row->first_payment_date)),
-        $row->second_payment_amount, $method[$row->second_payment_method], date("d-m-Y", $row->second_payment_date),
-        $row->comment_fin, $sum[Money::METHOD_YANDEX], $sum[Money::METHOD_CARD], $sum[Money::METHOD_BSO], $sum[Money::METHOD_CASH],
-        $sum[Money::METHOD_BANK_RS], $first_payment, $first_payment_date, $second_payment, $second_payment_date,
-        $row->registry_check, (empty($row->goods_bill_num) ? '' : $row->goods_bill_num),
-        (empty($row->goods_bill_date) ? '' : date('d.m.y', $row->goods_bill_date)), $row->goods_bill_comment,
-        $row->collection, $row->count, $row->units, $row->deadline, (empty($row->finished_at) ? '' : date('d.m.y', $row->finished_at)),
-        $payments_before, $payments_before, $payments_present, $payments_next, date('d.m.y H:i', $row->created_at)
-    ];
+
+    if ($year) {
+        if(isset($manager[$row->responsible_user_id])) {
+            $m = $manager[$row->responsible_user_id];    
+        }
+        
+        $line = [$m, $row->client_name, $row->phone, $row->city, $status, $row->total_amount, $row->first_payment_amount,
+            $method[$row->first_payment_method], (empty($row->first_payment_date) ? '' : date('d.m.y', $row->first_payment_date)),
+            $row->second_payment_amount, $method[$row->second_payment_method], date("d-m-Y", $row->second_payment_date),
+            $row->comment_fin, $sum[Money::METHOD_YANDEX], $sum[Money::METHOD_CARD], $sum[Money::METHOD_BSO], $sum[Money::METHOD_CASH],
+            $sum[Money::METHOD_BANK_RS], $first_payment, $first_payment_date, $second_payment, $second_payment_date,
+            $row->registry_check, (empty($row->goods_bill_num) ? '' : $row->goods_bill_num),
+            (empty($row->goods_bill_date) ? '' : date('d.m.y', $row->goods_bill_date)), $row->goods_bill_comment,
+            $row->collection, $row->count, $row->units, $row->deadline, (empty($row->finished_at) ? '' : date('d.m.y', $row->finished_at)),
+            $payments_before, $payments_before, $payments_present, $payments_next, date('d.m.y H:i', $row->created_at)
+        ];
+    } else {
+        $line = [$row->client_name, $row->phone, $row->city, $status, $row->total_amount, $row->first_payment_amount,
+            $method[$row->first_payment_method], (empty($row->first_payment_date) ? '' : date('d.m.y', $row->first_payment_date)),
+            $row->second_payment_amount, $method[$row->second_payment_method], date("d-m-Y", $row->second_payment_date),
+            $row->comment_fin, $sum[Money::METHOD_YANDEX], $sum[Money::METHOD_CARD], $sum[Money::METHOD_BSO], $sum[Money::METHOD_CASH],
+            $sum[Money::METHOD_BANK_RS], $first_payment, $first_payment_date, $second_payment, $second_payment_date,
+            $row->registry_check, (empty($row->goods_bill_num) ? '' : $row->goods_bill_num),
+            (empty($row->goods_bill_date) ? '' : date('d.m.y', $row->goods_bill_date)), $row->goods_bill_comment,
+            $row->collection, $row->count, $row->units, $row->deadline, (empty($row->finished_at) ? '' : date('d.m.y', $row->finished_at)),
+            $payments_before, $payments_before, $payments_present, $payments_next, date('d.m.y H:i', $row->created_at)
+        ];
+    }
+    
 
     // конвертируем в cp1251
     foreach ($line as $k => $column) {

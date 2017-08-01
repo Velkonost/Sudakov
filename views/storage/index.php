@@ -17,6 +17,14 @@ $user = Yii::$app->user->identity;
 
 
 ?>
+<?php
+
+if ($user->hasRole(['admin'])) { 
+    Yii::$app->response->redirect(Url::to(['storage/add']));
+} else if(!$user->hasRole(['admin', 'superadmin'])) { 
+    Yii::$app->response->redirect(Url::to(['site/index']));
+}
+?>
 
 
 <button class = 'btn_submit' onclick = "return location.href = 'view'" style = "text-decoration: none;"><span style="text-align:center;">Показать товары</span></button>

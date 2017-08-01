@@ -18,11 +18,11 @@ use yii\web\UploadedFile;
 use yii\data\Pagination;
 
 use app\models\StorageFormAdd;
-use app\models\Metals;
+use app\models\MetalsTest;
 
 
 
-class StorageController extends Controller
+class StorageeController extends Controller
 {
 
     private $isAddFormSubmitted = false;
@@ -69,21 +69,8 @@ class StorageController extends Controller
     }
 
 
-
-    public function actionIndex() {
-        return $this->render('index');
-    }
-
-    public function actionView() {
-        $all = Metals::find()->all();
-        
-        return $this->render('view',
-            ['all'=>$all]);
-
-    }
-
     public function actionReport() {
-        $all = Metals::find()->all();
+        $all = MetalsTest::find()->all();
         $from = [];
         $to = [];
         $operation = [];
@@ -115,6 +102,19 @@ class StorageController extends Controller
             ]);
     }
 
+
+    public function actionIndex() {
+        return $this->render('index');
+    }
+
+    public function actionView() {
+        $all = MetalsTest::find()->all();
+        
+        return $this->render('view',
+            ['all'=>$all]);
+
+    }
+
     public function actionAdd()
     {
 
@@ -122,7 +122,7 @@ class StorageController extends Controller
         $text = "";
         if (($form->load(Yii::$app->request->post())) && ($form->validate())){
 
-            $post = new Metals;
+            $post = new MetalsTest;
             $post->type_title = Html::encode($form->type_title_send);
             $post->type_desc = Html::encode($form->type_desc_send);
             $post->img_type = Html::encode($form->type_img_name);
@@ -151,7 +151,6 @@ class StorageController extends Controller
             $form->from = "От кого";
 
         }
-
         
         $items = [
             '' => 'Операция',

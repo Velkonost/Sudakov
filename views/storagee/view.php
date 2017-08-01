@@ -66,25 +66,6 @@ if (!$user->hasRole(['superadmin'])) {
     </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <style type="text/css">
 
     .inputTable {
@@ -309,4 +290,5 @@ if (!$user->hasRole(['superadmin'])) {
     .name_td {
         height: 38px;
     }
+
 </style>
